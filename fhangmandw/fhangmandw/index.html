@@ -10,7 +10,22 @@
     <script>
         function init() {
             console.log("init");
-            document.getElementById('startGame').addEventListener("click", function () { location.href='game.html'}, false);
+
+            document.getElementById('startGame').addEventListener("click",
+                function ()
+                {
+                    location.href = 'game.html';
+                }, false);
+
+            document.getElementById('score').addEventListener("click",
+                function () {
+                    location.href = 'scores.html';
+                }, false);
+
+            document.getElementById('instructions').addEventListener("click",
+                function () {
+                    location.href = 'instructions.html';
+                }, false);
         }
 
         document.addEventListener("DOMContentLoaded", init, false);
@@ -19,7 +34,7 @@
 <body>
     <h1>FHDW Hangman</h1>
 
-    <button class="menu" id="startGame" style="margin:10px;">Spiel starten</button> <br />
+    <button class="menu" id="startGame">Spiel starten</button> <br />
     <button class="menu" id="score">Bestenliste</button> <br />
     <button class="menu" id="instructions">Anleitung</button>
 </body>

@@ -1,3 +1,55 @@
-﻿.menu {
+﻿/*
+    --- FHDW Farben ---
+    Dunkelblau Logo: 013668
+    Noch Dunkler: 2E2E2E
+    Orange:FF7901
+    Orange blass:F8CAA1
+    Hellblau:49B8E6
+    Hellgrau:B9B9BA
+    Dunkelgrau:A9A9A9
+
+
+    Nützliche Links:
+    http://www.bestcssbuttongenerator.com/
+    http://css-button-generator.com/
+*/
+
+.menu {
     margin: 10px;
+    -moz-box-shadow: 0px 11px 8px -9px #276873;
+	-webkit-box-shadow: 0px 11px 8px -9px #276873;
+	box-shadow: 0px 11px 8px -9px #276873;
+	background-color:#013668;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #29668f;
+	display:inline-block;
+	cursor:pointer;
+	color:#FF7901;
+	font-family:Verdana;
+	font-size:23px;
+	padding:14px 31px;
+	text-decoration:none;
 }
+
+.menu:hover {
+	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #1e62d0), color-stop(100%, #3d94f6) );
+	background-color:#1e62d0;
+
+}
+
+.menu:active {
+	position:relative;
+	top:1px;
+}
+
+h1{
+    color:2E2E2E;
+    font-family: 'Comic Sans MS'; //Beste Schriftart ever <3333 - Verdana :D
+}
+
+
