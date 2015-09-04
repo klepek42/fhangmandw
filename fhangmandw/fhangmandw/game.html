@@ -1,9 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>FHDW Hangman</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
+
+	<p id="lives">Lives:</p>
+	
+	<!-- Bereich fuer das geheime Wort -->
+	<div id="area">
+		<ul id="secretField">
+			<li>_</li>
+			<li>_</li>
+			<li>_</li>
+			<li>_</li>
+		</ul>
+	</div>
+
+	<!-- Container fuer Darstellung der Buchstaben in einer unordered List mit li Elementen -->
+	<div id="buttons">
+		<ul id="letterButton">
+			<li>a</li>
+			<li>b</li>
+		</ul>
+	</div>
+	
+	<button id="nextWord">Next Word</button> <br/>
+	<button id="test" onclick="document.getElementById('test').disabled=true;">TEST</button>
+
 
 </body>
 </html>
