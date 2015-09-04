@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>FHDW Hangman</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+        function init() {
+            console.log("init");
+            document.getElementById('startGame').addEventListener("click", function () { location.href='game.html'}, false);
+        }
+
+        document.addEventListener("DOMContentLoaded", init, false);
+    </script>
+</head>
+<body>
+    <h1>FHDW Hangman</h1>
+
+    <button class="menu" id="startGame" style="margin:10px;">Spiel starten</button> <br />
+    <button class="menu" id="score">Bestenliste</button> <br />
+    <button class="menu" id="instructions">Anleitung</button>
+</body>
+</html>

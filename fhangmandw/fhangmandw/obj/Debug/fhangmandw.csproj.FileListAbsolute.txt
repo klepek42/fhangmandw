@@ -1,0 +1,6 @@
+C:\Data\GIT\fhangmandw\fhangmandw\fhangmandw\bin\fhangmandw.dll.config
+C:\Data\GIT\fhangmandw\fhangmandw\fhangmandw\bin\fhangmandw.dll
+C:\Data\GIT\fhangmandw\fhangmandw\fhangmandw\bin\fhangmandw.pdb
+C:\Data\GIT\fhangmandw\fhangmandw\fhangmandw\obj\Debug\fhangmandw.csprojResolveAssemblyReference.cache
+C:\Data\GIT\fhangmandw\fhangmandw\fhangmandw\obj\Debug\fhangmandw.dll
+C:\Data\GIT\fhangmandw\fhangmandw\fhangmandw\obj\Debug\fhangmandw.pdb
