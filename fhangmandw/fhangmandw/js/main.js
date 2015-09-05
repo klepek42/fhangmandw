@@ -40,3 +40,6 @@ var checkLetter = function() {
 }
 
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
+
+
+//Idee: Punktevergabe - Richtiger Buchstabe = 100 Punkte - Falscher Buchstabe -25 ?

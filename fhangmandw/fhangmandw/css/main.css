@@ -32,7 +32,7 @@
 	display:inline-block;
 	cursor:pointer;
 	color:#FF7901;
-	font-family:Roboto; /* Roboto nur kurz als Test */
+	font-family:'Roboto'; /* Roboto nur kurz als Test */
 	font-size:23px;
 	padding:14px 31px;
 	text-decoration:none;
@@ -88,11 +88,12 @@ ul {
 	font-size:20px;
 }
 
+/* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
 #lives {
 	font-size:30px;
 	font-family:'Roboto';
 }
 
-/* Buchstaben Button deaktiviert Effekt wenn falsch 
+/* Buchstaben-Button deaktiviert Effekt wenn falsch 
    CSS Selektor :disabled
 */
