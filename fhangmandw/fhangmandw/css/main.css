@@ -62,14 +62,40 @@ ul {
 	white-space:nowrap;
 }
 
+/* document.getElementById('test').disabled=true; */
 #letterButton li {
+	width:25px;
 	text-align:center;
 	font-family:'Roboto';
-	font-size:40px;
+	font-size:30px;
 	list-style:none;
 	cursor:pointer;
 	display:inline;
-	margin:20px;
+	margin:6px;
+	border-radius:30px;
+	border:4px solid #29668f;
+	display:inline-block;
+	background-color:white;
+	color:#FF7901;
+}
+
+#letterButton li:hover {
+	background-color:#FF7901;
+	color:white;
+}
+
+@media (max-width: 767px) {
+  #letterButton li{
+  /*padding:0 0 0 25px;*/
+   color:blue;
+  }
+}
+
+@media (max-width: 480px) {
+  #letterButton li{
+  /*padding:0 0 0 25px;*/
+   color:red;
+  }
 }
 
 #secretField li {
@@ -89,7 +115,7 @@ ul {
 }
 
 /* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
-#lives {
+#lives,#points {
 	font-size:30px;
 	font-family:'Roboto';
 }

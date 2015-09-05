@@ -12,29 +12,21 @@
 </head>
 <body>
 
-	<p id="lives">Lives:</p>
+	<p id="lives">Leben:</p>
+	<p id="points">Punkte:</p> 
 	
 	<!-- Bereich fuer das geheime Wort -->
 	<div id="area">
 		<ul id="secretField">
-			<li>_</li>
-			<li>_</li>
-			<li>_</li>
-			<li>_</li>
 		</ul>
 	</div>
 
 	<!-- Container fuer Darstellung der Buchstaben in einer unordered List mit li Elementen -->
 	<div id="buttons">
 		<ul id="letterButton">
-			<li>a</li>
-			<li>b</li>
 		</ul>
 	</div>
 	
-	<button id="nextWord">Nächstes Wort</button> <br/>
-	<button id="test" onclick="document.getElementById('test').disabled=true;">TEST</button>
-
-
+	<button id="nextWord" onclick="randomWord(), fillSecret()">Nächstes Wort</button> <br/>
 </body>
 </html>
