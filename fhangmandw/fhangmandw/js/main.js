@@ -22,7 +22,7 @@ var createButtons = function() {
 	}
 }
 
-createButtons();
+//createButtons();
 
 //Befüllen des Ratefelders mit Elementen in Abhängigkeit des zufällig gewählten Wortes
 var secretArea = function() {
@@ -38,3 +38,5 @@ var checkLetter = function() {
 		;
 	}
 }
+
+//eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()

@@ -19,6 +19,7 @@
 }
 
 .menu {
+	width:200px;
     margin: 10px;
     -moz-box-shadow: 0px 11px 8px -9px #276873;
 	-webkit-box-shadow: 0px 11px 8px -9px #276873;
@@ -52,8 +53,8 @@
 }
 
 h1{
-    color:2E2E2E;
-    font-family: 'Comic Sans MS'; /* Beste Schriftart ever <3333 - Verdana :D */
+    color:#003768;
+    font-family: 'Verdana'; /* Beste Schriftart ever <3333 - Verdana :D */
 }
 
 ul {
@@ -61,18 +62,35 @@ ul {
 	white-space:nowrap;
 }
 
-#letterButton li,#secretField li {
+#letterButton li {
 	text-align:center;
-	font-family:Roboto;
-	font-size:30px;
+	font-family:'Roboto';
+	font-size:40px;
 	list-style:none;
 	cursor:pointer;
 	display:inline;
-	margin:10px;
+	margin:20px;
+}
+
+#secretField li {
+	text-align:center;
+	font-family:'Roboto';
+	font-size:70px;
+	list-style:none;
+	cursor:pointer;
+	display:inline;
+	margin:20px;
 }
 
 #nextWord {
-	margin:20px;
+	margin:30px;
+	font-family:'Roboto';
+	font-size:20px;
+}
+
+#lives {
+	font-size:30px;
+	font-family:'Roboto';
 }
 
 /* Buchstaben Button deaktiviert Effekt wenn falsch 
