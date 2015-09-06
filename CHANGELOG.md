@@ -1,6 +1,12 @@
 # CHANGELOG
 
 
+## Version 1.4 (Edgar&Daniel)
+- Funktion randomWord verbessert: bereits genutztes Wort wird aus Array entfernt und in "Papierkorb-Array" usedWords verschoben
+- Funktion randomWord/fillSecret: Verhinderung von Errors bei leerem Wörter-Array durch if-Verzweigung und Alert
+- kleinere Anpassung in CSS
+
+
 ## Version 1.3 (Edgar)
 - ABC-Tastatur mittels jQuery umgesetzt
 - Erzeugen des Ratewortfelds in Abhängigkeit des Zufallsworts
