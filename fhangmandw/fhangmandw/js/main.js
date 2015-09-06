@@ -74,3 +74,11 @@ var checkLetter = function() {
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
 
 //Tastatureingaben
+
+
+//bla bla bla
+
+
+
+
+//bla bla bla
