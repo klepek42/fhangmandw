@@ -69,6 +69,7 @@
     <Content Include="game.html" />
     <Content Include="instructions.html" />
     <Content Include="index.html" />
+    <Content Include="js\keyboard.js" />
     <Content Include="scores.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -77,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
-    <Folder Include="js\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
