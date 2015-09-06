@@ -18,5 +18,11 @@ You can either play this game by clicking on the buttons representing the alphab
 * jQuery UI 1.11.4 (hosted by Google)
 * Google Roboto Font (Apache License, version 2.0)
 
+## Notations/conventions
+* Name convention: CamelCase
+* Functions and variables in English
+* Documentation and user interface texts in German
+* Code: focus on readability
+
 ## License
 fhangmandw is licensed under the [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE).
