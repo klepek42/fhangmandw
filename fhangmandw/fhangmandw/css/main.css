@@ -54,7 +54,7 @@
 
 h1{
     color:#003768;
-    font-family: 'Verdana'; /* Beste Schriftart ever <3333 - Verdana :D */
+    font-family: 'Verdana'; 
 }
 
 ul {
@@ -103,7 +103,7 @@ ul {
 	font-family:'Roboto';
 	font-size:70px;
 	list-style:none;
-	cursor:pointer;
+	cursor:default;
 	display:inline;
 	margin:20px;
 }
