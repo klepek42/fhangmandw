@@ -75,14 +75,3 @@ var checkLetter = function() {
 
 //Tastatureingaben
 
-
-<<<<<<< HEAD
-// Test123
-=======
-//bla bla bla
-
-
-
-
-//bla bla bla
->>>>>>> origin/master
