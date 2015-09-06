@@ -2,6 +2,7 @@
 A HTML5 and JavaScript game based on the game idea of hangman. This version represents the typical hangman game in a modern look and with a color branding based on the FHDW corporate design.
 
 [Play the game](link) TODO: add link
+[Visit the website](link) TODO: add link
 
 ## Contributions
 The only contributors to this project are [Daniel Zur Linden](https://github.com/Mastaa12) and [Edgar Klepek](https://github.com/edgarklepek42).
