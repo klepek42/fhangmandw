@@ -1,4 +1,27 @@
 # CHANGELOG
+
+
+## Version 1.3 (Edgar)
+- ABC-Tastatur mittels jQuery umgesetzt
+- Erzeugen des Ratewortfelds in Abhängigkeit des Zufallsworts
+- Funktion createButtons()
+- Funktion fillSecret()
+- Mehr Wörter zum Wörter Array hinzugefügt
+
+## Version 1.2 (Edgar)
+- Funktion randomWord() zur Wahl eines Zufallsworts
+- Gestaltung und Aufbau der ABC-Buttons
+- Gestaltung der Ratewortfelds
+
+## Version 1.10
 - Neue Schriftart "Roboto" von Google zum Testen hinzugefügt (Steht unter Apache Licence)
 - Gamelogik und Struktur grob erstellt
 - Gameoptik etwas angepasst
+
+## Version 1.1 (Daniel)
+- main.css erstellt
+- Menü gestaltet
+- eventListener für das Menü
+
+## Version 1 (Daniel)
+- Initiales einchecken
