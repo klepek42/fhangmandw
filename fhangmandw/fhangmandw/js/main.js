@@ -4,22 +4,11 @@ var usedWords = [];
 var word;
 var lives;
 var points = 0;
-
-//Erzeugen der Buttons mit Buchstaben
-var createButtons = function() {
-	jQuery(function($){
-		for(var i = 0; i < letters.length; i++) {
-			var letter = letters[i];
-			$("#buttons ul").append("<li>" + letter + "</li>");
-			
-		}
-	});
-}
-createButtons();
+var pick;
+var picks = [];
 
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
-
     word = words[Math.floor(Math.random() * (words.length))];
     usedWords.push(word);
 
@@ -36,13 +25,21 @@ function randomWord() {
     {
         //Alert erfolgte in Methode fillSecret bei Array-Länge 0
     }
-    
-
 	return word;
 }
-randomWord();
 
-//Befüllen des Ratefelders mit Elementen in Abhängigkeit des zufällig gewählten Wortes
+//Erzeugen der Buttons mit Buchstaben
+var createButtons = function() {
+	jQuery(function($){
+		for(var i = 0; i < letters.length; i++) {
+			var letter = letters[i];
+			$("#buttons ul").append("<li>" + letter + "</li>");
+			
+		}
+	});
+}
+
+//Befüllen des Ratefelders mit Elementen in Abhängigkeit der Wortlänge
 var fillSecret = function() {
 	jQuery(function($){
 	//Reset fuer "nächstes Wort"
@@ -50,7 +47,7 @@ var fillSecret = function() {
 
 	    if (words.length > 0) {
 	        for (var j = 0; j < word.length; j++) {
-	            //Erstelle so viele Underscores wie die Wortlänge
+	            //Erstelle so viele Unterstriche wie die Wortlänge
 	            $("#area ul").append('<li>_</li>');
 	        }
 	    }
@@ -60,7 +57,6 @@ var fillSecret = function() {
 	    }
 	});
 }
-fillSecret();
 
 //Pruefen ob der Benutzer einen richtigen Buchstaben gewählt hat
 //Wenn richtig dann decke auf und tausche _ durch richtigen Buchstaben
@@ -75,3 +71,8 @@ var checkLetter = function() {
 
 
 //Tastatureingaben
+
+//Funktionsaufrufe
+randomWord();
+createButtons();
+fillSecret();

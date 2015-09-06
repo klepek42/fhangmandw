@@ -5,39 +5,65 @@ function checkKeyboard()
         function (event)
         {
         var key = String.fromCharCode(event.keyCode);
+        console.log("Key: " + key);
         key.toUpperCase();
         switch (key)
             {
             case 'A':
+            break;
             case 'B':
-                case 'C':
-                case 'D':
-                case 'E':
-                case 'F':
-                case 'G':
-                case 'H':
-                case 'I':
-                case 'J':
-                case 'K':
-                case 'L':
-                case 'M':
-                case 'N':
-                case 'O':
-                case 'P':
-                case 'Q':
-                case 'R':
-                case 'S':
-                case 'T':
-                case 'U':
-                case 'V':
-                case 'W':
-                case 'X':
-                case 'Y':
+            break;
+            case 'C':
+            break;
+            case 'D':
+            break;
+            case 'E':
+            break;
+            case 'F':
+            break;
+            case 'G':
+            break;
+            case 'H':
+            break;
+            case 'I':
+            break;
+            case 'J':
+            break;
+            case 'K':
+            break;
+            case 'L':
+            break;
+            case 'M':
+            break;
+            case 'N':
+            break;
+            case 'O':
+            break;
+            case 'P':
+            break;
+            case 'Q':
+            break;
+            case 'R':
+            break;
+            case 'S':
+            break;
+            case 'T':
+            break;
+            case 'U':
+            break;
+            case 'V':
+            break;
+            case 'W':
+            break;
+            case 'X':
+            break;
+            case 'Y':
+            break;
             case 'Z':
+            break;
             default: alert("Bitte nur Buchstaben (keine Umlaute!) eingeben!"); 
                 break;
            }
        }
-                       );
-
+    );
 }
