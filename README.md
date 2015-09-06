@@ -19,4 +19,4 @@ You can either play this game by clicking on the buttons representing the alphab
 * Google Roboto Font (Apache License, version 2.0)
 
 ## License
-fhangmandw is licensed under the [MIT license.](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE)
+fhangmandw is licensed under the [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE).
