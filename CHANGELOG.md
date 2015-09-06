@@ -1,6 +1,9 @@
 # CHANGELOG
 
 
+## Verion 1.4.2 (Daniel)
+- Eventlistener in game.html implementiert
+
 ## Version 1.4 (Edgar&Daniel)
 - Funktion randomWord verbessert: bereits genutztes Wort wird aus Array entfernt und in "Papierkorb-Array" usedWords verschoben
 - Funktion randomWord/fillSecret: Verhinderung von Errors bei leerem Wörter-Array durch if-Verzweigung und Alert
