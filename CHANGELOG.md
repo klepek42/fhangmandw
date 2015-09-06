@@ -1,7 +1,10 @@
 # CHANGELOG
 
+## Version 1.4.3 (Daniel)
+- keyboard.js hinzugefügt
+- checkKeyboard() Grundgerüst erstellt
 
-## Verion 1.4.2 (Daniel)
+## Version 1.4.2 (Daniel)
 - Eventlistener in game.html implementiert
 
 ## Version 1.4 (Edgar&Daniel)
