@@ -1,5 +1,10 @@
 # CHANGELOG
 
+# Version 1.4.5 (Edgar)
+- Funktion checkLetter() teilweise implementiert, es fehlt das Feintunning
+- Erstellung neuer Variablen wie z.B. pick und picks Array
+- Verbesserung von createButtons() und fillSecret() -> jetzt werden auch IDs für die Elemente vergeben
+
 ## Version 1.4.4 (Edgar)
 - keyboard.js cases um breaks ergänzt
 - Game Over Seite grob erstellt
