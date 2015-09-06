@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.4.4 (Edgar)
+- keyboard.js cases um breaks ergänzt
+- Game Over Seite grob erstellt
+
 ## Version 1.4.3 (Daniel)
 - keyboard.js hinzugefügt
 - checkKeyboard() Grundgerüst erstellt
