@@ -9,6 +9,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+    function init() {
+    console.log("init");
+
+    document.getElementById('nextWord').addEventListener("click",
+    function () {
+        randomWord();
+        fillSecret();
+    });
+
+    }
+
+    document.addEventListener("DOMContentLoaded", init, false);
+    </script>
+
+    
 </head>
 <body>
 
@@ -27,6 +44,6 @@
 		</ul>
 	</div>
 	
-	<button id="nextWord" onclick="randomWord(), fillSecret()">Nächstes Wort</button> <br/> <!-- EVENTLISTENER IMPLEMENTIEREN -->
+	<button id="nextWord">Nächstes Wort</button> <br/> <!-- EVENTLISTENER IMPLEMENTIEREN -->
 </body>
 </html>
