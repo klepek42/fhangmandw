@@ -1,5 +1,10 @@
 # CHANGELOG
 
+# Version 1.5.1.2 (Edgar)
+- Erster Versuch die Highscores einzubauen. store.js angepeilt.
+
+## Version 1.5.1.1 (Daniel)
+
 ## Version 1.5.1 (Daniel)
 - einfache Punktlogik implementiert
 - game.html points-Textfeld von p- zu span-Element verändert wegen Punktevergabe
