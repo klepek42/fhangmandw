@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.4.8 (Edgar)
+- wordComplete() implementiert
+
 ## Version 1.4.7 (Edgar)
 - checkLetters() fertig implementiert
 
