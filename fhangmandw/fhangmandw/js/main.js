@@ -93,12 +93,14 @@ var getPick = function() {
 //Anmerkung Daniel: Würde ich mit Übergabeparameter implementieren, sprich: var checkLetter = function (letter) und Rückgabewert ebenfalls mit 0 und 1, damit ich das in meinem Tastaturlistener benutzen kann
 var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
 		jQuery(function($){
+				if(userPick != null) {
 				//Buchstabenprüfung
 				//TODO: 2 gleiche Buchstaben hintereinander werden nicht gefunden z.B. bei "Gewinn" oder "aa" nur 1.; bei "bbb" werden 1. und 3. gefunden
 				//var test = word.length + 1;
 				for (var i = 0; i < word.length; i++) {
 				    if (userPick === word[i]) {
-				        letterFound=1;
+				        letterFound = 1;
+				        console.log("letterFound " + letterFound);
 			          //Nur einmalig eintragen
 			          if(jQuery.inArray(userPick, correct) == -1) {
 			          	correct.push(userPick);
@@ -108,7 +110,10 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 			          	for(var a = 0; a < correct.length; a++) {
 			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
 			          	}
-			          	if (letterFound == 0) { tries--; console.log("Tries: " + tries); }
+				          	/*if (letterFound == 0) { 
+				          		tries--;
+				          		console.log("Tries: " + tries);
+				          	}*/
 			          	wordComplete();
 			          	
 			          }
@@ -119,9 +124,18 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 			          picks.push(userPick);
 			          console.log(picks);
 				    }
-				    
-			        
-			    }
+			     }
+			     //Sobald man einen richtigen Buchstaben trifft, werden keine tries mehr abgezogen BUG!
+			     if (letterFound == 0){
+				    tries--;
+				    $('#tplaceholder').html(tries);
+				    console.log("Tries: " + tries);
+				    if(tries === 0) {
+				    	lives--;
+				    	$('#lplaceholder').html(lives);
+				    }
+				}
+			}
             /*Überbleibsel, nur noch für Debugging notwendig: 
 		    //Fund
 		        if(picks.length > 0) {
@@ -147,10 +161,11 @@ var wordComplete = function() {
 			}
 		}
 		if (counter == 0) {
-
 		    console.log("wordComplete");
 		    alert("Gewonnen");
 			gameover = true;
+			//Wort aufdecken
+			// FOR mit $('ul#secretField li#'+word[j]).text(word[j]);  aufdecken aller Buchstaben!
 
             //picks und correct Array leeren
 			picks.length = 0;
@@ -162,8 +177,7 @@ var wordComplete = function() {
 
 		    //Punktevergabe
 			points++;
-			document.getElementById('pplaceholder').innerHTML = points;
-
+			$('#pplaceholder').html(points);
 		}
 	});
 	
@@ -174,6 +188,11 @@ function scoring() {
 
 }
 
+//Setzen von gameover auf true und Seitenwechsel
+function endgame() {
+	gameover = true;
+	document.location.href = 'http://localhost/fhangmandw/fhangmandw/fhangmandw/gameover.html';
+}
 
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
 
@@ -190,5 +209,3 @@ checkLetter(getPick());
 $('li').each(function () {
     $(this).attr('id', 'abc');
 });*/
-
-// FOR mit $('ul#secretField li#'+word[j]).text(word[j]);  aufdecken aller Buchstaben!
