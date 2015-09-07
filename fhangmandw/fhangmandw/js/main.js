@@ -79,53 +79,38 @@ var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuel
 			$('ul#letterButton li#abc').click(function() {
 				var pick = $(this).text();
 				console.log("Picked " + pick);
-
 				//Buchstabenprüfung
 				//TODO: 2 gleiche Buchstaben hintereinander werden nicht gefunden z.B. bei "Gewinn" oder "aa" nur 1.; bei "bbb" werden 1. und 3. gefunden
-				for (var i = 0; i < word.length; i++) {
-					//console.log("i = " + i);
+				var test = word.length + 1;
+				for (var i = 0; i < test; i++) {
 			        if(pick === word[i]) {
 			          //Nur einmalig eintragen
-			          if(jQuery.inArray(pick, picks) !== -1) {
+			          if(jQuery.inArray(pick, correct) == -1) {
 			          	correct.push(pick);
-			          	console.log("inArray");
-			          }
-			          else {
-			          	console.log("not inArray");
+			          	console.log("correct: " + correct);
+			          	//Unterstriche aufdecken
+			          	for(var a = 0; a < correct.length; a++) {
+			          		$('ul#secretField li#'+correct[a]).text(correct[a]); 
+			          	}
 			          }
 			          var position = ++i;
-			          console.log("Position: " + position);
+			          console.log("Fund bei " + position);
 			          //Array picks mit Funden füllen
 			          picks.push(pick);
 			          console.log(picks);
-			          console.log("correct: " + correct);
 			        }   
 			    }
 	    		//Fund
-		        if(picks.length > 0) { //TODO: && i == word.length (Ende der Schleife erreicht)
-		        	console.log("fund");
-		        	//Aufdecken der gefundenen Buchstaben
-		        	//TODO: Nur gefundene und nicht alle!!!! 
-		        	//Im IF darüber einbauen
-		        	for(var j = 0; j < word.length; j++) {
-		        		var b = word[j];
-		        		console.log("word[j]: " + b);
-		        		//TODO: Das richtige li Element ersetzen!!
-		        		$('ul#secretField li#'+b).text(b);
-		        		/* Experiment
-		        		$('ul#area li#secretField').each(function () {
-    						$(this).html('_', 'a');
-						});*/
-
-		        	}
-		        	
+		        if(picks.length > 0) {
+		        	console.log("Fund - return 1");
 		        	return 1;
 		        }
 		        //Kein Fund
-		        else return 0;
+		        else {
+		        	console.log("Kein Fund - return 0");
+		        	return 0;
+		        }
 			});
-	
-
 		});
 	}
 
@@ -144,3 +129,5 @@ checkLetter();
 $('li').each(function () {
     $(this).attr('id', 'abc');
 });*/
+
+// FOR mit $('ul#secretField li#'+word[j]).text(word[j]);  aufdecken aller Buchstaben!
