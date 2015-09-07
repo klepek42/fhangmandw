@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.5.2 (Edgar)
+- Punkte, Leben, Gameover etwas überarbeitet
+- Leben werden bei 0 Versuchen abgezogen
+- Tries werden abgezogen, aber hat noch nen Bug. Sobald ein richtiger Buchstabe gefunden wurde, bleiben die tries unverändert
+
 ## Version 1.5.1.2 (Edgar)
 - Erster Versuch die Highscores einzubauen. store.js angepeilt.
 
