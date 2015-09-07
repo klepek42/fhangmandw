@@ -6,6 +6,7 @@ var lives;
 var points = 0;
 var pick; //Buchstaben Wahl des Nutzers
 var picks = []; //Alle ausgewählten Buchstaben des Nutzers
+var correct = []; //Richtige picks
 
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
@@ -57,7 +58,7 @@ var fillSecret = function() {
 	        	//Unterstrich li Elemente
 	        	var secretEl = $('<li>_</li>')
 	        	//Vergabe einer id für spätere Prüfung
-				$(secretEl).attr('id', 'secret');
+				$(secretEl).attr('id', word[j]);
 	            //Erstelle so viele Unterstriche wie die Wortlänge
 	            $("#area ul").append(secretEl);
 	        }
@@ -84,12 +85,20 @@ var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuel
 				for (var i = 0; i < word.length; i++) {
 					//console.log("i = " + i);
 			        if(pick === word[i]) {
-			          var correct = pick;
+			          //Nur einmalig eintragen
+			          if(jQuery.inArray(pick, picks) !== -1) {
+			          	correct.push(pick);
+			          	console.log("inArray");
+			          }
+			          else {
+			          	console.log("not inArray");
+			          }
 			          var position = ++i;
 			          console.log("Position: " + position);
 			          //Array picks mit Funden füllen
 			          picks.push(pick);
 			          console.log(picks);
+			          console.log("correct: " + correct);
 			        }   
 			    }
 	    		//Fund
@@ -102,7 +111,7 @@ var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuel
 		        		var b = word[j];
 		        		console.log("word[j]: " + b);
 		        		//TODO: Das richtige li Element ersetzen!!
-		        		$('ul#secretField li#secret').text(b);
+		        		$('ul#secretField li#'+b).text(b);
 		        		/* Experiment
 		        		$('ul#area li#secretField').each(function () {
     						$(this).html('_', 'a');
