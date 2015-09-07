@@ -72,23 +72,32 @@ var fillSecret = function() {
 	});
 }
 
+
+var getPick = function() {
+	jQuery(function($){
+		$('ul#letterButton li#abc').click(function() {
+			var pick = $(this).text();
+			console.log("Picked " + pick);
+			checkLetter(pick);
+			return pick;
+		});
+	});
+}
+
 //Pruefen ob der Benutzer einen richtigen Buchstaben gewählt hat
 //Wenn richtig dann decke auf und tausche _ durch richtigen Buchstaben
 
 //Anmerkung Daniel: Würde ich mit Übergabeparameter implementieren, sprich: var checkLetter = function (letter) und Rückgabewert ebenfalls mit 0 und 1, damit ich das in meinem Tastaturlistener benutzen kann
-var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
+var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
 		jQuery(function($){
-			$('ul#letterButton li#abc').click(function() {
-				var pick = $(this).text();
-				console.log("Picked " + pick);
 				//Buchstabenprüfung
 				//TODO: 2 gleiche Buchstaben hintereinander werden nicht gefunden z.B. bei "Gewinn" oder "aa" nur 1.; bei "bbb" werden 1. und 3. gefunden
-				var test = word.length + 1;
-				for (var i = 0; i < test; i++) {
-			        if(pick === word[i]) {
+				//var test = word.length + 1;
+				for (var i = 0; i < word.length; i++) {
+			        if(userPick === word[i]) {
 			          //Nur einmalig eintragen
-			          if(jQuery.inArray(pick, correct) == -1) {
-			          	correct.push(pick);
+			          if(jQuery.inArray(userPick, correct) == -1) {
+			          	correct.push(userPick);
 			          	console.log("correct: " + correct);
 			          	//Unterstriche aufdecken
 			          	for(var a = 0; a < correct.length; a++) {
@@ -97,9 +106,9 @@ var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuel
 			          	wordComplete(); 
 			          }
 			          var position = ++i;
-			          console.log("Fund bei " + position);
+			          console.log("Position " + position);
 			          //Array picks mit Funden füllen
-			          picks.push(pick);
+			          picks.push(userPick);
 			          console.log(picks);
 			        }   
 			    }
@@ -113,7 +122,6 @@ var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuel
 		        	console.log("Kein Fund - return 0");
 		        	return 0;
 		        }
-			});
 		});
 	}
 
@@ -144,7 +152,7 @@ var wordComplete = function() {
 randomWord();
 createButtons();
 fillSecret();
-checkLetter();
+checkLetter(getPick());
 
 /* Snippet: Ansatz könnte noch brauchbar sein
 $('li').each(function () {
