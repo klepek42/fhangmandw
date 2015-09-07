@@ -2,12 +2,14 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 var words = ["fhdw", "informatik", "bwl", "dual", "studium", "finanzmathematik", "bilanz", "guv", "gewinn", "javascript", "java", "software", "wirtschaft", "klausur", "praesentation", "office", "praxis"];
 var usedWords = [];
 var word;
-var lives;
+var lives = 4;
+var tries = 10;
 var points = 0;
 var pick; //Buchstaben Wahl des Nutzers
 var picks = []; //Alle ausgewählten Buchstaben des Nutzers
 var correct = []; //Richtige picks
 var gameover;
+var letterFound = 0;
 
 
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
@@ -95,23 +97,30 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 				//TODO: 2 gleiche Buchstaben hintereinander werden nicht gefunden z.B. bei "Gewinn" oder "aa" nur 1.; bei "bbb" werden 1. und 3. gefunden
 				//var test = word.length + 1;
 				for (var i = 0; i < word.length; i++) {
-			        if(userPick === word[i]) {
+				    if (userPick === word[i]) {
+				        letterFound=1;
 			          //Nur einmalig eintragen
 			          if(jQuery.inArray(userPick, correct) == -1) {
 			          	correct.push(userPick);
 			          	console.log("correct: " + correct);
+			          	
 			          	//Unterstriche aufdecken
 			          	for(var a = 0; a < correct.length; a++) {
 			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
 			          	}
-			          	wordComplete(); 
+			          	if (letterFound == 0) { tries--; console.log("Tries: " + tries); }
+			          	wordComplete();
+			          	
 			          }
+			          
 			          var position = ++i;
 			          console.log("Position " + position);
 			          //Array picks mit Funden füllen
 			          picks.push(userPick);
 			          console.log(picks);
-			        }   
+				    }
+				    
+			        
 			    }
             /*Überbleibsel, nur noch für Debugging notwendig: 
 		    //Fund
