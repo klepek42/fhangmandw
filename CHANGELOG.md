@@ -1,6 +1,6 @@
 # CHANGELOG
 
-# Version 1.5.1.2 (Edgar)
+## Version 1.5.1.2 (Edgar)
 - Erster Versuch die Highscores einzubauen. store.js angepeilt.
 
 ## Version 1.5.1.1 (Daniel)
