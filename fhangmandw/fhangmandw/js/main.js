@@ -7,6 +7,7 @@ var points = 0;
 var pick; //Buchstaben Wahl des Nutzers
 var picks = []; //Alle ausgewählten Buchstaben des Nutzers
 var correct = []; //Richtige picks
+var gameover;
 
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
@@ -65,6 +66,7 @@ var fillSecret = function() {
 	    }
 	    else
 	    {
+	    	gameover = true;
 	        alert("Du bist zu gut für dieses Spiel");
 	    }
 	});
@@ -90,8 +92,9 @@ var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuel
 			          	console.log("correct: " + correct);
 			          	//Unterstriche aufdecken
 			          	for(var a = 0; a < correct.length; a++) {
-			          		$('ul#secretField li#'+correct[a]).text(correct[a]); 
+			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
 			          	}
+			          	wordComplete(); 
 			          }
 			          var position = ++i;
 			          console.log("Fund bei " + position);
@@ -113,6 +116,24 @@ var checkLetter = function() { //Geht ohne, weil per onclick Funktion das aktuel
 			});
 		});
 	}
+
+//Entweder Inhalt der Unterstrich li Elemente auf noch vorhanden sein prüfen oder word mit correct gegenchecken (String vs Array)
+var wordComplete = function() {
+	var counter = 0;
+	jQuery(function($){
+		for(var i = 0; i < word.length; i++) {
+			if($('ul#secretField li#'+word[i]).text() == '_') {
+				counter++;
+			}
+		}
+		if(counter == 0) {
+			console.log("wordComplete");
+			alert("Gewonnen");
+			gameover = true;
+		}
+	});
+}
+
 
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
 
