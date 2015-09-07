@@ -6,7 +6,7 @@
 - checkLetter() Debug-if auskommentiert
 
 ## Version 1.4.9 (Edgar)
-***to be written***
+- Refactoring von checkLetter(): aufsplitten in die zusätzliche Funktion getPick() um für die Tastatur verfügbar zu sein
 
 ## Version 1.4.8 (Edgar)
 - wordComplete() implementiert
