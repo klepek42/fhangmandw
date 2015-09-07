@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.5.1 (Daniel)
+- einfache Punktlogik implementiert
+- game.html points-Textfeld von p- zu span-Element verändert wegen Punktevergabe
+
 ## Version 1.5 (Daniel)
 - Workover wordComplete: Arrays picks und correct werden bei fertigem Wort geleert + randomWord()/fillSecret() Aufruf hinzugefügt
 - keyboard.js: Tastatureingabe fertiggestellt, ergänzte breaks wieder gelöscht :)
