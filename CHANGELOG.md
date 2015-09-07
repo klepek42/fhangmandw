@@ -1,6 +1,9 @@
 # CHANGELOG
 
-# Version 1.4.5 (Edgar)
+## Version 1.4.6 (Edgar)
+- Verbesserung von checkLetter(), jedes Unterstrich li Element hat jetzt eine ID in Abhängigkeit des Geheimworts
+
+## Version 1.4.5 (Edgar)
 - Funktion checkLetter() teilweise implementiert, es fehlt das Feintunning
 - Erstellung neuer Variablen wie z.B. pick und picks Array
 - Verbesserung von createButtons() und fillSecret() -> jetzt werden auch IDs für die Elemente vergeben
