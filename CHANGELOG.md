@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.4.7 (Edgar)
+- checkLetters() fertig implementiert
+
 ## Version 1.4.6 (Edgar)
 - Verbesserung von checkLetter(), jedes Unterstrich li Element hat jetzt eine ID in Abhängigkeit des Geheimworts
 
