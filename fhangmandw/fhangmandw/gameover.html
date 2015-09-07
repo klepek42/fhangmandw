@@ -8,12 +8,25 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/store.min.js"></script>
+    <script src="js/scores.js"></script>
+    <!-- <script>
+        init();
+            function init() {
+                if (!store.enabled) {
+                    alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
+                    return
+                }
+                var schoolname = store.set('schoolname', 'test');
+                
+            }
+    </script> -->
     <script>
         function init() {
             console.log("init");
 
             document.getElementById('playAgain').addEventListener("click",
-                function ()
+                function()
                 {
                     location.href = 'index.html';
                 }, false);
@@ -23,11 +36,14 @@
 </head>
 <body>
     <h1>EXMATRIKULIERT!</h1>
-    <div id="titel">Gib den Namen deiner Schule fuer die Bestenliste ein!</div><br/>
+    <div id="titel">Gib den Namen deiner Schule ein!</div><br/>
     <!-- Namenseingabe per form Element oder notfalls per prompt -->
-    <form>
-        <input type="text" name="schoolname">
+    <form id="highscore">
+        <input type="text" name="school">
+        <button>Eintragen</button>
     </form>
-    <button class="gameover" id="playAgain">Nochmal</button> <br />
+
+    <button class="gameover" id="playAgain">Nochmal</button> <br/>
+    <button>Test</button>
 </body>
 </html>
