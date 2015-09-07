@@ -115,10 +115,13 @@ ul {
 }
 
 /* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
-#lives,#points {
+#lives,#points,#pplaceholder {
 	font-size:30px;
 	font-family:'Roboto';
 }
+
+
+
 
 /* Buchstaben-Button deaktiviert Effekt wenn falsch 
    CSS Selektor :disabled

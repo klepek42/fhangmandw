@@ -9,6 +9,7 @@ var picks = []; //Alle ausgewählten Buchstaben des Nutzers
 var correct = []; //Richtige picks
 var gameover;
 
+
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
     word = words[Math.floor(Math.random() * (words.length))];
@@ -149,9 +150,19 @@ var wordComplete = function() {
             //neues Wort + Striche generieren
 			randomWord();
 			fillSecret();
+
+		    //Punktevergabe
+			points++;
+			document.getElementById('pplaceholder').innerHTML = points;
+
 		}
 	});
 	
+}
+
+
+function scoring() {
+
 }
 
 
