@@ -28,7 +28,7 @@ function randomWord() {
         //Alert erfolgte in Methode fillSecret bei Array-Länge 0
     }
     console.log(word);
-	return word;
+    return word;
 }
 
 //Erzeugen der Buttons mit Buchstaben
@@ -112,7 +112,8 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 			          console.log(picks);
 			        }   
 			    }
-	    		//Fund
+            /*Überbleibsel, nur noch für Debugging notwendig: 
+		    //Fund
 		        if(picks.length > 0) {
 		        	console.log("Fund - return 1");
 		        	return 1;
@@ -122,6 +123,7 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 		        	console.log("Kein Fund - return 0");
 		        	return 0;
 		        }
+            */
 		});
 	}
 
@@ -134,12 +136,22 @@ var wordComplete = function() {
 				counter++;
 			}
 		}
-		if(counter == 0) {
-			console.log("wordComplete");
-			alert("Gewonnen");
+		if (counter == 0) {
+
+		    console.log("wordComplete");
+		    alert("Gewonnen");
 			gameover = true;
+
+            //picks und correct Array leeren
+			picks.length = 0;
+			correct.length = 0;
+
+            //neues Wort + Striche generieren
+			randomWord();
+			fillSecret();
 		}
 	});
+	
 }
 
 
