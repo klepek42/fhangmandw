@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 1.5 (Daniel)
+- Workover wordComplete: Arrays picks und correct werden bei fertigem Wort geleert + randomWord()/fillSecret() Aufruf hinzugefügt
+- keyboard.js: Tastatureingabe fertiggestellt, ergänzte breaks wieder gelöscht :)
+- checkLetter() Debug-if auskommentiert
+
+## Version 1.4.9 (Edgar)
+***to be written***
+
 ## Version 1.4.8 (Edgar)
 - wordComplete() implementiert
 
