@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version (Daniel)
+- Punkte und Lebensvergabe fertiggestellt
+- Funktion checkEndgame() integriert
+- Weiterleitung auf Gameover-Seite korrigiert
+
 ## Version 1.5.2 (Edgar)
 - Punkte, Leben, Gameover etwas überarbeitet
 - Leben werden bei 0 Versuchen abgezogen
