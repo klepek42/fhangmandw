@@ -205,6 +205,7 @@ function checkEndgame() {
 
     if (lives === 0) {
         $('#tplaceholder').html('0'); //schafft er so schnell nicht
+        setTimeout('', 1000);
         alert("Alle Leben aufgebraucht, und tschüss!");
         window.location.href = 'gameover.html';
     }
