@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.5.4.3 (Edgar)
+- Kleinigkeiten, revealWord(), fhdwLife(), savePoints() und das FHDW Logo als Leben
+
+## Version 1.5.4.2 (Daniel)
+
 ## Version 1.5.4.1 (Daniel)
 - usedLetters in wordComplete() leeren
 
