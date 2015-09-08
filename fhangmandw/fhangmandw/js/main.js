@@ -183,6 +183,7 @@ var wordComplete = function() {
             //picks und correct Array leeren
 			picks.length = 0;
 			correct.length = 0;
+			usedLetters = 0;
 
             //neues Wort + Striche generieren
 			randomWord();
