@@ -3,14 +3,14 @@ var points;
 var result = {school: schoolname, score: points};
 var highscores = [];
 
-function initStore() { //später in init()
+function initStore() {
     if (!store.enabled) {
         alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
         return
     }
-    var schoolname = store.get('schoolname', 'Schule ABC'); // ('', '')
+    //var schoolname = store.get('schoolname', 'Schule ABC'); // ('', '')
     // ... and so on ...
-    console.log(store.get('schoolname'));
+    //console.log(store.get('schoolname'));
 }
 
 function addHighscore() {

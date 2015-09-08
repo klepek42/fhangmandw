@@ -12,7 +12,6 @@ var correct = []; //Richtige picks
 var gameover;
 var letterFound = 0;
 
-
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
     word = words[Math.floor(Math.random() * (words.length))];
@@ -29,7 +28,7 @@ function randomWord() {
     }
     else
     {
-        //Alert erfolgte in Methode fillSecret bei Array-Länge 0
+       	//Alert erfolgte in Methode fillSecret bei Array-Länge 0
     }
     console.log(word);
     return word;
@@ -68,20 +67,18 @@ var fillSecret = function() {
 	            $("#area ul").append(secretEl);
 	        }
 	    }
-	    else
-	    {
+	    else{
 	    	gameover = true;
 	        alert("Du bist zu gut für dieses Spiel");
 	    }
 	});
 }
 
-
 var getPick = function() {
 	jQuery(function($){
 		$('ul#letterButton li#abc').click(function() {
 			var pick = $(this).text();
-			console.log("Picked " + pick);
+			//console.log("Picked " + pick);
 			checkLetter(pick);
 			return pick;
 		});
@@ -90,14 +87,10 @@ var getPick = function() {
 
 //Pruefen ob der Benutzer einen richtigen Buchstaben gewählt hat
 //Wenn richtig dann decke auf und tausche _ durch richtigen Buchstaben
-
-//Anmerkung Daniel: Würde ich mit Übergabeparameter implementieren, sprich: var checkLetter = function (letter) und Rückgabewert ebenfalls mit 0 und 1, damit ich das in meinem Tastaturlistener benutzen kann
 var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
 		jQuery(function($){
 				if(userPick != null && $.inArray(userPick, usedLetters) == -1) {
-				//Buchstabenprüfung
 				//TODO: 2 gleiche Buchstaben hintereinander werden nicht gefunden z.B. bei "Gewinn" oder "aa" nur 1.; bei "bbb" werden 1. und 3. gefunden
-				    //var test = word.length + 1;
 				usedLetters.push(userPick);
 
 				for (var i = 0; i < word.length; i++) {
@@ -108,8 +101,7 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 			          if(jQuery.inArray(userPick, correct) == -1) {
 			          	correct.push(userPick);
 			          	console.log("correct: " + correct);
-			          	
-			          	//Unterstriche aufdecken
+			          	//Unterstrich durch richtigen Buchstaben aufdecken
 			          	for(var a = 0; a < correct.length; a++) {
 			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
 			          	}
@@ -135,6 +127,8 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 				        console.log("Tries: " + tries);
 				        if (tries === 0) {
 				            lives--;
+				            fhdwLife();
+				            revealWord();
 				            $('#lplaceholder').html(lives);
 				            tries = 10;
 				            $('#tplaceholder').html(tries);
@@ -142,7 +136,6 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 				            checkEndgame();
 				        }
 				    }
-			    
 			     letterFound = 0;
 				}
 				else 
@@ -164,7 +157,14 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 		});
 	}
 
-//Entweder Inhalt der Unterstrich li Elemente auf noch vorhanden sein prüfen oder word mit correct gegenchecken (String vs Array)
+//Aufdecken des Wortes wenn man keine Tries mehr hat; noch nicht eingesetzt, weil noch an richtiger Stelle resetet werden muss
+function revealWord() {
+	for(var i = 0; i < word.length; i++) {
+		$('ul#secretField li#'+word[i]).text(word[i]);
+	}
+}
+
+//Entweder Inhalt der Unterstrich li Elemente auf noch vorhanden sein prüfen (Alternativ word mit correct gegenchecken (String vs Array))
 var wordComplete = function() {
 	var counter = 0;
 	jQuery(function($){
@@ -173,12 +173,9 @@ var wordComplete = function() {
 				counter++;
 			}
 		}
+		//Wort ist vollständig
 		if (counter == 0) {
-		    console.log("wordComplete");
-		    alert("Gewonnen");
-			gameover = true;
-			//Wort aufdecken
-			// FOR mit $('ul#secretField li#'+word[j]).text(word[j]);  aufdecken aller Buchstaben!
+		    alert("Wort komplett");
 
             //picks und correct Array leeren
 			picks.length = 0;
@@ -194,18 +191,33 @@ var wordComplete = function() {
 			$('#pplaceholder').html(points);
 		}
 	});
-	
 }
 
+//Steuerung des FHDW Logos als Lebensanzeige
+function fhdwLife() {
+	//Von Anfang an alle spans bzw. das ganze div disablen
+	//Wenn 4 lives dann blende
+	if(lives == 3) {
+		$("#fhdwLogo span#f" ).toggle( "fade" );
+	}
+	else if(lives == 2) {
+		$("#fhdwLogo span#h" ).toggle( "fade" );
+	}
+	else if(lives == 1) {
+		$("#fhdwLogo span#d" ).toggle( "fade" );
+	}
+	else {
+		$("#fhdwLogo span#w" ).toggle( "fade" );
+	}	
+}
+
+function savePoints() {
+	store.set('id', points);
+	console.log("store get: " + store.get('id', points));
+}
 
 function scoring() {
 
-}
-
-//Setzen von gameover auf true und Seitenwechsel
-
-function gameover() {
-    //   gameover = true;
 }
 
 function checkEndgame() {
@@ -214,11 +226,17 @@ function checkEndgame() {
     if (lives === 0) {
         $('#tplaceholder').html('0'); //schafft er so schnell nicht, deshalb Timeout in der Folge
         setTimeout('', 1000);
+        savePoints(); //ZUM TESTEN
         alert("Alle Leben aufgebraucht, und tschüss!");
         window.location.href = 'gameover.html';
     }
-            
-
+    else {
+			picks.length = 0;
+			correct.length = 0;
+			usedLetters.length = 0;
+			randomWord();
+			fillSecret();
+    }
 }
 
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
@@ -231,10 +249,3 @@ randomWord();
 createButtons();
 fillSecret();
 checkLetter(getPick());
-
-
-
-/* Snippet: Ansatz könnte noch brauchbar sein
-$('li').each(function () {
-    $(this).attr('id', 'abc');
-});*/

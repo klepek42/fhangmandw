@@ -63,7 +63,7 @@ ul {
 }
 
 /* document.getElementById('test').disabled=true; */
-#letterButton li {
+#letterButton li, #highscores li {
 	width:25px;
 	text-align:center;
 	font-family:'Roboto';
@@ -120,8 +120,12 @@ ul {
 	font-family:'Roboto';
 }
 
-
-
+#fhdwLogo span {
+	font-size:100px;
+	font-family:'Roboto';
+	margin: 5px;
+	color:#013668;	
+}
 
 /* Buchstaben-Button deaktiviert Effekt wenn falsch 
    CSS Selektor :disabled

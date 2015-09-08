@@ -11,14 +11,12 @@
     <script src="js/store.min.js"></script>
     <script src="js/scores.js"></script>
     <!-- <script>
-        init();
-            function init() {
+        initStore();
+            function initStore() {
                 if (!store.enabled) {
                     alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
                     return
-                }
-                var schoolname = store.set('schoolname', 'test');
-                
+                }                
             }
     </script> -->
     <script>
@@ -30,6 +28,7 @@
                 {
                     location.href = 'index.html';
                 }, false);
+            console.log("store get: " + store.get('id', points));
         }
         document.addEventListener("DOMContentLoaded", init, false);
     </script>
