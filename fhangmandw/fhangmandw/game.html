@@ -13,24 +13,25 @@
     <script src="js/keyboard.js"></script>
     <script src="js/scores.js"></script>
     <script>
-    function init() {
-        console.log("init");
-        checkKeyboard();
-        document.getElementById('nextWord').addEventListener("click",
-        function () {
-            randomWord();
-            fillSecret();
-            initStore();
-        });
-    }
-    document.addEventListener("DOMContentLoaded", init, false);
+        function init() {
+            console.log("init");
+            checkKeyboard();
+            document.getElementById('nextWord').addEventListener("click",
+            function () {
+                randomWord();
+                fillSecret();
+                removeActive();
+                initStore();
+            });
+        }
+        document.addEventListener("DOMContentLoaded", init, false);
     </script>
 </head>
 <body>
 
-	<span id="lives">Leben: </span><span id="lplaceholder">4</span><br />
-    <span id="tries">Restliche Versuche Buchstaben: </span><span id="tplaceholder">10</span><br />
-	<span id="points">Punkte: </span><span id="pplaceholder">0</span>
+	<span class="hud" id="lives">Leben: </span><span class="hud" id="lplaceholder">4</span><br />
+    <span class="hud" id="tries">Versuche: </span><span class="hud"id="tplaceholder">10</span><br />
+	<span class="hud" id="points">Punkte: </span><span class="hud" id="pplaceholder">0</span>
 	
 	<!-- Bereich fuer das geheime Wort -->
 	<div id="area">
@@ -43,8 +44,7 @@
 		<ul id="letterButton">
 		</ul>
 	</div>
-	
 	<button id="nextWord">Nächstes Wort</button><br/>
-    <div id="fhdwLogo"><span id="f">F</span> <span id="h">H</span> <span id="d">D</span> <span id="w">W</span></div>
+    <div id="fhdwLogo"><span id="f" >F</span> <span id="h">H</span> <span id="d">D</span> <span id="w">W</span></div>
 </body>
 </html>

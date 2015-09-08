@@ -70,7 +70,6 @@ ul {
 	font-size:30px;
 	list-style:none;
 	cursor:pointer;
-	display:inline;
 	margin:6px;
 	border-radius:30px;
 	border:4px solid #29668f;
@@ -96,6 +95,13 @@ ul {
   /*padding:0 0 0 25px;*/
    color:red;
   }
+}
+
+/* Angeklickte Buchstaben erhalten ein "active" Attribut */
+#letterButton li#abc.active {
+  color:white;
+  background-color:grey;
+  cursor:default;
 }
 
 #secretField li {
@@ -125,8 +131,10 @@ ul {
 	font-family:'Roboto';
 	margin: 5px;
 	color:#013668;	
+	display: none;
 }
 
-/* Buchstaben-Button deaktiviert Effekt wenn falsch 
-   CSS Selektor :disabled
-*/
+.hud {
+	display:inline;
+	display:inline-block;
+}

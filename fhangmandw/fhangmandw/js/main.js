@@ -12,13 +12,18 @@ var correct = []; //Richtige picks
 var gameover;
 var letterFound = 0;
 
+//Local Highscores TEST; könnte komfortabeler sein; am Ende dann einblenden statt Seitenwechsel
+var schoolname;
+var result = {school:"", score:""};
+var highscores = [];
+//var result = {school:"", score:""};
+
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
     word = words[Math.floor(Math.random() * (words.length))];
     usedWords.push(word);
 
-    if (words.length > 0)
-    {
+    if (words.length > 0) {
         for (var i = 0; i < words.length; i++) {
             if (words[i] == word) {
                 words.splice(i, 1);
@@ -26,8 +31,7 @@ function randomWord() {
             }
         }
     }
-    else
-    {
+    else {
        	//Alert erfolgte in Methode fillSecret bei Array-Länge 0
     }
     console.log(word);
@@ -38,6 +42,11 @@ function randomWord() {
 var createButtons = function() {
 	jQuery(function($){
 		for(var i = 0; i < letters.length; i++) {
+			//Umbruch bzw. einstellen der Tastatur
+			if(i % 13 == 0) {
+				var br = $('<br/>');
+				$("#buttons ul").append(br);
+			}
 			//Einsetzen aller Buchstaben in Variable
 			var letter = letters[i];
 			//Erzeugen von li Elementen mit Buchstaben
@@ -47,7 +56,15 @@ var createButtons = function() {
 			//Anhängen der Elemente an ul
 			$("#buttons ul").append(abcEl);
 		}
-		
+	});
+}
+
+function removeActive() {
+	jQuery(function($){
+		for(var i = 0; i < letters.length; i++) {
+			$("#buttons ul li#abc").removeClass("active");
+			console.log("removeActive()");
+		}
 	});
 }
 
@@ -67,8 +84,8 @@ var fillSecret = function() {
 	            $("#area ul").append(secretEl);
 	        }
 	    }
-	    else{
-	    	gameover = true;
+	    else {
+	    	checkEndgame();
 	        alert("Du bist zu gut für dieses Spiel");
 	    }
 	});
@@ -77,6 +94,7 @@ var fillSecret = function() {
 var getPick = function() {
 	jQuery(function($){
 		$('ul#letterButton li#abc').click(function() {
+			$(this).addClass("active");
 			var pick = $(this).text();
 			//console.log("Picked " + pick);
 			checkLetter(pick);
@@ -110,9 +128,7 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 				          		console.log("Tries: " + tries);
 				          	}*/
 			          	wordComplete();
-			          	
 			          }
-			          
 			          var position = ++i;
 			          console.log("Position " + position);
 			          //Array picks mit Funden füllen
@@ -184,6 +200,7 @@ var wordComplete = function() {
 
             //neues Wort + Striche generieren
 			randomWord();
+			removeActive();
 			fillSecret();
 
 		    //Punktevergabe
@@ -206,29 +223,49 @@ function fhdwLife() {
 	else if(lives == 1) {
 		$("#fhdwLogo span#d" ).toggle( "fade" );
 	}
-	else {
+	else if(lives == 0) {
 		$("#fhdwLogo span#w" ).toggle( "fade" );
 	}	
 }
 
 function savePoints() {
-	store.set('id', points);
-	console.log("store get: " + store.get('id', points));
+	//store.set('id', points);
+	//console.log("store get: " + store.get('id', points));
 }
 
 function scoring() {
 
 }
 
+function highscore() {
+	var schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
+    result.schoolname = schoolname;
+    result.points = points;
+    console.log("Schule " + result.schoolname + " erzielte " + result.points);
+    highscores.push(result);
+    console.log("Highscores: " + highscores.length);
+
+    for(var i = 0; i < highscores.length; i++) {
+    	console.log("Highscore " + i + " " + highscores[i]);
+    }
+    //highscoreList.sort(function(a,b) { return (b.score - a.score ) });
+    store.set(result, {school:schoolname, score:points});
+    
+    store.forEach(function(key, val) {
+    	console.log(key, '==', val)
+    })
+}
+
 function checkEndgame() {
 
 
-    if (lives === 0) {
+    if (lives === 0 || words.length <= 0) {
         $('#tplaceholder').html('0'); //schafft er so schnell nicht, deshalb Timeout in der Folge
         setTimeout('', 1000);
         savePoints(); //ZUM TESTEN
         alert("Alle Leben aufgebraucht, und tschüss!");
-        window.location.href = 'gameover.html';
+        highscore();
+        //window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
     }
     else {
 			picks.length = 0;
