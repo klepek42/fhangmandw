@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Version (Daniel)
+## Version 1.5.3 (Daniel)
 - Punkte und Lebensvergabe fertiggestellt
 - Funktion checkEndgame() integriert
 - Weiterleitung auf Gameover-Seite korrigiert
