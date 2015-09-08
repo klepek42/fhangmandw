@@ -1,6 +1,7 @@
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var words = ["fhdw", "informatik", "bwl", "dual", "studium", "finanzmathematik", "bilanz", "guv", "gewinn", "javascript", "java", "software", "wirtschaft", "klausur", "praesentation", "office", "praxis"];
 var usedWords = [];
+var usedLetters = [];
 var word;
 var lives = 4;
 var tries = 10;
@@ -93,10 +94,12 @@ var getPick = function() {
 //Anmerkung Daniel: Würde ich mit Übergabeparameter implementieren, sprich: var checkLetter = function (letter) und Rückgabewert ebenfalls mit 0 und 1, damit ich das in meinem Tastaturlistener benutzen kann
 var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
 		jQuery(function($){
-				if(userPick != null) {
+				if(userPick != null && $.inArray(userPick, usedLetters) == -1) {
 				//Buchstabenprüfung
 				//TODO: 2 gleiche Buchstaben hintereinander werden nicht gefunden z.B. bei "Gewinn" oder "aa" nur 1.; bei "bbb" werden 1. und 3. gefunden
-				//var test = word.length + 1;
+				    //var test = word.length + 1;
+				usedLetters.push(userPick);
+
 				for (var i = 0; i < word.length; i++) {
 				    if (userPick === word[i]) {
 				        letterFound = 1;
@@ -141,7 +144,11 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 				    }
 			    
 			     letterFound = 0;
-			}
+				}
+				else 
+				{
+				    console.log("Bereits ausprobierter Buchstabe wurde nochmal probiert.");
+				}
             /*Überbleibsel, nur noch für Debugging notwendig: 
 		    //Fund
 		        if(picks.length > 0) {
@@ -204,7 +211,7 @@ function checkEndgame() {
 
 
     if (lives === 0) {
-        $('#tplaceholder').html('0'); //schafft er so schnell nicht
+        $('#tplaceholder').html('0'); //schafft er so schnell nicht, deshalb Timeout in der Folge
         setTimeout('', 1000);
         alert("Alle Leben aufgebraucht, und tschüss!");
         window.location.href = 'gameover.html';
