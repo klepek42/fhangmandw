@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.5.3.1 (Daniel)
+- 1 s Timeout in checkEndgame() eingefügt, damit der Versuche-Platzhalter vor Wechsel auf die Gameover-Seite noch auf 0 gesetzt wird
+
 ## Version 1.5.3 (Daniel)
 - Punkte und Lebensvergabe fertiggestellt
 - Funktion checkEndgame() integriert
@@ -14,6 +17,7 @@
 - Erster Versuch die Highscores einzubauen. store.js angepeilt.
 
 ## Version 1.5.1.1 (Daniel)
+- Erster Versuch, die Leben noch zu integrieren
 
 ## Version 1.5.1 (Daniel)
 - einfache Punktlogik implementiert
