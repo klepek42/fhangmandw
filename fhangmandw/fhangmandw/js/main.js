@@ -125,16 +125,22 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 			          console.log(picks);
 				    }
 			     }
-			     //Sobald man einen richtigen Buchstaben trifft, werden keine tries mehr abgezogen BUG!
-			     if (letterFound == 0){
-				    tries--;
-				    $('#tplaceholder').html(tries);
-				    console.log("Tries: " + tries);
-				    if(tries === 0) {
-				    	lives--;
-				    	$('#lplaceholder').html(lives);
+
+				    if (letterFound == 0) {
+				        tries--;
+				        $('#tplaceholder').html(tries);
+				        console.log("Tries: " + tries);
+				        if (tries === 0) {
+				            lives--;
+				            $('#lplaceholder').html(lives);
+				            tries = 10;
+				            $('#tplaceholder').html(tries);
+				            console.log("Lives: " + lives);
+				            checkEndgame();
+				        }
 				    }
-				}
+			    
+			     letterFound = 0;
 			}
             /*Überbleibsel, nur noch für Debugging notwendig: 
 		    //Fund
@@ -189,9 +195,21 @@ function scoring() {
 }
 
 //Setzen von gameover auf true und Seitenwechsel
-function endgame() {
-	gameover = true;
-	document.location.href = 'http://localhost/fhangmandw/fhangmandw/fhangmandw/gameover.html';
+
+function gameover() {
+    //   gameover = true;
+}
+
+function checkEndgame() {
+
+
+    if (lives === 0) {
+        $('#tplaceholder').html('0'); //schafft er so schnell nicht
+        alert("Alle Leben aufgebraucht, und tschüss!");
+        window.location.href = 'gameover.html';
+    }
+            
+
 }
 
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
@@ -204,6 +222,8 @@ randomWord();
 createButtons();
 fillSecret();
 checkLetter(getPick());
+
+
 
 /* Snippet: Ansatz könnte noch brauchbar sein
 $('li').each(function () {
