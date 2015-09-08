@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.5.4.4 (Edgar)
+- setzen von active class beim Klick eines Buchstaben + disabled Effekt
+- removeActive() zum löschen von disabled Buttons (active class)
+- Einbau einer lokalen Highscoreliste (nicht fertig)
+- in createButton() eine Möglichkeit zum umbrechen der Tastatur geschaffen if(i % x == 0)
+
 ## Version 1.5.4.3 (Edgar)
 - Kleinigkeiten, revealWord(), fhdwLife(), savePoints() und das FHDW Logo als Leben
 
