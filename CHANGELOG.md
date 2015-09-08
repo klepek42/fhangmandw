@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.5.4.1 (Daniel)
+- usedLetters in wordComplete() leeren
+
 ## Version 1.5.4 (Daniel)
 - Array usedLetters hinzugefügt
 - checkLetter damit erweitert, dass nun nur Versuche abgezogen werden, wenn Buchstabe noch nie gewählt
