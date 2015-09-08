@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.5.4 (Daniel)
+- Array usedLetters hinzugefügt
+- checkLetter damit erweitert, dass nun nur Versuche abgezogen werden, wenn Buchstabe noch nie gewählt
+
 ## Version 1.5.3.1 (Daniel)
 - 1 s Timeout in checkEndgame() eingefügt, damit der Versuche-Platzhalter vor Wechsel auf die Gameover-Seite noch auf 0 gesetzt wird
 
