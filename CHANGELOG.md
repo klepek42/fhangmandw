@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.5.5 (Edgar)
+- Tastatureingaben grauen jetzt auch die Buttons aus
+- Reset für ausgegraute Buttons behoben
+
 ## Version 1.5.4.4 (Edgar)
 - setzen von active class beim Klick eines Buchstaben + disabled Effekt
 - removeActive() zum löschen von disabled Buttons (active class)
