@@ -255,14 +255,6 @@ function loadHighscores() {
 		});
 		console.log(highscores);
 		console.log(result);
-
-
-		Object.keys(result).forEach(function (key) {
-    		var val = result[key];
-    		console.log("val|key: " + val + "|" + key);
-		});
-
-		console.log("highscores.length: " + highscores.length);
 		console.log("loadHighscores()");
 }
 
