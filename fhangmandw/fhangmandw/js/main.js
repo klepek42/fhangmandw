@@ -14,8 +14,22 @@ var letterFound = 0;
 
 //Local Highscores TEST; könnte komfortabeler sein; am Ende dann einblenden statt Seitenwechsel
 var schoolname;
-var result = {school:"", score:""};
 var highscores = [];
+
+//var a = result[Object.keys(result)[0]];
+//var b = result[Object.keys(result)[1]];
+//console.log("a: " + a);
+//console.log("b: " + b);
+
+//Ausgabe der Keys und Values eines Objects
+/*
+Object.keys(result).forEach(function (key) {
+    var val = result[key];
+    console.log("val|key: " + val + "|" + key);
+});
+*/
+
+
 //var result = {school:"", score:""};
 
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
@@ -209,61 +223,118 @@ function fhdwLife() {
 	}	
 }
 
-function savePoints() {
-	//store.set('id', points);
-	//console.log("store get: " + store.get('id', points));
+//Muss ueber checkNewHighscore()
+function highscorePrompt() {
+	schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
+	points = points;
+	//addScore(pos);
 }
 
-function scoring() {
+//Laden der bisherigen Highscores
+function loadHighscores() {
+		//Standinhalt
+		result = {"1":10, "2":8, "3":6, "4":4, "5":2};
 
+		//Store einlesen
+
+
+		//var a = result[Object.keys(result)[0]];
+
+		//console.log("a: " + result[Object.keys(result)[0]]);
+		//console.log("b: " + b);
+
+		var i = 0;
+		//Ausgabe der Keys und Values eines Objects
+		Object.keys(result).forEach(function (key) {
+		    var val = result[key];
+		    console.log("val|key: " + val + "|" + key)
+		    highscores.push(result[Object.keys(result)[i]]);
+		    //console.log("getscore: " + highscores.length);
+		    //console.log("inhalt: " + highscores[0]);
+		    i++;
+		});
+		console.log(highscores);
+		console.log(result);
+
+
+		Object.keys(result).forEach(function (key) {
+    		var val = result[key];
+    		console.log("val|key: " + val + "|" + key);
+		});
+
+		console.log("highscores.length: " + highscores.length);
+		console.log("loadHighscores()");
 }
 
-function checkNewHighscore() {
-
-}
-
+//Aufbauen der Liste mit bestehenden Highscores
 function createHighscorelist() {
 	jQuery(function($){
 		$("#highscores").empty();
-		var punkte = 1000;
-		var name = "FHDW";
+		loadHighscores();
 		for(var i = 0; i < 5; i++) {
-			var entry = $('<li><span id="score">' + punkte + '</span> <span class="id="schoolname">' + name + '</span></li><br/>');
+			var entry = $('<li id="entry"><span id="score">' + 0 + '</span> <span id="schoolname">' + "noch keiner" + '</span></li><br/>');
 			$("#highscores").append(entry);
 		}
 	});
+	console.log("createHighscorelist()");
 }
 
-
-function highscore() {
-	var schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
-    result.schoolname = schoolname;
-    result.points = points;
-    console.log("Schule " + result.schoolname + " erzielte " + result.points);
-    highscores.push(result);
-    console.log("Highscores: " + highscores.length);
-
-    for(var i = 0; i < highscores.length; i++) {
-    	console.log("Highscore " + i + " " + highscores[i]);
-    }
-    //highscoreList.sort(function(a,b) { return (b.score - a.score ) });
-    store.set(result, {school:schoolname, score:points});
-    
-    store.forEach(function(key, val) {
-    	console.log(key, '==', val)
-    })
+//Pruefen ob der neue Score in die Highscoreliste gehoert
+function checkNewHighscore(achievedPoints) {
+	//Durchlaufen der Highscoreliste und Points gegenchecken
+	var pos = 5;
+	//Wenn Wert groeßer als der kleinste in der Liste also highscores[4]
+	if(achievedPoints > highscores[4].score) {
+		//Suchen der position
+		while(points > highscores[pos].score) {
+			pos--;
+		}
+		//highscorePrompt(pos);   Muss davor Namen holen
+		addScore(pos);	
+	}
+	console.log("checkNewHighscore(achievedPoints)");
 }
 
+//Hinzufuegen eines neuen Scores zur Highscoreliste
+function addScore(position) {
+	//Hole Punktestand und Namen
+	var punkte = points;
+	var name = schoolname;
+
+	//Fuege ins result Object ein
+	result.school = schoolname;
+	result.score = punkte;
+
+	//Fuege Ergebnis an ermittelte Position und verschiebe
+	highscores.splice(position, 0, result);
+    highscores.pop();
+
+    //Update highscoreList() Eintraege
+    jQuery(function($){
+    	var realPos = --position;
+		for(var i = position; i < 5; i++) {
+			//Wahrscheinlich Probleme mit der richtigen Reihe; Loesung zusaetzliche classes mit ids vergeben
+			$('span #score').html(highscores[realPos].score);
+    		$('span #schoolname').html(highscores[realPos].schoolname);
+		}
+	});
+	console.log("addScore(" + position + ")");
+}
+
+//Wahrscheinlich raus
+function saveToStore() {
+	//store.set('id', points);
+	//console.log("store get: " + store.get('id', points));
+}
 
 function checkEndgame() {
     if (lives === 0 || words.length <= 0) {
         $('#tplaceholder').html('0'); //schafft er so schnell nicht, deshalb Timeout in der Folge
         setTimeout('', 1000);
-        savePoints(); //ZUM TESTEN
         alert("Game Over");
-        highscore();
+        highscorePrompt();
         createHighscorelist();
-        console.log("highscore list created");
+        checkNewHighscore(points); // oder points oder newPoints
         //window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
     }
     else {

@@ -129,30 +129,38 @@ ul {
 #fhdwLogo span {
 	font-size:100px;
 	font-family:'Roboto';
-	margin: 5px;
+	margin:15px;
 	color:#013668;	
 	display: none;
 }
 
 .hud {
-	display:inline;
 	display:inline-block;
+	margin-left:30px;
+	margin-top:10px;
 }
 
-#highscores li {
+#entry {
+	list-style:none;
+	display:inline;
+}
+
+#score {
 	/*width:1px;*/
 	text-align:center;
 	font-family:'Roboto';
-	font-size:1.6em;
+	font-size:1.8em;
 	list-style:none;
-	margin:1px;
+	margin-top:8px;
 	display:inline-block;
 	color:red;
 }
 
-#score,#schoolname {
+#schoolname {
 	text-align:center;
 	font-family:'Roboto';
-	font-size:1.6em;
+	font-size:1.8em;
+	list-style:none;
+	margin-left:20px;
 	color:blue;
 }
