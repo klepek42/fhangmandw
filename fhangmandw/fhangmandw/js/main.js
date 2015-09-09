@@ -232,41 +232,41 @@ function highscorePrompt() {
 
 //Laden der bisherigen Highscores
 function loadHighscores() {
-		//Standinhalt
-		result = {"1":10, "2":8, "3":6, "4":4, "5":2};
-
-		//Store einlesen
-
-
-		//var a = result[Object.keys(result)[0]];
-
-		//console.log("a: " + result[Object.keys(result)[0]]);
-		//console.log("b: " + b);
-
+		//Standardinhalt
+		result = {"1":9, "2":8, "3":6, "4":4, "5":2};
 		var i = 0;
+		//store (localStorage) einlesen
+		// TODO
+
 		//Ausgabe der Keys und Values eines Objects
 		Object.keys(result).forEach(function (key) {
 		    var val = result[key];
-		    console.log("val|key: " + val + "|" + key)
+		    //console.log("val|key: " + val + "|" + key)
+		    //Einfuegen in die Highscoreliste
 		    highscores.push(result[Object.keys(result)[i]]);
-		    //console.log("getscore: " + highscores.length);
-		    //console.log("inhalt: " + highscores[0]);
 		    i++;
 		});
-		console.log(highscores);
-		console.log(result);
 		console.log("loadHighscores()");
+		createHighscorelist(result, highscores);
 }
 
 //Aufbauen der Liste mit bestehenden Highscores
-function createHighscorelist() {
+function createHighscorelist(r, h) {
 	jQuery(function($){
 		$("#highscores").empty();
-		loadHighscores();
+
+		/* Statische Art
 		for(var i = 0; i < 5; i++) {
 			var entry = $('<li id="entry"><span id="score">' + 0 + '</span> <span id="schoolname">' + "noch keiner" + '</span></li><br/>');
 			$("#highscores").append(entry);
 		}
+		*/		
+
+		Object.keys(r).forEach(function (key) {
+		    var val = r[key];
+			var entry = $('<li id="entry"><span id="score">' + key + '</span> <span id="schoolname">' + val + '</span></li><br/>');
+			$("#highscores").append(entry);
+		});
 	});
 	console.log("createHighscorelist()");
 }
@@ -274,15 +274,21 @@ function createHighscorelist() {
 //Pruefen ob der neue Score in die Highscoreliste gehoert
 function checkNewHighscore(achievedPoints) {
 	//Durchlaufen der Highscoreliste und Points gegenchecken
-	var pos = 5;
+	var pos = 4;
+	var i = 0;
+	var achievedPoints = 3;
+	console.log(result[Object.keys(result)[4]]);
+
 	//Wenn Wert groeßer als der kleinste in der Liste also highscores[4]
-	if(achievedPoints > highscores[4].score) {
+	if(achievedPoints > result[Object.keys(result)[4]]) {
 		//Suchen der position
-		while(points > highscores[pos].score) {
+		console.log("Punkte groeßer als ein Ergebnis der Highscoreliste");
+		console.log(result[Object.keys(result)[pos]]);
+		while(points > result[Object.keys(result)[pos]]) {
 			pos--;
 		}
 		//highscorePrompt(pos);   Muss davor Namen holen
-		addScore(pos);	
+		//addScore(pos);	TODO wieder aktivieren wenn addScore laeuft
 	}
 	console.log("checkNewHighscore(achievedPoints)");
 }
@@ -293,7 +299,7 @@ function addScore(position) {
 	var punkte = points;
 	var name = schoolname;
 
-	//Fuege ins result Object ein
+	//Fuege ins result Object ein : TODO auf object schreibweise umstellen
 	result.school = schoolname;
 	result.score = punkte;
 
@@ -313,7 +319,7 @@ function addScore(position) {
 	console.log("addScore(" + position + ")");
 }
 
-//Wahrscheinlich raus
+//Abspeichern in localStorage via store.js
 function saveToStore() {
 	//store.set('id', points);
 	//console.log("store get: " + store.get('id', points));
@@ -325,8 +331,8 @@ function checkEndgame() {
         setTimeout('', 1000);
         alert("Game Over");
         highscorePrompt();
-        createHighscorelist();
-        checkNewHighscore(points); // oder points oder newPoints
+        //createHighscorelist();
+        //checkNewHighscore(points); // oder points oder newPoints
         //window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
     }
     else {
@@ -341,10 +347,24 @@ function checkEndgame() {
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
 
 
-//Tastatureingaben
-
-//Funktionsaufrufe
+//Funktionsaufrufe: TODO alles in init() oder start()
 randomWord();
 createButtons();
 fillSecret();
 checkLetter(getPick());
+loadHighscores();
+checkNewHighscore(points);
+
+/*
+function start() {
+	picks.length = 0;
+	correct.length = 0;
+	usedLetters.length = 0;
+
+	randomWord();
+	createButtons();
+	fillSecret();
+	createHighscorelist();
+	checkLetter(getPick());
+}
+*/
