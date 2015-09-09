@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.5.5.2 (Edgar)
+- Highscore Logik weitgehend umgesetzt
+
+## Version 1.5.5.1 (Edgar)
+- Lokale Highscoreliste integriert
+
 ## Version 1.5.5 (Edgar)
 - Tastatureingaben grauen jetzt auch die Buttons aus
 - Reset für ausgegraute Buttons behoben
