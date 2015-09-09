@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 1.5.5.4 (Edgar)
+- loadHighscores() fertig implementiert
+- createHighscorelist(r,h) fertig implementiert
+- checkNewHighscore(achievedPoints) fertig implementiert
+
+## Version 1.5.5.3 (Edgar)
+- etwas einkommentiert
+
 ## Version 1.5.5.2 (Edgar)
 - Highscore Logik weitgehend umgesetzt
 
