@@ -1,5 +1,5 @@
 # fhangmandw
-A HTML5 and JavaScript game based on the game idea of hangman. This version represents the typical hangman game in a modern look and with a color branding based on the FHDW corporate design.
+A HTML5/JavaScript game based on the game idea of hangman. This version represents the typical hangman game in a modern look and with a color branding based on the FHDW corporate design.
 
 [Play the game](link) TODO: add link  
 [Visit the website](link) TODO: add link
