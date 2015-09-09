@@ -34,7 +34,10 @@ function checkKeyboard() {
                 case 'X':
                 case 'Y':
                 case 'Z':
-                    checkLetter(key.toLowerCase());
+                    jQuery(function($){
+                        checkLetter(key.toLowerCase());
+                        $('ul#letterButton li#abc.' + key.toLowerCase()).addClass("active");
+                    });
                     break;
                 default: console.log("Alles was kein Grundbuchstabe ist, wird ignoriert.");
                     break;

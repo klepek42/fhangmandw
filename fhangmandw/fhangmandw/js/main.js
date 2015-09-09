@@ -53,6 +53,8 @@ var createButtons = function() {
 			var abcEl = $('<li>' + letter + '</li>');
 			//Vergabe einer id für spätere Identifizierung bei checkLetter()
 			$(abcEl).attr('id', 'abc');
+			//Klasse für Keyboards.js
+			$(abcEl).addClass(letters[i]);
 			//Anhängen der Elemente an ul
 			$("#buttons ul").append(abcEl);
 		}
@@ -108,7 +110,6 @@ var getPick = function() {
 var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
 		jQuery(function($){
 				if(userPick != null && $.inArray(userPick, usedLetters) == -1) {
-				//TODO: 2 gleiche Buchstaben hintereinander werden nicht gefunden z.B. bei "Gewinn" oder "aa" nur 1.; bei "bbb" werden 1. und 3. gefunden
 				usedLetters.push(userPick);
 
 				for (var i = 0; i < word.length; i++) {
@@ -123,10 +124,6 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 			          	for(var a = 0; a < correct.length; a++) {
 			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
 			          	}
-				          	/*if (letterFound == 0) { 
-				          		tries--;
-				          		console.log("Tries: " + tries);
-				          	}*/
 			          	wordComplete();
 			          }
 			          var position = ++i;
@@ -143,6 +140,7 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 				        console.log("Tries: " + tries);
 				        if (tries === 0) {
 				            lives--;
+				            removeActive();
 				            fhdwLife();
 				            revealWord();
 				            $('#lplaceholder').html(lives);
@@ -154,22 +152,9 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 				    }
 			     letterFound = 0;
 				}
-				else 
-				{
+				else {
 				    console.log("Bereits ausprobierter Buchstabe wurde nochmal probiert.");
 				}
-            /*Überbleibsel, nur noch für Debugging notwendig: 
-		    //Fund
-		        if(picks.length > 0) {
-		        	console.log("Fund - return 1");
-		        	return 1;
-		        }
-		        //Kein Fund
-		        else {
-		        	console.log("Kein Fund - return 0");
-		        	return 0;
-		        }
-            */
 		});
 	}
 
