@@ -14,9 +14,10 @@ You can either play this game by clicking on the buttons representing the alphab
 ... to be added
 
 ## 3rd party libraries/plug-ins
-* jQuery 1.11.3 (hosted by Google)
-* jQuery UI 1.11.4 (hosted by Google)
+* jQuery 1.11.3 (hosted by Google) (MIT License)
+* jQuery UI 1.11.4 (hosted by Google) (MIT License)
 * Google Roboto Font (Apache License, version 2.0)
+* Store.js (MIT License)
 
 ## Notations/conventions
 * Name convention: CamelCase
