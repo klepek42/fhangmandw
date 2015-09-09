@@ -24,5 +24,4 @@ function addHighscore() {
     highscores.sort(function(x,y) { return (y.score - x.score ) });	//Sortieren der Ergebnisse evtl. anders
 
     $('#score1').text(highscores[0].player + " - Punkte: "+ highscores[0].score);
-
 };

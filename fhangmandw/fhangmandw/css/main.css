@@ -63,7 +63,7 @@ ul {
 }
 
 /* document.getElementById('test').disabled=true; */
-#letterButton li, #highscores li {
+#letterButton li {
 	width:25px;
 	text-align:center;
 	font-family:'Roboto';
@@ -137,4 +137,22 @@ ul {
 .hud {
 	display:inline;
 	display:inline-block;
+}
+
+#highscores li {
+	/*width:1px;*/
+	text-align:center;
+	font-family:'Roboto';
+	font-size:1.6em;
+	list-style:none;
+	margin:1px;
+	display:inline-block;
+	color:red;
+}
+
+#score,#schoolname {
+	text-align:center;
+	font-family:'Roboto';
+	font-size:1.6em;
+	color:blue;
 }

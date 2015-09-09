@@ -65,7 +65,6 @@ function removeActive() {
 	jQuery(function($){
 		for(var i = 0; i < letters.length; i++) {
 			$("#buttons ul li#abc").removeClass("active");
-			console.log("removeActive()");
 		}
 	});
 }
@@ -88,7 +87,6 @@ var fillSecret = function() {
 	    }
 	    else {
 	    	checkEndgame();
-	        alert("Du bist zu gut für dieses Spiel");
 	    }
 	});
 }
@@ -133,11 +131,12 @@ var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion da
 			          console.log(picks);
 				    }
 			     }
-
 				    if (letterFound == 0) {
 				        tries--;
 				        $('#tplaceholder').html(tries);
 				        console.log("Tries: " + tries);
+
+				        //Eigene Funktion daraus machen?
 				        if (tries === 0) {
 				            lives--;
 				            removeActive();
@@ -176,8 +175,6 @@ var wordComplete = function() {
 		}
 		//Wort ist vollständig
 		if (counter == 0) {
-		    alert("Wort komplett");
-
             //picks und correct Array leeren
 			picks.length = 0;
 			correct.length = 0;
@@ -198,7 +195,6 @@ var wordComplete = function() {
 //Steuerung des FHDW Logos als Lebensanzeige
 function fhdwLife() {
 	//Von Anfang an alle spans bzw. das ganze div disablen
-	//Wenn 4 lives dann blende
 	if(lives == 3) {
 		$("#fhdwLogo span#f" ).toggle( "fade" );
 	}
@@ -222,6 +218,23 @@ function scoring() {
 
 }
 
+function checkNewHighscore() {
+
+}
+
+function createHighscorelist() {
+	jQuery(function($){
+		$("#highscores").empty();
+		var punkte = 1000;
+		var name = "FHDW";
+		for(var i = 0; i < 5; i++) {
+			var entry = $('<li><span id="score">' + punkte + '</span> <span class="id="schoolname">' + name + '</span></li><br/>');
+			$("#highscores").append(entry);
+		}
+	});
+}
+
+
 function highscore() {
 	var schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
     result.schoolname = schoolname;
@@ -241,15 +254,16 @@ function highscore() {
     })
 }
 
+
 function checkEndgame() {
-
-
     if (lives === 0 || words.length <= 0) {
         $('#tplaceholder').html('0'); //schafft er so schnell nicht, deshalb Timeout in der Folge
         setTimeout('', 1000);
         savePoints(); //ZUM TESTEN
-        alert("Alle Leben aufgebraucht, und tschüss!");
+        alert("Game Over");
         highscore();
+        createHighscorelist();
+        console.log("highscore list created");
         //window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
     }
     else {

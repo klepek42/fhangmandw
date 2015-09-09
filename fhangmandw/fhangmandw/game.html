@@ -16,6 +16,7 @@
         function init() {
             console.log("init");
             checkKeyboard();
+            createHighscorelist();
             document.getElementById('nextWord').addEventListener("click",
             function () {
                 randomWord();
@@ -46,5 +47,12 @@
 	</div>
 	<button id="nextWord">Nächstes Wort</button><br/>
     <div id="fhdwLogo"><span id="f" >F</span> <span id="h">H</span> <span id="d">D</span> <span id="w">W</span></div>
+    
+    <!-- Highscore Bereich -->
+    <h1>Bestenliste</h1>
+    <ul id="highscores">
+    </ul>
+
+
 </body>
 </html>
