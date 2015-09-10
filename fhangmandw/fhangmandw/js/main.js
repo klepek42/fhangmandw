@@ -53,7 +53,7 @@ function randomWord() {
 }
 
 //Erzeugen der Buttons mit Buchstaben
-var createButtons = function() {
+function createButtons() {
 	jQuery(function($){
 		for(var i = 0; i < letters.length; i++) {
 			//Umbruch bzw. einstellen der Tastatur
@@ -84,7 +84,7 @@ function removeActive() {
 }
 
 //Befüllen des Ratefelders mit Elementen in Abhängigkeit der Wortlänge
-var fillSecret = function() {
+function fillSecret() {
 	jQuery(function($){
 	//Reset fuer "nächstes Wort"
 	    $("#area ul").empty();
@@ -105,7 +105,7 @@ var fillSecret = function() {
 	});
 }
 
-var getPick = function() {
+function getPick() {
 	jQuery(function($){
 		$('ul#letterButton li#abc').click(function() {
 			$(this).addClass("active");
@@ -119,7 +119,7 @@ var getPick = function() {
 
 //Pruefen ob der Benutzer einen richtigen Buchstaben gewählt hat
 //Wenn richtig dann decke auf und tausche _ durch richtigen Buchstaben
-var checkLetter = function(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
+function checkLetter(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
 		jQuery(function($){
 				if(userPick != null && $.inArray(userPick, usedLetters) == -1) {
 				usedLetters.push(userPick);
@@ -179,7 +179,7 @@ function revealWord() {
 }
 
 //Entweder Inhalt der Unterstrich li Elemente auf noch vorhanden sein prüfen (Alternativ word mit correct gegenchecken (String vs Array))
-var wordComplete = function() {
+function wordComplete() {
 	var counter = 0;
 	jQuery(function($){
 		for(var i = 0; i < word.length; i++) {
@@ -195,6 +195,7 @@ var wordComplete = function() {
 			usedLetters.length = 0;
 
             //neues Wort + Striche generieren
+            tries = 10;
 			randomWord();
 			removeActive();
 			fillSecret();
