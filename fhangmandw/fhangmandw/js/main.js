@@ -80,20 +80,21 @@ function createButtons() {
 		    
 		    if (browserWidth > 860 && i == 13)
 		    {
-		        $("#buttons ul").append(br);
+		        $("#buttons ul").append('<br/>');
 		    }
 		    else if (browserWidth > 675 && browserWidth < 860 && i % 9 == 0)
 		    {
-		        $("#buttons ul").append(br);
+
+                    $("#buttons ul").append('<br/>');		        
 		    }
-		    else if (browserWidth > 300 && browserWidth < 675 && i % 4 == 0) {
-		        $("#buttons ul").append(br);
+		    else if (browserWidth > 500 && browserWidth < 675 && i % 7 == 0) {
+		            $("#buttons ul").append('<br/>');
+		    }
+		    else if (browserWidth > 350 && browserWidth < 500 && i % 5 == 0) {
+		        $("#buttons ul").append('<br/>');
 		    }
 
-			/*if(i % 13 == 0) {
-				var br = $('<br/>');
-				$("#buttons ul").append(br);
-			}*/
+
 			//Einsetzen aller Buchstaben in Variable
 			var letter = letters[i];
 			//Erzeugen von li Elementen mit Buchstaben
