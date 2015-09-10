@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.5.8 (Daniel)
+- Integrierung erste Ansätze Responsive Design (main.css & game.js)
+
+## Version 1.5.7.5 (Daniel)
+- Versuch des dynamischen Umbrechens der Alphabet-Reihe
+
 ## Version 1.5.7.4 (Daniel)
 - kleine Style Anpassungen
 
