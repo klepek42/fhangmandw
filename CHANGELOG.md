@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## Version 1.5.7.1 (Edgar)
+- Neue Sounds für Gameover und rightWord hinzugefügt
+- Unnötige Kommentare entfernt
+- Das "W" des FHDW Lebens wird jetzt korrekt gerendert
+
+## Version 1.5.7 (Edgar)
+- Sounds und Library audio-fx.js hinzugefügt
+- Initiale Skripte für index.html und für game.html ausgelagert
+- Ordner für Bilder und Sounds erstellt
+- Sounds gesucht und eingefügt
+- Leben auf 6 runtergesetzt
+
 ## Version 1.5.6.2 (D + E)
 - Style angepasst
 
