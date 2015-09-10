@@ -119,20 +119,6 @@ ul {
 	color:white;
 }
 
-@media (max-width: 767px) {
-  #letterButton li{
-  /*padding:0 0 0 25px;*/
-   color:blue;
-  }
-}
-
-@media (max-width: 480px) {
-  #letterButton li{
-  /*padding:0 0 0 25px;*/
-   color:red;
-  }
-
-}
 
 /* Angeklickte Buchstaben erhalten ein "active" Attribut */
 #letterButton li#abc.active {
@@ -155,7 +141,7 @@ ul {
 	list-style:none;
 	cursor:default;
 	display:inline;
-	margin:20px;
+	margin:10px;
 }
 
 /* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
@@ -220,4 +206,22 @@ ul {
 
 #area{
     margin:100px;
+}
+
+
+/*Responsive Design: */
+
+@media (max-width: 767px) {
+  #letterButton li{
+  /*padding:0 0 0 25px;*/
+   color:blue;
+  }
+}
+
+@media (max-width: 480px) {
+  #letterButton li{
+  /*padding:0 0 0 25px;*/
+   color:red;
+  }
+
 }
