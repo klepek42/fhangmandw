@@ -1,4 +1,4 @@
-# fhangmandw
+# FHDW Hangman
 A HTML5/JavaScript game based on the game idea of hangman. This version represents the typical hangman game in a modern look and with a color branding based on the FHDW corporate design.
 
 [Play the game](link) TODO: add link  
@@ -28,4 +28,4 @@ You can either play this game by clicking on the buttons representing the alphab
 * Code: focus on readability
 
 ## License
-fhangmandw is licensed under the [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE).
+FHDW Hangman is licensed under the [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE).
