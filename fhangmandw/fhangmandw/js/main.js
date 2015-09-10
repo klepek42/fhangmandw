@@ -162,7 +162,7 @@ function checkLetter(userPick) { //Geht ohne, weil per onclick Funktion das aktu
 				        console.log("Tries: " + tries);
 
 				        //Eigene Funktion daraus machen?
-				        if (tries === 0) {
+				        if (tries == 0) {
 				            lives--;
 				            removeActive();
 				            fhdwLife();
@@ -191,15 +191,15 @@ function revealWord() {
 
 //Entweder Inhalt der Unterstrich li Elemente auf noch vorhanden sein prüfen (Alternativ word mit correct gegenchecken (String vs Array))
 function wordComplete() {
-	var counter = 0;
+	var finds = 0;
 	jQuery(function($){
 		for(var i = 0; i < word.length; i++) {
 			if($('ul#secretField li#'+word[i]).text() == '_') {
-				counter++;
+				finds++;
 			}
 		}
 		//Wort ist vollständig
-		if (counter == 0) {
+		if (finds == 0) {
             //picks und correct Array leeren
 			picks.length = 0;
 			correct.length = 0;
@@ -211,6 +211,7 @@ function wordComplete() {
 			randomWord();
 			removeActive();
 			fillSecret();
+			rightWord.play();
 
 		    //Punktevergabe
 			points++;
@@ -343,11 +344,13 @@ function saveToStore() {
 }
 
 function checkEndgame() {
-    if (lives === 0 || words.length <= 0) {
+    if (lives == 0 || words.length <= 0) {
         $('#tplaceholder').html('0'); //schafft er so schnell nicht, deshalb Timeout in der Folge
         setTimeout('', 1000);
-        alert("Game Over");
-        highscorePrompt();
+		end.play();
+		setTimeout(function(){ highscorePrompt(); }, 300);
+        //alert("Game Over");
+
         //createHighscorelist();
         //checkNewHighscore(points); // oder points oder newPoints
         //window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
@@ -362,28 +365,3 @@ function checkEndgame() {
 }
 
 //eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
-
-
-//Funktionsaufrufe: TODO alles in init() oder start()
-/*
-randomWord();
-createButtons();
-fillSecret();
-checkLetter(getPick());
-loadHighscores();
-checkNewHighscore(points);
-*/
-
-/*
-function start() {
-	picks.length = 0;
-	correct.length = 0;
-	usedLetters.length = 0;
-
-	randomWord();
-	createButtons();
-	fillSecret();
-	createHighscorelist();
-	checkLetter(getPick());
-}
-*/
