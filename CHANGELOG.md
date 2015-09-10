@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.5.7.2 (Daniel)
+- Visual Studio Ansicht angepasst :)
+
 ## Version 1.5.7.1 (Edgar)
 - Neue Sounds für Gameover und rightWord hinzugefügt
 - Unnötige Kommentare entfernt
