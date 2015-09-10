@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## Version 1.5.6.2 (D + E)
+- Style angepasst
+
+## Version 1.5.6.1 (D + E)
+- Style angepasst
+
+## Version 1.5.6 (D + E)
+- Style angepasst
+
 ## Version 1.5.5.4 (Edgar)
 - loadHighscores() fertig implementiert
 - createHighscorelist(r,h) fertig implementiert
@@ -28,6 +37,7 @@
 - Kleinigkeiten, revealWord(), fhdwLife(), savePoints() und das FHDW Logo als Leben
 
 ## Version 1.5.4.2 (Daniel)
+- Mini Anpassung
 
 ## Version 1.5.4.1 (Daniel)
 - usedLetters in wordComplete() leeren
