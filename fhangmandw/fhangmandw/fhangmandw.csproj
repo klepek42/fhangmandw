@@ -58,6 +58,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="img\000571-black-ink-grunge-stamp-texture-icon-media-loud-speaker.png" />
+    <Content Include="img\076976-black-ink-grunge-stamp-textures-icon-business-computer-keyboard.png" />
+    <Content Include="img\076979-black-ink-grunge-stamp-textures-icon-business-computer-mouse.png" />
+    <Content Include="img\077072-black-ink-grunge-stamp-textures-icon-business-light-bulb.png" />
+    <Content Include="js\audio-fx.min.js" />
+    <Content Include="js\init.js" />
+    <Content Include="js\start.js" />
+    <Content Include="sounds\243020__plasterbrain__game-start.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -68,6 +76,7 @@
   <ItemGroup>
     <Content Include="css\main.css" />
     <Content Include="game.html" />
+    <Content Include="gameover.html" />
     <Content Include="instructions.html" />
     <Content Include="index.html" />
     <Content Include="js\keyboard.js" />
@@ -75,6 +84,23 @@
     <Content Include="js\scores.js" />
     <Content Include="js\store.min.js" />
     <Content Include="scores.html" />
+    <Content Include="sounds\109663__grunz__success-low.wav" />
+    <Content Include="sounds\110390__soundscalpel-com__cartoon-siren-whistle-001.wav" />
+    <Content Include="sounds\133283__fins__game-over.wav" />
+    <Content Include="sounds\141334__lluiset7__error-2.aiff" />
+    <Content Include="sounds\142608__autistic-lucario__error.wav" />
+    <Content Include="sounds\166186__drminky__menu-screen-mouse-over.wav" />
+    <Content Include="sounds\171494__fins__error.wav" />
+    <Content Include="sounds\202576__sergeeo__xylophone-for-cartoon-2.wav" />
+    <Content Include="sounds\212766__qubodup__heart-failure.flac" />
+    <Content Include="sounds\242208__wagna__failfare.mp3" />
+    <Content Include="sounds\242503__gabrielaraujo__failure-wrong-action.wav" />
+    <Content Include="sounds\245646__unfa__cartoon-pop-distorted.flac" />
+    <Content Include="sounds\270404__littlerobotsoundfactory__jingle-achievement-00.wav" />
+    <Content Include="sounds\29928__dj-chronos__menu-nav-2.wav" />
+    <Content Include="sounds\95557__robinhood76__01662-cartoon-jump.wav" />
+    <Content Include="sounds\BounceYoFrankie.mp3" />
+    <Content Include="sounds\Hi-Score.mp3" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
