@@ -16,3 +16,9 @@ C:\Users\Localuser\Desktop\WIP\fhangmandw\fhangmandw\bin\fhangmandw.pdb
 C:\Users\Localuser\Desktop\WIP\fhangmandw\fhangmandw\obj\Debug\fhangmandw.csprojResolveAssemblyReference.cache
 C:\Users\Localuser\Desktop\WIP\fhangmandw\fhangmandw\obj\Debug\fhangmandw.dll
 C:\Users\Localuser\Desktop\WIP\fhangmandw\fhangmandw\obj\Debug\fhangmandw.pdb
+C:\Users\Localuser\Desktop\Hangman\fhangmandw\fhangmandw\bin\fhangmandw.dll.config
+C:\Users\Localuser\Desktop\Hangman\fhangmandw\fhangmandw\bin\fhangmandw.dll
+C:\Users\Localuser\Desktop\Hangman\fhangmandw\fhangmandw\bin\fhangmandw.pdb
+C:\Users\Localuser\Desktop\Hangman\fhangmandw\fhangmandw\obj\Debug\fhangmandw.csprojResolveAssemblyReference.cache
+C:\Users\Localuser\Desktop\Hangman\fhangmandw\fhangmandw\obj\Debug\fhangmandw.dll
+C:\Users\Localuser\Desktop\Hangman\fhangmandw\fhangmandw\obj\Debug\fhangmandw.pdb

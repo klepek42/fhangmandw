@@ -195,7 +195,8 @@ function wordComplete() {
 			usedLetters.length = 0;
 
             //neues Wort + Striche generieren
-            tries = 10;
+			tries = 10;
+			$('#tplaceholder').html(tries);
 			randomWord();
 			removeActive();
 			fillSecret();
