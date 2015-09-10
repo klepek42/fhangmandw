@@ -158,12 +158,6 @@ ul {
 	margin:20px;
 }
 
-#nextWord {
-	margin:30px;
-	font-family:'Roboto';
-	font-size:20px;
-}
-
 /* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
 #lives,#points,#pplaceholder, #tplaceholder, #lplaceholder, #tries {
 	font-size:30px;

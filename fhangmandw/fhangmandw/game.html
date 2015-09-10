@@ -10,29 +10,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/store.min.js"></script>
+    <script src="js/audio-fx.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/keyboard.js"></script>
+    <script src="js/start.js"></script>
     <script src="js/scores.js"></script>
-    <script>
-        function init() {
-            console.log("init");
-            checkKeyboard();
-            //createHighscorelist();
-            document.getElementById('nextWord').addEventListener("click",
-            function () {
-                randomWord();
-                fillSecret();
-                removeActive();
-                initStore();
-            });
-        }
-        document.addEventListener("DOMContentLoaded", init, false);
-    </script>
 </head>
 <body>
 
 	<span class="hud" id="lives">Leben: </span><span class="hud" id="lplaceholder">4</span>
-    <span class="hud" id="tries">Versuche: </span><span class="hud"id="tplaceholder">10</span>
+    <span class="hud" id="tries">Versuche: </span><span class="hud"id="tplaceholder">6</span>
 	<span class="hud" id="points">Punkte: </span><span class="hud" id="pplaceholder">0</span>
 	
 	<!-- Bereich fuer das geheime Wort -->
@@ -46,7 +33,7 @@
 		<ul id="letterButton">
 		</ul>
 	</div>
-	<button id="nextWord">Nächstes Wort</button><br/>
+
     <div id="fhdwLogo"><span id="f" >F</span> <span id="h">H</span> <span id="d">D</span> <span id="w">W</span></div>
     
     <!-- Highscore Bereich -->

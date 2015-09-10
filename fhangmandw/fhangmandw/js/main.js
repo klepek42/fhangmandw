@@ -4,7 +4,7 @@ var usedWords = [];
 var usedLetters = [];
 var word;
 var lives = 4;
-var tries = 10;
+var tries = 6;
 var points = 0;
 var pick; //Buchstaben Wahl des Nutzers
 var picks = []; //Alle ausgewählten Buchstaben des Nutzers
@@ -15,6 +15,14 @@ var letterFound = 0;
 //Local Highscores TEST; könnte komfortabeler sein; am Ende dann einblenden statt Seitenwechsel
 var schoolname;
 var highscores = [];
+
+//Sounds
+var button = AudioFX('sounds/BounceYoFrankie.mp3', { pool: 10 });
+var rightLetter = AudioFX('sounds/110390__soundscalpel-com__cartoon-siren-whistle-001.wav', { pool: 10 });
+var rightWord = AudioFX('sounds/109663__grunz__success-low.wav', { pool: 10 });
+var wrong = AudioFX('sounds/142608__autistic-lucario__error.wav', { pool: 10 });
+var fail = AudioFX('sounds/242503__gabrielaraujo__failure-wrong-action.wav', { pool: 10 });
+var end = AudioFX('sounds/133283__fins__game-over.wav', { pool: 10 });
 
 //var a = result[Object.keys(result)[0]];
 //var b = result[Object.keys(result)[1]];
@@ -108,6 +116,7 @@ function fillSecret() {
 function getPick() {
 	jQuery(function($){
 		$('ul#letterButton li#abc').click(function() {
+			//button.play();
 			$(this).addClass("active");
 			var pick = $(this).text();
 			//console.log("Picked " + pick);
@@ -135,6 +144,7 @@ function checkLetter(userPick) { //Geht ohne, weil per onclick Funktion das aktu
 			          	//Unterstrich durch richtigen Buchstaben aufdecken
 			          	for(var a = 0; a < correct.length; a++) {
 			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
+							rightLetter.play();
 			          	}
 			          	wordComplete();
 			          }
@@ -147,6 +157,7 @@ function checkLetter(userPick) { //Geht ohne, weil per onclick Funktion das aktu
 			     }
 				    if (letterFound == 0) {
 				        tries--;
+				        wrong.play();
 				        $('#tplaceholder').html(tries);
 				        console.log("Tries: " + tries);
 
@@ -157,7 +168,7 @@ function checkLetter(userPick) { //Geht ohne, weil per onclick Funktion das aktu
 				            fhdwLife();
 				            revealWord();
 				            $('#lplaceholder').html(lives);
-				            tries = 10;
+				            tries = 6;
 				            $('#tplaceholder').html(tries);
 				            console.log("Lives: " + lives);
 				            checkEndgame();
@@ -195,7 +206,7 @@ function wordComplete() {
 			usedLetters.length = 0;
 
             //neues Wort + Striche generieren
-			tries = 10;
+			tries = 6;
 			$('#tplaceholder').html(tries);
 			randomWord();
 			removeActive();
@@ -213,14 +224,18 @@ function fhdwLife() {
 	//Von Anfang an alle spans bzw. das ganze div disablen
 	if(lives == 3) {
 		$("#fhdwLogo span#f" ).toggle( "fade" );
+		fail.play();
 	}
 	else if(lives == 2) {
 		$("#fhdwLogo span#h" ).toggle( "fade" );
+		fail.play();
 	}
 	else if(lives == 1) {
 		$("#fhdwLogo span#d" ).toggle( "fade" );
+		fail.play();
 	}
 	else if(lives == 0) {
+		console.log("fhdwLife togglet");
 		$("#fhdwLogo span#w" ).toggle( "fade" );
 	}	
 }
@@ -350,12 +365,14 @@ function checkEndgame() {
 
 
 //Funktionsaufrufe: TODO alles in init() oder start()
+/*
 randomWord();
 createButtons();
 fillSecret();
 checkLetter(getPick());
 loadHighscores();
 checkNewHighscore(points);
+*/
 
 /*
 function start() {

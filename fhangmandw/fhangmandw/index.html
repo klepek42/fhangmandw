@@ -9,29 +9,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script>
-        function init() {
-            console.log("init");
-
-            document.getElementById('startGame').addEventListener("click",
-                function ()
-                {
-                    location.href = 'game.html';
-                }, false);
-
-            document.getElementById('scores').addEventListener("click",
-                function () {
-                    location.href = 'scores.html';
-                }, false);
-
-            document.getElementById('instructions').addEventListener("click",
-                function () {
-                    location.href = 'instructions.html';
-                }, false); 
-        }
-
-        document.addEventListener("DOMContentLoaded", init, false);
-    </script>
+    <script src="js/audio-fx.min.js"></script> 
+    <script src="js/init.js"></script>  
 </head>
 <body>
     <h1>FHDW Hangman</h1>

@@ -37,6 +37,8 @@ function checkKeyboard() {
                     jQuery(function($){
                         checkLetter(key.toLowerCase());
                         $('ul#letterButton li#abc.' + key.toLowerCase()).addClass("active");
+                        //var sound = new Audio("sounds/BounceYoFrankie.mp3");
+                        //sound.play();
                     });
                     break;
                 default: console.log("Alles was kein Grundbuchstabe ist, wird ignoriert.");
