@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.5.7.4 (Daniel)
+- kleine Style Anpassungen
+
+## Version 1.5.7.3 (Edgar)
+- 
+
 ## Version 1.5.7.2 (Daniel)
 - Visual Studio Ansicht angepasst :)
 
