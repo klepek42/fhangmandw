@@ -66,15 +66,34 @@ function randomWord() {
     return word;
 }
 
+
+
 //Erzeugen der Buttons mit Buchstaben
 function createButtons() {
-	jQuery(function($){
+    jQuery(function ($) {
+        var browserWidth = $( window ).width();
+        //950px = 13 - 1 Buchstabe benötigt ca. 75 px
+        var br = $('<br/>');
+
 		for(var i = 0; i < letters.length; i++) {
-			//Umbruch bzw. einstellen der Tastatur
-			if(i % 13 == 0) {
+		    //Umbruch bzw. einstellen der Tastatur
+		    
+		    if (browserWidth > 860 && i == 13)
+		    {
+		        $("#buttons ul").append(br);
+		    }
+		    else if (browserWidth > 675 && browserWidth < 860 && i % 9 == 0)
+		    {
+		        $("#buttons ul").append(br);
+		    }
+		    else if (browserWidth > 300 && browserWidth < 675 && i % 4 == 0) {
+		        $("#buttons ul").append(br);
+		    }
+
+			/*if(i % 13 == 0) {
 				var br = $('<br/>');
 				$("#buttons ul").append(br);
-			}
+			}*/
 			//Einsetzen aller Buchstaben in Variable
 			var letter = letters[i];
 			//Erzeugen von li Elementen mit Buchstaben
