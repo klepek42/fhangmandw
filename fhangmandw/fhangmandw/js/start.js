@@ -14,3 +14,4 @@ function start() {
 }
 
 start();
+loadStore();

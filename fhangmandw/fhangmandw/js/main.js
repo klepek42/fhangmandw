@@ -24,6 +24,12 @@ var wrong = AudioFX('sounds/142608__autistic-lucario__error.wav', { pool: 10 });
 var fail = AudioFX('sounds/242503__gabrielaraujo__failure-wrong-action.wav', { pool: 10 });
 var end = AudioFX('sounds/133283__fins__game-over.wav', { pool: 10 });
 
+/*
+
+
+
+ */
+
 //var a = result[Object.keys(result)[0]];
 //var b = result[Object.keys(result)[1]];
 //console.log("a: " + a);
@@ -241,6 +247,18 @@ function fhdwLife() {
 	}	
 }
 
+function loadStore() {
+	store.get('highscores');
+	var load = store.get('highscores');
+	console.log("load: " + load);
+}
+
+//Abspeichern in localStorage via store.js
+function saveToStore() {
+	//store.set('id', points);
+	//console.log("store get: " + store.get('id', points));
+}
+
 //Muss ueber checkNewHighscore()
 function highscorePrompt() {
 	schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
@@ -335,12 +353,6 @@ function addScore(position) {
 		}
 	});
 	console.log("addScore(" + position + ")");
-}
-
-//Abspeichern in localStorage via store.js
-function saveToStore() {
-	//store.set('id', points);
-	//console.log("store get: " + store.get('id', points));
 }
 
 function checkEndgame() {
