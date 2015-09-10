@@ -66,19 +66,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\main.css" />
     <Content Include="game.html" />
     <Content Include="instructions.html" />
     <Content Include="index.html" />
     <Content Include="js\keyboard.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\scores.js" />
+    <Content Include="js\store.min.js" />
     <Content Include="scores.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="css\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
