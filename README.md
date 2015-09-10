@@ -13,12 +13,13 @@ You can either play this game by clicking on the buttons representing the alphab
 ## Screenshots
 ... to be added
 
-## 3rd party libraries/plug-ins
+## 3rd party libraries/plug-ins/fonts
 * jQuery 1.11.3 (hosted by Google) (MIT License)
 * jQuery UI 1.11.4 (hosted by Google) (MIT License)
-* Google Roboto Font (Apache License, version 2.0)
 * [Store.js](https://github.com/marcuswestin/store.js/) (MIT License)
 * [Javascript AudioFX](https://github.com/jakesgordon/javascript-audio-fx) (MIT License)
+* Google Roboto Font (Apache License, version 2.0)
+* Cabin Sketch Font (SIL open font license)
 
 ## Notations/conventions
 * Name convention: CamelCase
