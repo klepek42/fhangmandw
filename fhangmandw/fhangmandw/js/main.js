@@ -45,6 +45,8 @@ Object.keys(result).forEach(function (key) {
 
 
 //var result = {school:"", score:""};
+/*$(window).resize(deleteButtons);
+$(window).resize(createButtons);*/
 
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
@@ -73,7 +75,7 @@ function createButtons() {
     jQuery(function ($) {
         var browserWidth = $( window ).width();
         //950px = 13 - 1 Buchstabe benötigt ca. 75 px
-        var br = $('<br/>');
+
 
 		for(var i = 0; i < letters.length; i++) {
 		    //Umbruch bzw. einstellen der Tastatur
@@ -108,6 +110,18 @@ function createButtons() {
 		}
 	});
 }
+
+/*function deleteButtons() {
+    jQuery(function ($) {
+        for (var i = 0; i < letters.length; i++) {
+            var letter = letters[i];
+            var abcEl = $('<li>' + letter + '</li>');
+          $(abcEl).removeAttr('id', 'abc');
+          $(abcEl).removeClass(letters[i]);
+            $("#buttons ul").remove();
+        }
+    });
+}*/
 
 function removeActive() {
 	jQuery(function($){

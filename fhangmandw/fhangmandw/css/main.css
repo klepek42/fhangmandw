@@ -210,7 +210,7 @@ ul {
 
 
 /*Responsive Design: */
-
+/*Game.html*/
 @media (max-width: 500px) {
   #letterButton li{
     width:28.75px;
@@ -251,7 +251,7 @@ ul {
   }
 }
 
-@media (min-width: 675px) {
+@media (min-width: 950px) {
 
   #letterButton li{
     width:49.45px;
@@ -262,11 +262,30 @@ ul {
 	border:5.375px solid #014C91;
   }
   #secretField li{
-    font-size:86px;
+    font-size:120px;
 	margin:1.72px;
   }
   #area
   {
       margin:129px;
   }
+}
+
+
+/*Index.html*/
+
+@media (max-width:600px){
+    
+h1{
+        font-size:70px;
+   }
+.menu{
+    width:200px;
+    height:54px;
+     margin: 13.4px;
+	border-radius:16.8px;
+    border:0.67px solid #29668f;
+    padding:9.5px 21px;
+    font-size:27px;
+}
 }
