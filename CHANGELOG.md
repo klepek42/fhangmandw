@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.5.8.2 (Edgar)
+- In game.html <img> Tags eingefügt
+- Einbinden von Bildern für Versuche und Punkte
+- Auswahl an passenden Icons im img Folder platziert
+- Sound an/aus Button überarbeitet
+
 ##Version 1.5.8.1 (Daniel)
 - Responsive Design Hauptmenü
 - Direct Responsive Design für Break in main.js (auskommentiert, weil verbuggt)
