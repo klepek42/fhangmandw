@@ -14,7 +14,7 @@
 - kleine Style Anpassungen
 
 ## Version 1.5.7.3 (Edgar)
-- 
+- Kleine Anpassungen, loadStore() implentiert
 
 ## Version 1.5.7.2 (Daniel)
 - Visual Studio Ansicht angepasst :)
