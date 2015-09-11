@@ -1,5 +1,9 @@
 # CHANGELOG
 
+##Version 1.5.8.1 (Daniel)
+- Responsive Design Hauptmenü
+- Direct Responsive Design für Break in main.js (auskommentiert, weil verbuggt)
+
 ## Version 1.5.8 (Daniel)
 - Integrierung erste Ansätze Responsive Design (main.css & game.js)
 
