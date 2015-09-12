@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.7 (Daniel)
+- Joker-Funktion final optimiert und Span-Element für Joker-Count eingefügt
+
 ## Version 1.6 (Edgar)
 - Highscore Funktionen und store.js implementiert
 
