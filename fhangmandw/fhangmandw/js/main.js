@@ -34,13 +34,31 @@ function init() {
 
         $("#joker").bind("click", function () {
             jQuery(function ($) {
-                console.log("joker used");
+
                 var letterNumber = Math.floor(Math.random() * word.length);
+
+                    while ($.inArray(word[letterNumber], correct) != -1) {
+                        letterNumber = Math.floor(Math.random() * word.length);
+                    }
+
+
                 for (var i = 0; i < word.length; i++) {
                     if (i === letterNumber && joker > 0) {
                         $('ul#secretField li#' + word[letterNumber]).text(word[letterNumber]);
                         joker--;
+                        picks.push(word[letterNumber]);
+                        correct.push(word[letterNumber]);
+                        usedLetters.push(word[letterNumber]);
+                        $("." + word[letterNumber]).addClass("active");
+                        $('#jplaceholder').html(joker);
+                        wordComplete();
+                        //Joker-Sound play
                     }
+                    else if (joker === 0)
+                    {
+                        $('#joker').prop('disabled', true);
+                    }
+
                 }
             });
         }
