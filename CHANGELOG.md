@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.6 (Edgar)
+- Highscore Funktionen und store.js implementiert
+
 ## Version 1.5.8.6 (Daniel)
 - Joker-Button hinzugefügt und implementiert (Erstfassung)
 
