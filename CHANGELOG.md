@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.5.8.3 (Daniel)
+- Animationen im Hauptmenü eingefügt
+
 ## Version 1.5.8.2 (Edgar)
 - In game.html <img> Tags eingefügt
 - Einbinden von Bildern für Versuche und Punkte
