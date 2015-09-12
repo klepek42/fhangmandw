@@ -175,7 +175,7 @@ ul {
 	display:inline;
 }
 
-#score {
+.score {
 	/*width:1px;*/
 	text-align:center;
 	font-family:'Roboto';
@@ -186,7 +186,7 @@ ul {
 	color:red;
 }
 
-#schoolname {
+.schoolname {
 	text-align:center;
 	font-family:'Roboto';
 	font-size:1.8em;

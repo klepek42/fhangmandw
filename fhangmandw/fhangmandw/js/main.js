@@ -11,6 +11,7 @@ var picks = []; //Alle ausgewählten Buchstaben des Nutzers
 var correct = []; //Richtige picks
 var gameover;
 var letterFound = 0;
+var joker = 3;
 
 //Local Highscores TEST; könnte komfortabeler sein; am Ende dann einblenden statt Seitenwechsel
 var schoolname;
@@ -24,27 +25,6 @@ var wrong = AudioFX('sounds/142608__autistic-lucario__error.wav', { pool: 10 });
 var fail = AudioFX('sounds/242503__gabrielaraujo__failure-wrong-action.wav', { pool: 10 });
 var end = AudioFX('sounds/133283__fins__game-over.wav', { pool: 10 });
 
-/*
-
-
-
- */
-
-//var a = result[Object.keys(result)[0]];
-//var b = result[Object.keys(result)[1]];
-//console.log("a: " + a);
-//console.log("b: " + b);
-
-//Ausgabe der Keys und Values eines Objects
-/*
-Object.keys(result).forEach(function (key) {
-    var val = result[key];
-    console.log("val|key: " + val + "|" + key);
-});
-*/
-
-
-//var result = {school:"", score:""};
 /*$(window).resize(deleteButtons);
 $(window).resize(createButtons);*/
 
@@ -53,12 +33,11 @@ function init() {
         document.addEventListener("DOMContentLoaded", init, false);
 
         $("#sound").bind("click", function () {
-            $("#sound").attr('src', "img/speaker_off_button.png");
+            $("#off").attr('src', "img/speaker_off_button.png");
         });
     });
 }
 init();
-
 
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
@@ -79,8 +58,6 @@ function randomWord() {
     console.log(word);
     return word;
 }
-
-
 
 //Erzeugen der Buttons mit Buchstaben
 function createButtons() {
@@ -111,7 +88,6 @@ function createButtons() {
 
 			//Einsetzen aller Buchstaben in Variable
 			var letter = letters[i];
-			//Erzeugen von li Elementen mit Buchstaben
 			var abcEl = $('<li>' + letter + '</li>');
 			//Vergabe einer id für spätere Identifizierung bei checkLetter()
 			$(abcEl).attr('id', 'abc');
@@ -151,7 +127,6 @@ function fillSecret() {
 
 	    if (words.length > 0) {
 	        for (var j = 0; j < word.length; j++) {
-	        	//Unterstrich li Elemente
 	        	var secretEl = $('<li>_</li>')
 	        	//Vergabe einer id für spätere Prüfung
 				$(secretEl).attr('id', word[j]);
@@ -178,10 +153,9 @@ function getPick() {
 	});
 }
 
-
 //Pruefen ob der Benutzer einen richtigen Buchstaben gewählt hat
 //Wenn richtig dann decke auf und tausche _ durch richtigen Buchstaben
-function checkLetter(userPick) { //Geht ohne, weil per onclick Funktion das aktuelle Element angetriggert wird, der gewählte Buchstabe ist jeweils in "pick" drinnen
+function checkLetter(userPick) {
 		jQuery(function($){
 				if(userPick != null && $.inArray(userPick, usedLetters) == -1) {
 				usedLetters.push(userPick);
@@ -273,7 +247,7 @@ function wordComplete() {
 	});
 }
 
-//Steuerung des FHDW Logos als Lebensanzeige
+//Steuerung der Lebensanzeige (FHDW Logo)
 function fhdwLife() {
 	//Von Anfang an alle spans bzw. das ganze div disablen
 	if(lives == 3) {
@@ -294,124 +268,93 @@ function fhdwLife() {
 	}	
 }
 
+//Auslesen des localStorage und speichern in einer Variable
 function loadStore() {
+	//Notwendig?
 	store.get('highscores');
-	var load = store.get('highscores');
-	console.log("load: " + load);
+	//Highscores Array aktualisieren
+	highscores = store.get('highscores');
+	console.log("highscores: " + highscores);
 }
 
 //Abspeichern in localStorage via store.js
-function saveToStore() {
-	//store.set('id', points);
-	//console.log("store get: " + store.get('id', points));
+function saveStore() {
+	store.set('highscores', highscores);
+	console.log("Highscores saved to Store");
 }
 
 //Muss ueber checkNewHighscore()
-function highscorePrompt() {
+function highscorePrompt(pos) {
 	schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
-	points = points;
-	//addScore(pos);
-}
-
-//Laden der bisherigen Highscores
-function loadHighscores() {
-		//Standardinhalt
-		result = {"1":9, "2":8, "3":6, "4":4, "5":2};
-		var i = 0;
-		//store (localStorage) einlesen
-		// TODO
-
-		//Ausgabe der Keys und Values eines Objects
-		Object.keys(result).forEach(function (key) {
-		    var val = result[key];
-		    //console.log("val|key: " + val + "|" + key)
-		    //Einfuegen in die Highscoreliste
-		    highscores.push(result[Object.keys(result)[i]]);
-		    i++;
-		});
-		console.log("loadHighscores()");
-		createHighscorelist(result, highscores);
+	addScore(pos,schoolname);
 }
 
 //Aufbauen der Liste mit bestehenden Highscores
-function createHighscorelist(r, h) {
+function createHighscorelist() { //evtl highscore übergeben
 	jQuery(function($){
 		$("#highscores").empty();
+		loadStore();
+		var y = 4;
 
-		/* Statische Art
 		for(var i = 0; i < 5; i++) {
-			var entry = $('<li id="entry"><span id="score">' + 0 + '</span> <span id="schoolname">' + "noch keiner" + '</span></li><br/>');
+			y++;
+			var entry = $('<li id="entry"><span id="'+i+'" class="score">' + highscores[i] + '</span> <span id="'+y+'" class="schoolname">' + highscores[y] + '</span></li><br/>');
 			$("#highscores").append(entry);
 		}
-		*/		
-
-		Object.keys(r).forEach(function (key) {
-		    var val = r[key];
-			var entry = $('<li id="entry"><span id="score">' + key + '</span> <span id="schoolname">' + val + '</span></li><br/>');
-			$("#highscores").append(entry);
-		});
 	});
 	console.log("createHighscorelist()");
 }
 
 //Pruefen ob der neue Score in die Highscoreliste gehoert
-function checkNewHighscore(achievedPoints) {
+function checkNewHighscore() {
 	//Durchlaufen der Highscoreliste und Points gegenchecken
 	var pos = 4;
-	var i = 0;
-	var achievedPoints = 3;
-	console.log(result[Object.keys(result)[4]]);
+	var i = 4;
+	var achievedPoints = points;
+
+	console.log(highscores[4]);
+	console.log("Beginne Positonssuche");
 
 	//Wenn Wert groeßer als der kleinste in der Liste also highscores[4]
-	if(achievedPoints > result[Object.keys(result)[4]]) {
-		//Suchen der position
-		console.log("Punkte groeßer als ein Ergebnis der Highscoreliste");
-		console.log(result[Object.keys(result)[pos]]);
-		while(points > result[Object.keys(result)[pos]]) {
+	if(achievedPoints > highscores[4]) {
+		i--;
+		//Suchen der Position
+		console.log("Neuer Highscore");
+		console.log(highscores[i]);
+		while(achievedPoints > highscores[i]) {
+			i--;
 			pos--;
 		}
-		//highscorePrompt(pos);   Muss davor Namen holen
-		//addScore(pos);	TODO wieder aktivieren wenn addScore laeuft
+		console.log("Position gefunden. Ergebnis = " + pos);
+		highscorePrompt(pos);
 	}
-	console.log("checkNewHighscore(achievedPoints)");
+	else {
+		alert("Kein neuer Highscore");
+	}
 }
 
 //Hinzufuegen eines neuen Scores zur Highscoreliste
-function addScore(position) {
-	//Hole Punktestand und Namen
+function addScore(pos,schoolname) {
+	console.log("pos: " + pos);
 	var punkte = points;
 	var name = schoolname;
 
-	//Fuege ins result Object ein : TODO auf object schreibweise umstellen
-	result.school = schoolname;
-	result.score = punkte;
-
 	//Fuege Ergebnis an ermittelte Position und verschiebe
-	highscores.splice(position, 0, result);
-    highscores.pop();
-
-    //Update highscoreList() Eintraege
-    jQuery(function($){
-    	var realPos = --position;
-		for(var i = position; i < 5; i++) {
-			//Wahrscheinlich Probleme mit der richtigen Reihe; Loesung zusaetzliche classes mit ids vergeben
-			$('span #score').html(highscores[realPos].score);
-    		$('span #schoolname').html(highscores[realPos].schoolname);
-		}
-	});
-	console.log("addScore(" + position + ")");
+	highscores.splice(pos+5, 0, name);
+	highscores.pop();
+	highscores.splice(pos, 0, punkte);
+	highscores.splice(pos+1, 1);
+	console.log("speichere highscore: " + highscores);
+	saveStore();
+	createHighscorelist();
+	console.log("added score at " + pos);
 }
 
 function checkEndgame() {
     if (lives == 0 || words.length <= 0) {
-        $('#tplaceholder').html('0'); //schafft er so schnell nicht, deshalb Timeout in der Folge
-        setTimeout('', 1000);
+        $('#tplaceholder').html('0');
 		end.play();
-		setTimeout(function(){ highscorePrompt(); }, 300);
-        //alert("Game Over");
-
-        //createHighscorelist();
-        //checkNewHighscore(points); // oder points oder newPoints
+		setTimeout(function(){ checkNewHighscore(); }, 500);
         //window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
     }
     else {
@@ -422,5 +365,3 @@ function checkEndgame() {
 			fillSecret();
     }
 }
-
-//eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()

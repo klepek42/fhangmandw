@@ -9,9 +9,7 @@ function start() {
 	createButtons();
 	fillSecret();
 	checkLetter(getPick());
-	loadHighscores();
-	checkNewHighscore(points);
 }
 
 start();
-loadStore();
+createHighscorelist();

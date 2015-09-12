@@ -17,11 +17,9 @@
     <script src="js/scores.js"></script>
 </head>
 <body>
-    <!-- lives am Ende raus -->
-	<!--<span class="hud" id="lives">Leben: </span><span class="hud" id="lplaceholder">4</span>-->
     <span class="hud" id="tries"><img src="img/try.png" height="64" width="64"></span><span class="hud" id="tplaceholder">6</span>
 	<span class="hud" id="points"><img src="img/star.png" height="64" width="64"></span><span class="hud" id="pplaceholder">0</span>
-    <span id="sound"><img src="img/speaker_on_button2.png" height="64" width="64"></span>
+    <span id="sound"><img id="off" src="img/speaker_on_button2.png" height="64" width="64"></span>
 	
 	<!-- Bereich fuer das geheime Wort -->
 	<div id="area">
@@ -35,11 +33,12 @@
 		</ul>
 	</div>
 
+    <button id="joker">Joker</button>
     <div id="fhdwLogo"><span id="f" >F</span> <span id="h">H</span> <span id="d">D</span> <span id="w">W</span></div>
     
-    <!-- Highscore Bereich -->
-   <!--<h1>Bestenliste</h1>
+    <!--Highscore Bereich -->
+   <h1>Bestenliste</h1>
     <ul id="highscores">
-    </ul>--> 
+    </ul>
 </body>
 </html>
