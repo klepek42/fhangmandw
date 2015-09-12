@@ -48,6 +48,18 @@ Object.keys(result).forEach(function (key) {
 /*$(window).resize(deleteButtons);
 $(window).resize(createButtons);*/
 
+function init() {
+    jQuery(function($){
+        document.addEventListener("DOMContentLoaded", init, false);
+
+        $("#sound").bind("click", function () {
+            $("#sound").attr('src', "img/speaker_off_button.png");
+        });
+    });
+}
+init();
+
+
 //Waehle zufaelliges Wort aus Woerterarray und entferne Wort aus Array in "Papierkorb-Array" usedWords
 function randomWord() {
     word = words[Math.floor(Math.random() * (words.length))];
