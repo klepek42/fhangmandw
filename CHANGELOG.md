@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.7.1 (Edgar)
+- Fix für leeres LocalStorage
+- Bestenliste in game.html wird am Ende des Spiels angezeigt
+- Umzug von Highscores begonnen
+
 ## Version 1.7 (Daniel)
 - Joker-Funktion final optimiert und Span-Element für Joker-Count eingefügt
 
