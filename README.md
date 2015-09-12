@@ -2,10 +2,10 @@
 A HTML5/JavaScript game based on the game idea of hangman. This version represents the typical hangman game in a modern look and with a color branding based on the FHDW corporate design.
 
 [Play the game](link) TODO: add link  
-[Visit the website](link) TODO: add link
+[Visit the website](http://wip.esy.es/)
 
 ## Contributions
-The only contributors to this project are [Daniel Zur Linden](https://github.com/Mastaa12) and [Edgar Klepek](https://github.com/edgarklepek42).
+The only contributors to this project are [Daniel zur Linden](https://github.com/Mastaa12) and [Edgar Klepek](https://github.com/edgarklepek42).
 
 ## Instructions
 You can either play this game by clicking on the buttons representing the alphabet or by using the keyboard. The goal is to guess as many secret words as possible. To achieve this you have to choose wisely the right letters. Wrong letter choices will punish you and disable the specific letter button until you complete the word or get a new one.
