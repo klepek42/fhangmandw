@@ -11,6 +11,8 @@ function init() {
 
         $("#startGame").bind( "click", function() {
             click.play();
+            $("#divMain").toggle("fade");
+            $("#startGame").toggle("highlight", { color: '#FF7901' }, 1000);
             setTimeout(function () {
                 location.href = 'game.html';
             }, 500);
@@ -19,6 +21,8 @@ function init() {
 
         $("#scores").bind( "click", function() {
             click.play();
+            $("#divMain").toggle("fade");
+            $("#scores").toggle("highlight", { color: '#FF7901' }, 1000);
             setTimeout(function () {
                 location.href = 'scores.html';
             }, 500);
@@ -26,6 +30,8 @@ function init() {
 
         $("#instructions").bind( "click", function() {
             click.play();
+            $("#divMain").toggle("fade");
+            $("#instructions").toggle("highlight", { color: '#FF7901' }, 1000);
             setTimeout(function () {
                 location.href = 'instructions.html';
             }, 500);
