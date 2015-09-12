@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.5.8.4 (Daniel)
+- HUD etwas per CSS angepasst
+
 ## Version 1.5.8.3 (Daniel)
 - Animationen im Hauptmenü eingefügt
 
