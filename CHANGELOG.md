@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.5.8.5 (Daniel)
+- init-Funktion in main.js hinzugefügt für Ton-aus-Funktion
+
 ## Version 1.5.8.4 (Daniel)
 - HUD etwas per CSS angepasst
 
