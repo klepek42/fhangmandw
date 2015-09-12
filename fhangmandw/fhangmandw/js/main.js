@@ -13,7 +13,7 @@ var gameover;
 var letterFound = 0;
 var joker = 3;
 
-//Local Highscores TEST; könnte komfortabeler sein; am Ende dann einblenden statt Seitenwechsel
+//Local Highscores TEST
 var schoolname;
 var highscores = [];
 
@@ -284,30 +284,31 @@ function wordComplete() {
 function fhdwLife() {
 	//Von Anfang an alle spans bzw. das ganze div disablen
 	if(lives == 3) {
-		$("#fhdwLogo span#f" ).toggle( "fade" );
+		$("#fhdwLogo span#f" ).toggle("fade");
 		fail.play();
 	}
 	else if(lives == 2) {
-		$("#fhdwLogo span#h" ).toggle( "fade" );
+		$("#fhdwLogo span#h" ).toggle("fade");
 		fail.play();
 	}
 	else if(lives == 1) {
-		$("#fhdwLogo span#d" ).toggle( "fade" );
+		$("#fhdwLogo span#d" ).toggle("fade");
 		fail.play();
 	}
 	else if(lives == 0) {
 		console.log("fhdwLife togglet");
-		$("#fhdwLogo span#w" ).toggle( "fade" );
+		$("#fhdwLogo span#w" ).toggle("fade");
 	}	
 }
 
 //Auslesen des localStorage und speichern in einer Variable
 function loadStore() {
-	//Notwendig?
-	store.get('highscores');
-	//Highscores Array aktualisieren
-	highscores = store.get('highscores');
-	console.log("highscores: " + highscores);
+	if(store.get('highscores') == undefined) {
+		highscores = [0,0,0,0,0,'','','','',''];
+	}
+	else {
+		highscores = store.get('highscores');
+	}
 }
 
 //Abspeichern in localStorage via store.js
@@ -320,10 +321,13 @@ function saveStore() {
 function highscorePrompt(pos) {
 	schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
 	addScore(pos,schoolname);
+	jQuery(function($){
+		$('#game').switchClass('invisible', 'visible');
+	});
 }
 
 //Aufbauen der Liste mit bestehenden Highscores
-function createHighscorelist() { //evtl highscore übergeben
+function createHighscorelist() {
 	jQuery(function($){
 		$("#highscores").empty();
 		loadStore();
@@ -380,6 +384,7 @@ function addScore(pos,schoolname) {
 	console.log("speichere highscore: " + highscores);
 	saveStore();
 	createHighscorelist();
+	$("#highscoreliste").toggle("fade");
 	console.log("added score at " + pos);
 }
 

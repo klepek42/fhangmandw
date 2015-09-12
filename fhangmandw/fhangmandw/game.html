@@ -16,7 +16,7 @@
     <script src="js/start.js"></script>
     <script src="js/scores.js"></script>
 </head>
-<body>
+<body id="game">
     <span class="hud" id="tries"><img src="img/try.png" height="64" width="64"></span><span class="hud" id="tplaceholder">6</span>
 	<span class="hud" id="points"><img src="img/star.png" height="64" width="64"></span><span class="hud" id="pplaceholder">0</span>
     <!--Joker Image-->   <span class="hud" id="jokerSpan"><img src="" height=" 64" width="64"></span><span class="hud" id="jplaceholder">3</span>
@@ -33,13 +33,15 @@
 		<ul id="letterButton">
 		</ul>
 	</div>
-    
+
     <button id="joker">Joker</button>
     <div id="fhdwLogo"><span id="f" >F</span> <span id="h">H</span> <span id="d">D</span> <span id="w">W</span></div>
     
     <!--Highscore Bereich -->
-   <h1>Bestenliste</h1>
-    <ul id="highscores">
-    </ul>
+    <div id="highscoreliste" class="invisible">
+        <h1>Bestenliste</h1>
+        <ul id="highscores">
+        </ul>
+    </div>
 </body>
 </html>
