@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.5.8.6 (Daniel)
+- Joker-Button hinzugefügt und implementiert (Erstfassung)
+
+## Version 1.5.8.5 (Daniel)
+- init-Funktion & Eventhandler in main.js hinzugefügt
+
 ## Version 1.5.8.4 (Daniel)
 - HUD etwas per CSS angepasst
 

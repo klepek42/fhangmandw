@@ -32,6 +32,21 @@ function init() {
     jQuery(function($){
         document.addEventListener("DOMContentLoaded", init, false);
 
+        $("#joker").bind("click", function () {
+            jQuery(function ($) {
+                console.log("joker used");
+                var letterNumber = Math.floor(Math.random() * word.length);
+                for (var i = 0; i < word.length; i++) {
+                    if (i === letterNumber && joker > 0) {
+                        $('ul#secretField li#' + word[letterNumber]).text(word[letterNumber]);
+                        joker--;
+                    }
+                }
+            });
+        }
+        );
+
+
         $("#sound").bind("click", function () {
             $("#off").attr('src', "img/speaker_off_button.png");
         });
@@ -365,3 +380,21 @@ function checkEndgame() {
 			fillSecret();
     }
 }
+
+//eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
+
+/*
+function useJoker() {
+    jQuery(function ($) {
+        console.log("joker used");
+        var joker = 3;
+        var letterNumber = Math.floor(Math.random() * word.length);
+        for (var i = 0; i < word.length; i++) {
+            if (i === letterNumber && joker > 0) {
+                $('ul#secretField li#' + word[letterNumber]).text(word[letterNumber]);
+                joker--;
+            }
+        }
+    });
+}
+*/
