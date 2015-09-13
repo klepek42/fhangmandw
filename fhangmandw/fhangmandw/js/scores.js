@@ -9,6 +9,9 @@ function initStore() {
     }
 }
 
-loadStore();
+createHighscorelist();
 
-//createHighscorelist()
+jQuery(function($){
+    $('#results').hide();
+    $('#results').show("drop", 1200);
+});

@@ -381,11 +381,8 @@ function addScore(pos,schoolname) {
 	highscores.pop();
 	highscores.splice(pos, 0, punkte);
 	highscores.splice(pos+1, 1);
-	console.log("speichere highscore: " + highscores);
 	saveStore();
 	createHighscorelist();
-	$("#highscoreliste").toggle("fade");
-	console.log("added score at " + pos);
 }
 
 function checkEndgame() {
@@ -393,7 +390,7 @@ function checkEndgame() {
         $('#tplaceholder').html('0');
 		end.play();
 		setTimeout(function(){ checkNewHighscore(); }, 500);
-        //window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
+        window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
     }
     else {
 			picks.length = 0;

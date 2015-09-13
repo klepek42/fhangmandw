@@ -177,9 +177,9 @@ ul {
 
 .score {
 	/*width:1px;*/
-	text-align:center;
-	font-family:'Roboto';
-	font-size:1.8em;
+	text-align:left;
+	font-family:'Cabin Sketch';
+	font-size:2.5em;
 	list-style:none;
 	margin-top:8px;
 	display:inline-block;
@@ -187,9 +187,10 @@ ul {
 }
 
 .schoolname {
-	text-align:center;
-	font-family:'Roboto';
-	font-size:1.8em;
+	text-align:left;
+	font-family:'Cabin Sketch';
+  font-weight:700;
+	font-size:2.5em;
 	list-style:none;
 	margin-left:20px;
 	color:blue;
@@ -294,14 +295,4 @@ h1{
     padding:9.5px 21px;
     font-size:27px;
  }
-}
-
-.invisible {
-  display:none;
-  position:fixed;
-
-}
-
-.visible {
-  display:true;
 }
