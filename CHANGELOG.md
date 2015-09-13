@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.7.2 (Edgar)
+- Highscores in das Hauptmenü umgezogen
+
 ## Version 1.7.1 (Edgar)
 - Fix für leeres LocalStorage
 - Bestenliste in game.html wird am Ende des Spiels angezeigt
