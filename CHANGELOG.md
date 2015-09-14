@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.8.1 (Daniel)
+- Animation in checkEndgame()
+- Joker-Button an Design angepasst
+
 ## Version 1.8 (Daniel)
 - Reengineering wordComplete()
 
