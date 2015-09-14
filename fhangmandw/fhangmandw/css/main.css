@@ -56,14 +56,26 @@ body{
 	display:inline-block;
 	cursor:pointer;
 	color:#FF7901;
-  font-family:'Cabin Sketch';
-  font-weight:400;
+    font-family:'Cabin Sketch';
+    font-weight:400;
 	font-size:40px;
 	padding:14px 31px;
 	text-decoration:none;
 }
 
-.menu:hover {
+
+#joker {
+    width:80px;
+    height:80px;
+    margin-top: 10px;
+	background-color:#013668;
+	border-radius:25px;
+	border:1px solid #29668f;
+	display:inline-block;
+	cursor:pointer;
+}
+
+.menu:hover, joker:hover {
 /*	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
 	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');*/

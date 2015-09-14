@@ -407,10 +407,18 @@ function addScore(pos,schoolname) {
 
 function checkEndgame() {
     if (lives == 0 || words.length <= 0) {
-        $('#tplaceholder').html('0');
-		end.play();
-		setTimeout(function(){ checkNewHighscore(); }, 500);
-        window.location.href = 'gameover.html'; //fuer localHighscore erstmal ausgemacht
+        $("#secretField li").css("color", "#FF7901");
+        $("#secretField li").toggle("pulsate", { times: 8 }, 3000);
+        end.play();
+
+        setTimeout(function () {
+            revealWord();
+            $('#tplaceholder').html('0');
+
+            setTimeout(function () { checkNewHighscore(); }, 500);
+            window.location.href = 'gameover.html';
+        }, 3000);
+
     }
     else {
 			picks.length = 0;
