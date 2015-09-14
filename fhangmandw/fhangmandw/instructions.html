@@ -14,8 +14,11 @@
     		$('#instructions').hide();
     		$('#instructions').show("fade", 1200);
 
-    		$('#instructions').click(function() {
-  				$('#instructions').slideUp();
+    		$('body').click(function() {
+    			$('#instructions').toggle("fade");
+  				setTimeout(function () {
+                	location.href = 'index.html';
+            	}, 500);
   			});
 		});
 	</script>
