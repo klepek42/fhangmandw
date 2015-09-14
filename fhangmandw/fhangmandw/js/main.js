@@ -18,6 +18,7 @@ var schoolname;
 var highscores = [];
 
 //Sounds
+/*
 var button = AudioFX('sounds/BounceYoFrankie.mp3', { pool: 10 });
 var rightLetter = AudioFX('sounds/243701__ertfelda__correct.wav', { pool: 10 });
 var rightWord = AudioFX('sounds/109663__grunz__success-low.wav', { pool: 10 });
@@ -25,6 +26,15 @@ var wrong = AudioFX('sounds/232444__afleetingspeck__game-over-sounds-1.wav', { p
 var fail = AudioFX('sounds/242503__gabrielaraujo__failure-wrong-action.wav', { pool: 10 });
 var end = AudioFX('sounds/133283__fins__game-over.wav', { pool: 10 });
 var jokerSound = AudioFX('sounds/116779__domrodrig__ringing-bell-happy.wav', { pool: 10 });
+*/
+
+var button = new Howl({urls: ['sounds/BounceYoFrankie.mp3']});
+var rightLetter = new Howl({urls: ['sounds/243701__ertfelda__correct.wav']});
+var rightWord = new Howl({urls: ['sounds/109663__grunz__success-low.wav']});
+var wrong = new Howl({urls: ['sounds/232444__afleetingspeck__game-over-sounds-1.wav']});
+var fail = new Howl({urls: ['sounds/242503__gabrielaraujo__failure-wrong-action.wav']});
+var end = new Howl({urls: ['sounds/133283__fins__game-over.wav']});
+var jokerSound = new Howl({urls: ['sounds/116779__domrodrig__ringing-bell-happy.wav']});
 
 /*
 $(window).resize(deleteButtons());
@@ -68,13 +78,7 @@ function init() {
 
         $("#sound").bind("click", function () {
             $("#off").attr('src', "img/speaker_off_button.png");
-            rightLetter.volume = 0;
-            button.volume = 0;
-            rightWord.volume = 0;
-            wrong.volume = 0;
-            fail.volume = 0;
-            end.volume = 0;
-            AudioFX.volume = 0;
+            Howler.mute();
         });
     });
 }
