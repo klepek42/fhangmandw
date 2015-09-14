@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# Version 1.7.7 (Edgar)
+- Austausch von audio-fx.js durch howler.js
+- Mute-Button umgesetzt
+
 ## Version 1.7.6 (Edgar)
 - Zürück per Click in Anleitung/Bestenliste
 
