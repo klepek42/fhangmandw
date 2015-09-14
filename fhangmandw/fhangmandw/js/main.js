@@ -255,34 +255,50 @@ function revealWord() {
 
 //Entweder Inhalt der Unterstrich li Elemente auf noch vorhanden sein prüfen (Alternativ word mit correct gegenchecken (String vs Array))
 function wordComplete() {
-	var finds = 0;
-	jQuery(function($){
-		for(var i = 0; i < word.length; i++) {
-			if($('ul#secretField li#'+word[i]).text() == '_') {
-				finds++;
-			}
-		}
-		//Wort ist vollständig
-		if (finds == 0) {
+    var finds = 0;
+    var wordArray = [];
+    jQuery(function ($) {
+        for (var i = 0; i < word.length; i++) {
+            wordArray.push(word.charAt(i));
+
+        }
+
+        wordArray = $.unique(wordArray);
+        wordArray.sort();
+        correct = $.unique(correct);
+        correct.sort();
+        console.log("Wordarray: " + wordArray);
+        console.log("Correct-Array: " + correct);
+
+
+        if (JSON.stringify(correct) === JSON.stringify(wordArray)) {
+            //Wort ist vollständig
             //picks und correct Array leeren
-			picks.length = 0;
-			correct.length = 0;
-			usedLetters.length = 0;
+            rightWord.play();
+            $("#secretField li").toggle("pulsate", { times: 4 }, 1500);
+            setTimeout(function () {
 
-            //neues Wort + Striche generieren
-			tries = 6;
-			$('#tplaceholder').html(tries);
-			randomWord();
-			removeActive();
-			fillSecret();
-			rightWord.play();
+                picks.length = 0;
+                correct.length = 0;
+                usedLetters.length = 0;
 
-		    //Punktevergabe
-			points++;
-			$('#pplaceholder').html(points);
-		}
-	});
+                //neues Wort + Striche generieren
+                tries = 6;
+                $('#tplaceholder').html(tries);
+                randomWord();
+                removeActive();
+                fillSecret();
+
+
+                //Punktevergabe
+                points++;
+                $('#pplaceholder').html(points);
+            }, 1500);
+
+        }
+    });
 }
+
 
 //Steuerung der Lebensanzeige (FHDW Logo)
 function fhdwLife() {
