@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.8 (Daniel)
+- Reengineering wordComplete()
+
+## Version 1.7.9 (Edgar)
+
+
 ## Version 1.7.8 (Edgar)
 - Versucht den Mute-Button wechseln zu lassen
 
