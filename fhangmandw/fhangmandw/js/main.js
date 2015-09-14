@@ -19,15 +19,17 @@ var highscores = [];
 
 //Sounds
 var button = AudioFX('sounds/BounceYoFrankie.mp3', { pool: 10 });
-var rightLetter = AudioFX('sounds/110390__soundscalpel-com__cartoon-siren-whistle-001.wav', { pool: 10 });
+var rightLetter = AudioFX('sounds/243701__ertfelda__correct.wav', { pool: 10 });
 var rightWord = AudioFX('sounds/109663__grunz__success-low.wav', { pool: 10 });
-var wrong = AudioFX('sounds/142608__autistic-lucario__error.wav', { pool: 10 });
+var wrong = AudioFX('sounds/232444__afleetingspeck__game-over-sounds-1.wav', { pool: 10 });
 var fail = AudioFX('sounds/242503__gabrielaraujo__failure-wrong-action.wav', { pool: 10 });
 var end = AudioFX('sounds/133283__fins__game-over.wav', { pool: 10 });
+var jokerSound = AudioFX('sounds/116779__domrodrig__ringing-bell-happy.wav', { pool: 10 });
 
-/*$(window).resize(deleteButtons);
-$(window).resize(createButtons);*/
-
+/*
+$(window).resize(deleteButtons());
+$(window).resize(createButtons);
+*/
 function init() {
     jQuery(function($){
         document.addEventListener("DOMContentLoaded", init, false);
@@ -45,6 +47,7 @@ function init() {
                 for (var i = 0; i < word.length; i++) {
                     if (i === letterNumber && joker > 0) {
                         $('ul#secretField li#' + word[letterNumber]).text(word[letterNumber]);
+                        jokerSound.play();
                         joker--;
                         picks.push(word[letterNumber]);
                         correct.push(word[letterNumber]);
@@ -52,13 +55,11 @@ function init() {
                         $("." + word[letterNumber]).addClass("active");
                         $('#jplaceholder').html(joker);
                         wordComplete();
-                        //Joker-Sound play
-                    }
+                                            }
                     else if (joker === 0)
                     {
                         $('#joker').prop('disabled', true);
                     }
-
                 }
             });
         }
@@ -67,6 +68,13 @@ function init() {
 
         $("#sound").bind("click", function () {
             $("#off").attr('src', "img/speaker_off_button.png");
+            rightLetter.volume = 0;
+            button.volume = 0;
+            rightWord.volume = 0;
+            wrong.volume = 0;
+            fail.volume = 0;
+            end.volume = 0;
+            AudioFX.volume = 0;
         });
     });
 }
@@ -102,11 +110,11 @@ function createButtons() {
 		for(var i = 0; i < letters.length; i++) {
 		    //Umbruch bzw. einstellen der Tastatur
 		    
-		    if (browserWidth > 860 && i == 13)
+		    if (browserWidth > 1050 && i == 13)
 		    {
 		        $("#buttons ul").append('<br/>');
 		    }
-		    else if (browserWidth > 675 && browserWidth < 860 && i % 9 == 0)
+		    else if (browserWidth > 675 && browserWidth < 1050 && i % 9 == 0)
 		    {
 
                     $("#buttons ul").append('<br/>');		        
@@ -131,19 +139,13 @@ function createButtons() {
 		}
 	});
 }
-
-/*function deleteButtons() {
+/*
+function deleteButtons() {
     jQuery(function ($) {
-        for (var i = 0; i < letters.length; i++) {
-            var letter = letters[i];
-            var abcEl = $('<li>' + letter + '</li>');
-          $(abcEl).removeAttr('id', 'abc');
-          $(abcEl).removeClass(letters[i]);
-            $("#buttons ul").remove();
-        }
+        $("#buttons").empty();
     });
-}*/
-
+}
+*/
 function removeActive() {
 	jQuery(function($){
 		for(var i = 0; i < letters.length; i++) {
@@ -400,21 +402,3 @@ function checkEndgame() {
 			fillSecret();
     }
 }
-
-//eventListener bzw. onclick Event für die Buchstaben Buttons -> ausführen von checkLetters()
-
-/*
-function useJoker() {
-    jQuery(function ($) {
-        console.log("joker used");
-        var joker = 3;
-        var letterNumber = Math.floor(Math.random() * word.length);
-        for (var i = 0; i < word.length; i++) {
-            if (i === letterNumber && joker > 0) {
-                $('ul#secretField li#' + word[letterNumber]).text(word[letterNumber]);
-                joker--;
-            }
-        }
-    });
-}
-*/

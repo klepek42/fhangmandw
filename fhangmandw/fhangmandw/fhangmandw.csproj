@@ -62,11 +62,13 @@
     <Content Include="img\076976-black-ink-grunge-stamp-textures-icon-business-computer-keyboard.png" />
     <Content Include="img\076979-black-ink-grunge-stamp-textures-icon-business-computer-mouse.png" />
     <Content Include="img\077072-black-ink-grunge-stamp-textures-icon-business-light-bulb.png" />
+    <Content Include="img\077084-black-ink-grunge-stamp-textures-icon-business-magic-wand.png" />
     <Content Include="img\speaker_off_button.png" />
     <Content Include="img\star.png" />
     <Content Include="js\audio-fx.min.js" />
     <Content Include="js\init.js" />
     <Content Include="js\start.js" />
+    <Content Include="sounds\232444__afleetingspeck__game-over-sounds-1.wav" />
     <Content Include="sounds\243020__plasterbrain__game-start.ogg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -145,11 +145,20 @@ ul {
 }
 
 /* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
-#lives,#points,#pplaceholder, #tplaceholder, #lplaceholder, #tries {
+#lives,#points, #tries, #jokerSpan {
 	font-size:45px;
 	font-family:'Cabin Sketch';
-  vertical-align:middle;
-  padding-right:30px;
+    vertical-align:middle;
+    margin-right:10px;
+
+}
+
+#tplaceholder, #pplaceholder, #jplaceholder{
+    font-size:45px;
+	font-family:'Cabin Sketch';
+    vertical-align:middle;
+    margin-right:70px;
+    margin-left:0px;
 }
 
 #sound{
@@ -218,6 +227,7 @@ ul {
 
 /*Responsive Design: */
 /*Game.html*/
+/*75%*/
 @media (max-width: 500px) {
   #letterButton li{
     width:28.75px;
@@ -235,30 +245,57 @@ ul {
   {
       margin:75px;
   }
+
   
 }
 
-@media (min-width: 501px) {
+/*--- HUD only ---*/
+@media (max-width:570px){
+    
+#imgPoints, #imgTries, #imgJoker, #off {
+    width:48px;
+    height:48px;
+
+}
+
+#lives,#points, #tries, #jokerSpan {
+	font-size:33.75px;
+    margin-right:7.5px;
+
+}
+
+#tplaceholder, #pplaceholder, #jplaceholder{
+    font-size:33.75px;
+    margin-right:52.5px;
+}
+}
+
+
+/*123 %*/
+@media (min-width: 800px) {
 
   #letterButton li{
-    width:38.82px;
-    font-size:33.75px;
-    margin:3.375px;
-    border-radius:23.625px;
-    padding:3.375px;
-	  border:4.22px solid #014C91;
+    width:47.15px;
+    font-size:41px;
+    margin:4.1px;
+    border-radius:28.7px;
+    padding:4.1px;
+	  border:5.125px solid #014C91;
   }
   #secretField li{
-    font-size:65px;
-	  margin:1.35px;
+    font-size:82px;
+	  margin:1.64px;
   }
   #area
   {
-      margin:101.25px;
+      margin:123px;
   }
+
+
 }
 
-@media (min-width: 950px) {
+/*129%*/
+@media (min-width: 1200px) {
 
   #letterButton li{
     width:49.45px;
@@ -270,13 +307,18 @@ ul {
   }
   #secretField li{
     font-size:120px;
-	  margin:1.72px;
+	  margin:17px;
   }
   #area
   {
       margin:129px;
   }
+  #imgPoints, #imgTries, #imgJoker, #off {
+        width:82px;
+        height:82px;
+    }
 }
+
 
 
 /*Index.html*/
@@ -296,3 +338,7 @@ h1{
     font-size:27px;
  }
 }
+
+
+
+
