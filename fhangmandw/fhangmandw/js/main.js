@@ -75,11 +75,19 @@ function init() {
         }
         );
 
-
-        $("#sound").bind("click", function () {
-            $("#off").attr('src', "img/speaker_off_button.png");
+		//Versuch den Wechsel umzusetzen
+        $('#off').bind("click", function () {
+            $('#off').attr('src', "img/speaker_off_button.png");
+            $('#off').attr('id', 'on');
             Howler.mute();
         });
+
+        $("#on").bind("click", function () {
+            $('#on').attr('src', "img/speaker_on_button.png");
+            $('#on').attr('id', 'off');
+            Howler.unmute();
+        });
+
     });
 }
 init();

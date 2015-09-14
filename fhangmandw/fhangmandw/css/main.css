@@ -273,7 +273,7 @@ ul {
 /*--- HUD only ---*/
 @media (max-width:570px){
     
-#imgPoints, #imgTries, #imgJoker, #off {
+#imgPoints, #imgTries, #imgJoker, #off, #on {
     width:48px;
     height:48px;
 
@@ -334,7 +334,7 @@ ul {
   {
       margin:129px;
   }
-  #imgPoints, #imgTries, #imgJoker, #off {
+  #imgPoints, #imgTries, #imgJoker, #off, #on {
         width:82px;
         height:82px;
     }
