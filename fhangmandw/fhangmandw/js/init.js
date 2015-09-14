@@ -28,10 +28,10 @@ function init() {
             }, 500);
         });
 
-        $("#instructions").bind( "click", function() {
+        $("#instruction").bind( "click", function() {
             click.play();
             $("#divMain").toggle("fade");
-            $("#instructions").toggle("highlight", { color: '#FF7901' }, 1000);
+            $("#instruction").toggle("highlight", { color: '#FF7901' }, 1000);
             setTimeout(function () {
                 location.href = 'instructions.html';
             }, 500);

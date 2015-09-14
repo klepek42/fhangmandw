@@ -94,11 +94,9 @@ ul {
 	white-space:nowrap;
 }
 
-/* document.getElementById('test').disabled=true; */
 #letterButton li {
 	width:35px;
 	text-align:center;
-	/*font-family:'Roboto';*/
   font-family:'Cabin Sketch';
   font-weight:400;
 	font-size:30px;
@@ -179,6 +177,8 @@ ul {
 	margin-top:10px;
 }
 
+
+/* scores.html */
 #entry {
 	list-style:none;
 	display:inline;
@@ -192,7 +192,7 @@ ul {
 	list-style:none;
 	margin-top:8px;
 	display:inline-block;
-	color:red;
+	color:#FF7901;
 }
 
 .schoolname {
@@ -202,9 +202,30 @@ ul {
 	font-size:2.5em;
 	list-style:none;
 	margin-left:20px;
-	color:blue;
+	color:black;
 }
 
+/* instructions.html */
+#instructions {
+  font-family:'Cabin Sketch';
+  font-size:2.8em;
+  display:inline-block;
+  color:#FF7901;
+}
+
+#three {
+  font-family:'Cabin Sketch';
+  font-size:1.2em;
+  display:inline-block;
+  color:black;
+}
+
+.controls {
+  margin:50px;
+}
+
+
+/* index.html */
 .footer{
     font-family:'Cabin Sketch';
     font-weight:700;
