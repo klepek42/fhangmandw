@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.7.8 (Edgar)
+- Versucht den Mute-Button wechseln zu lassen
+
 ## Version 1.7.7 (Edgar)
 - Austausch von audio-fx.js durch howler.js
 - Mute-Button umgesetzt
