@@ -20,7 +20,7 @@ You can either play this game by clicking on the buttons representing the alphab
 * [howler.js](https://github.com/goldfire/howler.js) (MIT License)
 * Google Roboto Font (Apache License, version 2.0)
 * Cabin Sketch Font (SIL open font license)
-* Joker Icon made by [www.Freepik.com] from www.flaticon.com
+* Joker Icon made by Freepik [www.Freepik.com] from www.flaticon.com
 
 ## Notations/conventions
 * Name convention: CamelCase
