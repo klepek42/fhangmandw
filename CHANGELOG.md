@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## Version 1.7.6 (Edgar)
+- Zürück per Click in Anleitung/Bestenliste
+
+## Version 1.7.5 (Edgar)
+- Anleitung/Bestenliste
+- Style Feinheiten
+
 ## Version 1.7.4 (Daniel)
 - CSS angepasst: Margin secretField li deutlich verringert
 
