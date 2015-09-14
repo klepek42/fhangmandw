@@ -12,22 +12,13 @@ var correct = []; //Richtige picks
 var gameover;
 var letterFound = 0;
 var joker = 3;
+var muted = false;
 
 //Local Highscores TEST
 var schoolname;
 var highscores = [];
 
 //Sounds
-/*
-var button = AudioFX('sounds/BounceYoFrankie.mp3', { pool: 10 });
-var rightLetter = AudioFX('sounds/243701__ertfelda__correct.wav', { pool: 10 });
-var rightWord = AudioFX('sounds/109663__grunz__success-low.wav', { pool: 10 });
-var wrong = AudioFX('sounds/232444__afleetingspeck__game-over-sounds-1.wav', { pool: 10 });
-var fail = AudioFX('sounds/242503__gabrielaraujo__failure-wrong-action.wav', { pool: 10 });
-var end = AudioFX('sounds/133283__fins__game-over.wav', { pool: 10 });
-var jokerSound = AudioFX('sounds/116779__domrodrig__ringing-bell-happy.wav', { pool: 10 });
-*/
-
 var button = new Howl({urls: ['sounds/BounceYoFrankie.mp3']});
 var rightLetter = new Howl({urls: ['sounds/243701__ertfelda__correct.wav']});
 var rightWord = new Howl({urls: ['sounds/109663__grunz__success-low.wav']});
@@ -65,29 +56,28 @@ function init() {
                         $("." + word[letterNumber]).addClass("active");
                         $('#jplaceholder').html(joker);
                         wordComplete();
-                                            }
-                    else if (joker === 0)
-                    {
+                    }
+                    else if (joker === 0) {
                         $('#joker').prop('disabled', true);
                     }
                 }
             });
-        }
-        );
-
-		//Versuch den Wechsel umzusetzen
-        $('#off').bind("click", function () {
-            $('#off').attr('src', "img/speaker_off_button.png");
-            $('#off').attr('id', 'on');
-            Howler.mute();
         });
 
-        $("#on").bind("click", function () {
-            $('#on').attr('src', "img/speaker_on_button.png");
-            $('#on').attr('id', 'off');
-            Howler.unmute();
-        });
-
+			$('#off').bind("click", function () {
+				if(!muted) {
+					$('#off').attr('src', "img/speaker_off_button.png");
+	            	muted = true;
+	            	Howler.mute();
+	            	console.log("muted = true");
+				}
+				else {
+	            	$('#off').attr('src', "img/speaker_on_button.png");
+	            	muted = false;
+	            	Howler.unmute();
+	            	console.log("muted = false");
+				}
+        	});
     });
 }
 init();
