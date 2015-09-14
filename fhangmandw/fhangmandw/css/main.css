@@ -141,7 +141,7 @@ ul {
 	list-style:none;
 	cursor:default;
 	display:inline;
-	margin:10px;
+	margin:1.5px;
 }
 
 /* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
@@ -307,7 +307,7 @@ ul {
   }
   #secretField li{
     font-size:120px;
-	  margin:17px;
+	  margin:3px;
   }
   #area
   {
