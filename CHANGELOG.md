@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.7.4 (Daniel)
+- CSS angepasst: Margin secretField li deutlich verringert
+
 ## Version 1.7.3 (Daniel)
 - Responsive Design für HUD und weitere kleine Anpassungen im CSS
 - Austausch Sound falscher Buchstabe und Einbindung Sound/Bild für Joker
