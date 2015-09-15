@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.8.4 (D+E)
+- Wörterarray erweitert
+
 ## Version 1.8.3 (Edgar)
 - GameOver Animation
 - Umbau Highscores -> Eingabe auf Gameover Seite
