@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.9.6.2 (Edgar)
+- ID und CLASS der Buchstaben-Buttons ausgetauscht
+
 ## Version 1.9.6.1 (Edgar)
 - List-Style Fix für Firefox (gameover.hmtl)
 
