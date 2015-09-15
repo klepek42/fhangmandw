@@ -19,13 +19,15 @@ var schoolname;
 var highscores = [];
 
 //Sounds
-var button = new Howl({urls: ['sounds/BounceYoFrankie.mp3']});
-var rightLetter = new Howl({urls: ['sounds/243701__ertfelda__correct.wav']});
-var rightWord = new Howl({urls: ['sounds/109663__grunz__success-low.wav']});
-var wrong = new Howl({urls: ['sounds/232444__afleetingspeck__game-over-sounds-1.wav']});
-var fail = new Howl({urls: ['sounds/242503__gabrielaraujo__failure-wrong-action.wav']});
-var end = new Howl({urls: ['sounds/133283__fins__game-over.wav']});
-var jokerSound = new Howl({urls: ['sounds/116779__domrodrig__ringing-bell-happy.wav']});
+var button = new Howl({ urls: ['sounds/BounceYoFrankie.mp3'], volume: 1 });
+var rightLetter = new Howl({urls: ['sounds/243701__ertfelda__correct.wav'], volume:0.2});
+var rightWord = new Howl({ urls: ['sounds/109663__grunz__success-low.wav'], volume: 1 });
+var wrong = new Howl({ urls: ['sounds/232444__afleetingspeck__game-over-sounds-1.wav'], volume: 1 });
+var fail = new Howl({ urls: ['sounds/242503__gabrielaraujo__failure-wrong-action.wav'], volume: 1 });
+var end = new Howl({ urls: ['sounds/133283__fins__game-over.wav'], volume: 1 });
+var jokerSound = new Howl({ urls: ['sounds/116779__domrodrig__ringing-bell-happy.wav'], volume: 1 });
+var mouseover = new Howl({ urls: ['sounds/166186__drminky__menu-screen-mouse-over.wav'], volume: 1 });
+
 
 /*
 $(window).resize(deleteButtons());
@@ -34,6 +36,11 @@ $(window).resize(createButtons);
 function init() {
     jQuery(function($){
         document.addEventListener("DOMContentLoaded", init, false);
+
+
+        $("#joker").mouseover(function () {
+            mouseover.play();
+        });
 
         $("#joker").bind("click", function () {
             jQuery(function ($) {
@@ -208,7 +215,7 @@ function checkLetter(userPick) {
 			          	//Unterstrich durch richtigen Buchstaben aufdecken
 			          	for(var a = 0; a < correct.length; a++) {
 			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
-							rightLetter.play();
+			          		rightLetter.play();
 			          	}
 			          	wordComplete();
 			          }

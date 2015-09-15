@@ -7,11 +7,6 @@
     Hellblau:49B8E6
     Hellgrau:B9B9BA
     Dunkelgrau:A9A9A9
-
-
-    Nützliche Links:
-    http://www.bestcssbuttongenerator.com/
-    http://css-button-generator.com/
 */
 
 *{
@@ -61,12 +56,17 @@ body{
 	font-size:40px;
 	padding:14px 31px;
 	text-decoration:none;
+    
+}
+
+ul, menu, dir{
+    padding:0;
 }
 
 
 #joker {
-    width:80px;
-    height:80px;
+    width:70px;
+    height:70px;
     margin-top: 10px;
 	background-color:#013668;
 	border-radius:25px;
@@ -75,7 +75,7 @@ body{
 	cursor:pointer;
 }
 
-.menu:hover, joker:hover {
+.menu:hover, #joker:hover {
 /*	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
 	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');*/
@@ -150,7 +150,7 @@ ul {
 	font-size:70px;
 	list-style:none;
 	cursor:default;
-	display:inline;
+	display:inline-block;
 	margin:1.5px;
 }
 
@@ -171,8 +171,9 @@ ul {
     margin-left:0px;
 }
 
-#sound{
+#off{
     cursor:pointer;
+    float:right;
 }
 
 #fhdwLogo span {
@@ -254,7 +255,8 @@ ul {
 }
 
 #area{
-    margin:100px;
+    margin-bottom:100px;
+    margin-top:100px;
 }
 
 
@@ -276,20 +278,36 @@ ul {
   }
   #area
   {
-      margin:75px;
+      margin-bottom:75px;
+      margin-top:75px;
+  }
+  #joker
+  {
+      width:57px;
+      height:57px;
+  }
+  #imgJokerbutton
+  {
+      width:35px;
+      height:35px;
   }
 
-  
-}
+
+  }
 
 /*--- HUD only ---*/
 @media (max-width:570px){
     
-#imgPoints, #imgTries, #imgJoker, #off, #on {
+#imgPoints, #imgTries, #imgJoker{
     width:48px;
     height:48px;
 
 }
+
+    #off {
+        width: 34px;
+        height: 34px;
+    }
 
 #lives,#points, #tries, #jokerSpan {
 	font-size:33.75px;
@@ -301,6 +319,7 @@ ul {
     font-size:33.75px;
     margin-right:52.5px;
 }
+
 }
 
 
@@ -321,7 +340,8 @@ ul {
   }
   #area
   {
-      margin:123px;
+      margin-bottom:123px;
+      margin-top:123px;
   }
 
 
@@ -344,11 +364,17 @@ ul {
   }
   #area
   {
-      margin:129px;
+      margin-bottom:129px;
+      margin-top:129px;
   }
-  #imgPoints, #imgTries, #imgJoker, #off, #on {
+  #imgPoints, #imgTries, #imgJoker{
         width:82px;
         height:82px;
+    }
+
+    #off {
+        width:48px;
+        height:48px;
     }
 }
 
