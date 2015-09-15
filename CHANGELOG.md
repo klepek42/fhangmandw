@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# Version 1.8.5 (Edgar)
+- Einbau von sweetalert
+- Pitcher PPTX angehangen
+
 ## Version 1.8.4 (D+E)
 - Wörterarray erweitert
 
