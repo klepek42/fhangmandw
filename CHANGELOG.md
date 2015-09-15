@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.8.7 (Daniel)
+- Screenshots-Ordern erstellt und gefüllt
+- Pitcher überarbeitet + CabinSketch-Font hinzugefügt
+
 ## Version 1.8.6 (Edgar)
 - SweetAlert minifiziert mit cssminifier.com
 - Code aufgeräumt
