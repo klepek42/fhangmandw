@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.9.6.1 (Edgar)
+- List-Style Fix für Firefox (gameover.hmtl)
+
 ## Version 1.9.6 (Daniel)
 - Hover + -Sounds für Buttons im Gameover-Bereich
 - Keydown zurück zum Hauptmenü für Highscores.html
