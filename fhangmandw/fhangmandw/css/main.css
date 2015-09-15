@@ -103,6 +103,14 @@ h1{
     font-size:100px;
 }
 
+h2{
+       font-family:'Cabin Sketch'; 
+    font-weight:700;
+    margin:60px;
+    
+    font-size:70px;
+}
+
 ul {
 	overflow-x:hidden;
 	white-space:nowrap;
@@ -194,6 +202,13 @@ ul {
 	margin-top:10px;
 }
 
+#back{
+    color:#49B8E6;
+      margin-top:40px;
+  font-family:'Roboto';
+  font-size:15px;
+}
+
 
 /* scores.html */
 #entry {
@@ -233,6 +248,7 @@ ul {
 #three {
   font-family:'Cabin Sketch';
   font-size:1.2em;
+  margin-top:10px;
   display:inline-block;
   color:black;
 }
@@ -242,7 +258,7 @@ ul {
 }
 
 #credits {
-  margin-top:40px;
+  margin-top:20px;
   font-family:'Roboto';
   font-size:10px;
   color:black;
