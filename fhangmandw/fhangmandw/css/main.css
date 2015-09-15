@@ -215,7 +215,7 @@ ul {
 /* instructions.html */
 #instructions {
   font-family:'Cabin Sketch';
-  font-size:2.8em;
+  font-size:50px;
   display:inline-block;
   color:#FF7901;
 }
@@ -231,10 +231,10 @@ ul {
   margin:50px;
 }
 
-div#instructions #credits {
+#credits {
+  margin-top:40px;
   font-family:'Roboto';
-  font-size:10em;
-  display:inline-block;
+  font-size:10px;
   color:black;
   text-align:center;
 }
