@@ -5,16 +5,27 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
     <link href="css/main.css" rel="stylesheet" />
+    <link href="css/sweetalert.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/store.min.js"></script>
     <script src="js/howler.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     <!-- <script>
     </script> -->
     <script>
         function init() {
+            //Namenseingabe
+            swal({
+                title: "Neuer Highscore!",
+                text: "Gib den Namen deiner Schule ein!",
+                type: "input",   showCancelButton: false,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "Schulname"
+            });
             jQuery(function($){
                 $('#end').hide();
                 $('#end').show("fade", 1200);
