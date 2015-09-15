@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.9.1 (Daniel)
+- Style-Anpassungen für Instructions
+- Instructions: Zurück zum Hauptmenü per Tastendruck
+- Instructions: Blinkender Text unten
+
 ## Version 1.9 (Edgar)
 - Pitcher angepasst
 - Logos überarbeitet
