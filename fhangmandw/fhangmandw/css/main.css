@@ -66,7 +66,7 @@ ul, menu, dir{
 
 #joker {
     width:70px;
-    height:70px;
+    height:50px;
     margin-top: 10px;
 	background-color:#013668;
 	border-radius:25px;
@@ -75,13 +75,18 @@ ul, menu, dir{
 	cursor:pointer;
 }
 
-.menu:hover, #joker:hover {
+.menu:hover{
 /*	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
 	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');*/
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #014C91), color-stop(80%, #013668) );
 	background-color:#1e62d0;
     
+}
+
+.jokerHover:hover {
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #014C91), color-stop(80%, #013668) );
+    background-color: #1e62d0;
 }
 
 .menu:active {
@@ -135,6 +140,11 @@ ul {
   cursor:default;
   -webkit-transition:background-color linear 0.5s;
   transition:background-color linear 0.5s;
+}
+
+#joker.active{
+    background-color:rgba(1,54,104,0.4);
+    cursor:default;
 }
 
 #secretField li {
@@ -278,16 +288,6 @@ ul {
   {
       margin-bottom:75px;
       margin-top:75px;
-  }
-  #joker
-  {
-      width:57px;
-      height:57px;
-  }
-  #imgJokerbutton
-  {
-      width:35px;
-      height:35px;
   }
 
 

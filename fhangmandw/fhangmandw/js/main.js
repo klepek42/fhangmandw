@@ -39,8 +39,10 @@ function init() {
 
 
         $("#joker").mouseover(function () {
-            mouseover.play();
-        });
+            if (joker > 0) {
+                mouseover.play();
+            }
+          });
 
         $("#joker").bind("click", function () {
             var letterNumber = Math.floor(Math.random() * word.length);
@@ -62,7 +64,9 @@ function init() {
                     wordComplete();
                 }
                 else if (joker === 0) {
-                    $('#joker').prop('disabled', true);
+                    $('#joker').addClass("active");
+                    $('#joker').removeClass("jokerHover");
+                    $('#imgJokerbutton').attr('src', "img/joke_off.png");
                 }
             }
 		});
