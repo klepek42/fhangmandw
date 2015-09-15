@@ -66,7 +66,8 @@ ul, menu, dir{
 #joker {
     width:70px;
     height:50px;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom:10px;
 	background-color:#013668;
 	border-radius:25px;
 	border:1px solid #29668f;
@@ -276,8 +277,8 @@ ul {
 }
 
 #area{
-    margin-bottom:100px;
-    margin-top:100px;
+    margin-bottom:80px;
+    margin-top:80px;
 }
 
 
@@ -351,8 +352,8 @@ ul {
   }
   #area
   {
-      margin-bottom:123px;
-      margin-top:123px;
+      margin-bottom:110px;
+      margin-top:110px;
   }
 
 

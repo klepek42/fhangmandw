@@ -4,7 +4,7 @@ var usedWords = [];
 var usedLetters = [];
 var word;
 var lives = 4;
-var tries = 6;
+var tries = 8;
 var points = 0;
 var pick; //Buchstaben Wahl des Nutzers
 var picks = []; //Alle ausgewählten Buchstaben des Nutzers
@@ -239,7 +239,7 @@ function checkLetter(userPick) {
 				            fhdwLife();
 				            revealWord();
 				            $('#lplaceholder').html(lives);
-				            tries = 6;
+				            tries = 8;
 				            $('#tplaceholder').html(tries);
 				            console.log("Lives: " + lives);
 				            checkEndgame();
@@ -290,7 +290,7 @@ function wordComplete() {
                 usedLetters.length = 0;
 
                 //neues Wort + Striche generieren
-                tries = 6;
+                tries = 8;
                 $('#tplaceholder').html(tries);
                 randomWord();
                 removeActive();
