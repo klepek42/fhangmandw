@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9 (Edgar)
+- Pitcher angepasst
+- Logos überarbeitet
+
 ## Version 1.8.9 (Daniel)
 - Redesign Joker-Button: Farblich angepasst, mouseover bei 0 Leben entfernt, ausgegraut
 
