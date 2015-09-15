@@ -66,4 +66,4 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 * Suchen weiterer Libraries/Plug-Ins/Fonts
 
 ## Lizenz
-FHDW Hangman ist unter der [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE) lizensiert.
+FHDW Hangman ist unter der [MIT License](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE) lizensiert.
