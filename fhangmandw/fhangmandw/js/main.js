@@ -43,33 +43,29 @@ function init() {
         });
 
         $("#joker").bind("click", function () {
-            jQuery(function ($) {
+            var letterNumber = Math.floor(Math.random() * word.length);
 
-                var letterNumber = Math.floor(Math.random() * word.length);
-
-                    while ($.inArray(word[letterNumber], correct) != -1) {
-                        letterNumber = Math.floor(Math.random() * word.length);
-                    }
-
-
-                for (var i = 0; i < word.length; i++) {
-                    if (i === letterNumber && joker > 0) {
-                        $('ul#secretField li#' + word[letterNumber]).text(word[letterNumber]);
-                        jokerSound.play();
-                        joker--;
-                        picks.push(word[letterNumber]);
-                        correct.push(word[letterNumber]);
-                        usedLetters.push(word[letterNumber]);
-                        $("." + word[letterNumber]).addClass("active");
-                        $('#jplaceholder').html(joker);
-                        wordComplete();
-                    }
-                    else if (joker === 0) {
-                        $('#joker').prop('disabled', true);
-                    }
+                while ($.inArray(word[letterNumber], correct) != -1) {
+                    letterNumber = Math.floor(Math.random() * word.length);
                 }
-            });
-        });
+
+            for (var i = 0; i < word.length; i++) {
+                if (i === letterNumber && joker > 0) {
+                    $('ul#secretField li#' + word[letterNumber]).text(word[letterNumber]);
+                    jokerSound.play();
+                    joker--;
+                    picks.push(word[letterNumber]);
+                    correct.push(word[letterNumber]);
+                    usedLetters.push(word[letterNumber]);
+                    $("." + word[letterNumber]).addClass("active");
+                    $('#jplaceholder').html(joker);
+                    wordComplete();
+                }
+                else if (joker === 0) {
+                    $('#joker').prop('disabled', true);
+                }
+            }
+		});
 
 			$('#off').bind("click", function () {
 				if(!muted) {
@@ -353,7 +349,18 @@ function savePoints() {
 
 //Muss ueber checkNewHighscore()
 function highscorePrompt(pos) {
-	schoolname = swal("Neuer Highscore! Gib den Namen deiner Schule ein! " + inputValue, "success");
+	schoolname = swal("Neuer Highscore! Gib den Namen deiner Schule ein!");
+
+	swal({
+		title: "Neuer Highscore!",
+		text: "Gib den Namen deiner Schule ein!",
+		type: "input",
+		closeOnConfirm: true,
+		animation: "pop",
+		inputPlaceholder: "Schulname",
+		confirmButtonColor: "#013668"
+	});
+	
 	if(schoolname == null) {
 		schoolname = 'Unbekannt';
 	}
