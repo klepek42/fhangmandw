@@ -34,9 +34,9 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 * Code: Fokus auf Lesbarkeit 
 
 ## Arbeitsteilung (grob)
-Edgar:
-* Highscores mit allen Funktionen, die dazu gehören
-* Mute-Funktionalität
+#### Edgar:
+* Highscores Funktionen und store.js Speicherung
+* Mute-Funktionalität inkl. howler.js
 * Grundfunktion createButtons
 * removeActive-Funktion
 * fillSecret-Funktion
@@ -45,24 +45,25 @@ Edgar:
 * fhdwLife-Funktion
 * revealWord-Funktion
 
-Daniel:
+#### Daniel:
 * Spielidee
 * Joker
 * Responsive Design CSS
-* Versuche- und Lebenszähler in checkLetter
+* Versuche- und Lebenszähler in checkLetter (HUD)
 * Tastatureingabe
 * wordComplete-Funktion
 * checkEndgame-Funktion
 * Responsive Design on Refresh createButtons-Funktion
 
-Beide:
+#### Beide:
 * WordPress-Seite
 * Pitcher
 * HTML & Struktur
-* grundlegendes Design/Farbauswahl
+* Grundlegendes Design/Farbauswahl
 * Tonauswahl & Integration
 * Animationen
 * Verbesserung bestehender Funktionen
+* Suchen weiterer Libraries/Plug-Ins/Fonts
 
 ## Lizenz
 FHDW Hangman ist unter der [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE) lizensiert.
