@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9.5 (Daniel)
+- Versuche von sechs auf acht hochgesetzt
+- kleine Margin-Anpassungen im Spiel
+
 ## Version 1.9.4 (Edgar)
 - Bestenlisten Button auf Gameover Seite
 - Eintragen per prompt sollte jetzt funktionieren
