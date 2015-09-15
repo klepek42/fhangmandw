@@ -58,6 +58,10 @@ body{
 	text-decoration:none;
 }
 
+#over {
+  list-style:none;
+}
+
 ul, menu, dir{
     padding:0;
 }
