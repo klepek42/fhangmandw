@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.8.2 (Daniel)
+- Anpassungen im Design
+- Bugfix: "Abschneiden" der _ - Felder -> area-margin
+
 ## Version 1.8.1 (Daniel)
 - Animation in checkEndgame()
 - Joker-Button an Design angepasst
