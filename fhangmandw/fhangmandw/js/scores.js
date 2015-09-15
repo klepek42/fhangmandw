@@ -11,6 +11,12 @@ jQuery(function($){
   		setTimeout(function () {
                location.href = 'index.html';
         }, 500);
-  	});
+    });
+    $('#results').keydown(function () {
+        $('#results').toggle("fade");
+        setTimeout(function () {
+            location.href = 'index.html';
+        }, 500);
+    });
     $('#back').toggle("pulsate", { times: 80 }, 50000);
 });

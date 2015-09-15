@@ -24,18 +24,26 @@
                 var points = store.get('points');
                 var highscores = [];
                 var pos;
+                var mouseover = new Howl({ urls: ['sounds/166186__drminky__menu-screen-mouse-over.wav'], volume: 1 });
                 console.log("points aus store: " + points);
                 loadStore();
                 checkNewHighscore(points);
                 console.log("init");
                 document.getElementById('playAgain').addEventListener("click",
                     function() {
-                        location.href = 'index.html';
+                        location.href = 'game.html';
                     }, false);
                 document.getElementById('goHighscores').addEventListener("click",
                     function() {
                         location.href = 'scores.html';
                     }, false);
+                $("#playAgain").mouseover(function () {
+                    mouseover.play();
+                });
+                $("#goHighscores").mouseover(function () {
+                    mouseover.play();
+                });
+
             });
         }
         document.addEventListener("DOMContentLoaded", init, false);
@@ -44,7 +52,7 @@
 <body id="end">
         <h1>Auswahlverfahren<br/>beendet!</h1>
         <ul id="over">
-            <li><button class="gameover" id="playAgain">Nochmal</button> <br /></li>
+            <li><button class="gameover" id="playAgain">Nochmal!</button> <br /></li>
             <li><button class="gameover" id="goHighscores">Bestenliste</button> <br /></li>
         </ul>
 </body>

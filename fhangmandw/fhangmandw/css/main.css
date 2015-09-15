@@ -75,18 +75,13 @@ ul, menu, dir{
 	cursor:pointer;
 }
 
-.menu:hover{
+.menu:hover, .gameover:hover, .jokerHover:hover{
 /*	background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
 	background:-ms-linear-gradient( top, #1e62d0 5%, #3d94f6 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');*/
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(5%, #014C91), color-stop(80%, #013668) );
 	background-color:#1e62d0;
     
-}
-
-.jokerHover:hover {
-    background: -webkit-gradient( linear, left top, left bottom, color-stop(5%, #014C91), color-stop(80%, #013668) );
-    background-color: #1e62d0;
 }
 
 .menu:active {
