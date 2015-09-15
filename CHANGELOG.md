@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.9.2 (Edgar)
+- Anpassung Pitcher und neue Bilder
+
 ## Version 1.9.1 (Daniel)
 - Style-Anpassungen für Instructions
 - Instructions: Zurück zum Hauptmenü per Tastendruck
