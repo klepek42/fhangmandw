@@ -12,7 +12,9 @@ Die einzigen Entwickler dieses Projektes sind [Daniel zur Linden](https://github
 Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient werden. Ziel des Spiels ist es, so viele Wörter wie möglich zu erraten. Es ist wichtig, genau zu überlegen, welchen Buchstaben man als nächstes wählt, denn in einem Leben hast du nur sechs Fehlversuche. Insgesamt hast du vier Leben, repräsentiert durch die Buchstaben F,H,D und W. Solltest du ein Wort nicht erraten können, helfen dir die drei Joker, welche jeweils einen zufälligen Buchstaben aufdecken. Nach sechs Fehlversuchen verlierst du ein Leben, das aktuelle Wort ist aus dem Spiel und eine neues Wort wird automatisch generiert. Hast du alle Leben aufgebraucht, kannst du dich in die Highscore-Liste eintragen und dich mit anderen Spielern vor dir vergleichen.
 
 ## Screenshots
-![alt tag](https://raw.github.com/edgarklepek42/fhangmandw/blob/master/fhangmandw/fhangmandw/screenshots/Buchstaben.png)
+![alt tag](https://raw.githubusercontent.com/edgarklepek42/fhangmandw/master/fhangmandw/fhangmandw/screenshots/Gameplay01.PNG)
+![alt tag](https://raw.githubusercontent.com/edgarklepek42/fhangmandw/master/fhangmandw/fhangmandw/screenshots/Gameplay03.PNG)
+![alt tag](https://raw.githubusercontent.com/edgarklepek42/fhangmandw/master/fhangmandw/fhangmandw/screenshots/gameplay.gif)
 
 ## Genutzte Bibliotheken/Plug-Ins/Schriftarten Dritter
 * jQuery 1.11.3 (hosted by Google) (MIT License)
