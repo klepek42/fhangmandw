@@ -331,7 +331,8 @@ function fhdwLife() {
 //Auslesen des localStorage und speichern in einer Variable
 function loadStore() {
 	if(store.get('highscores') == undefined) {
-		highscores = [0,0,0,0,0,'','','','',''];
+		store.set('highscores', [5,4,3,2,1,'Gymnasium Hochdahl','Gymnasium am Neanderthal','Berufskolleg Hilden','Gymnasium Ratingen','FHDW Mettmann'])
+		highscores = [5,4,3,2,1,'Gymnasium Hochdahl','Gymnasium am Neanderthal','Berufskolleg Hilden','Gymnasium Ratingen','FHDW Mettmann'];
 	}
 	else {
 		highscores = store.get('highscores');
@@ -344,13 +345,20 @@ function saveStore() {
 	console.log("Highscores saved to Store");
 }
 
+//Speichern der Punkte fuer die GameOver-Seite
+function savePoints() {
+	store.set('points', points);
+	console.log("Saved " + points + " points");
+}
+
 //Muss ueber checkNewHighscore()
 function highscorePrompt(pos) {
 	schoolname = prompt("Neuer Highscore! Gib den Namen deiner Schule ein!");
+	if(schoolname == null) {
+		schoolname = 'Unbekannt';
+	}
 	addScore(pos,schoolname);
-	jQuery(function($){
-		$('#game').switchClass('invisible', 'visible');
-	});
+	console.log("Rufe addScore auf mit " + pos + " und " + schoolname);
 }
 
 //Aufbauen der Liste mit bestehenden Highscores
@@ -370,7 +378,7 @@ function createHighscorelist() {
 }
 
 //Pruefen ob der neue Score in die Highscoreliste gehoert
-function checkNewHighscore() {
+function checkNewHighscore(points) {
 	//Durchlaufen der Highscoreliste und Points gegenchecken
 	var pos = 4;
 	var i = 4;
@@ -402,6 +410,7 @@ function addScore(pos,schoolname) {
 	console.log("pos: " + pos);
 	var punkte = points;
 	var name = schoolname;
+	console.log("addScore points: " + punkte);
 
 	//Fuege Ergebnis an ermittelte Position und verschiebe
 	highscores.splice(pos+5, 0, name);
@@ -417,12 +426,10 @@ function checkEndgame() {
         $("#secretField li").css("color", "#FF7901");
         $("#secretField li").toggle("pulsate", { times: 8 }, 3000);
         end.play();
-
+        savePoints();
         setTimeout(function () {
             revealWord();
             $('#tplaceholder').html('0');
-
-            setTimeout(function () { checkNewHighscore(); }, 500);
             window.location.href = 'gameover.html';
         }, 3000);
 

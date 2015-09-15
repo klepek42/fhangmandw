@@ -8,33 +8,34 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <!--
     <script src="js/store.min.js"></script>
-    <script src="js/scores.js"></script>
-    -->
+    <script src="js/howler.min.js"></script>
+    <script src="js/main.js"></script>
     <!-- <script>
-        initStore();
-            function initStore() {
-                if (!store.enabled) {
-                    alert('Local storage is not supported by your browser. Please disable "Private Mode", or upgrade to a modern browser.')
-                    return
-                }                
-            }
     </script> -->
     <script>
         function init() {
-            console.log("init");
-
-            document.getElementById('playAgain').addEventListener("click",
-                function()
-                {
-                    location.href = 'index.html';
-                }, false);
+            jQuery(function($){
+                $('#end').hide();
+                $('#end').show("fade", 1200);
+                var points = store.get('points');
+                var highscores = [];
+                var pos;
+                console.log("points aus store: " + points);
+                loadStore();
+                checkNewHighscore(points);
+                console.log("init");
+                document.getElementById('playAgain').addEventListener("click",
+                    function()
+                    {
+                        location.href = 'index.html';
+                    }, false);
+            });
         }
         document.addEventListener("DOMContentLoaded", init, false);
     </script>
 </head>
-<body>
+<body id="end">
         <h1>EXMATRIKULIERT!</h1>
         <div id="titel">Gib den Namen deiner Schule ein!</div><br />
         <!-- Namenseingabe per form Element oder notfalls per prompt -->
