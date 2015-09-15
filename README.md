@@ -22,7 +22,10 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 * [SweetAlert](https://github.com/t4t5/sweetalert) (MIT License)
 * Google Roboto Font (Apache License, version 2.0)
 * Cabin Sketch Font (SIL open font license)
-* Joker Icon erstellt von Freepik [www.Freepik.com] von www.flaticon.com
+
+## Bilder/Icons
+- Joker Icon erstellt von Freepik [www.Freepik.com] von www.flaticon.com ([Autorennennung notwendig](http://support.flaticon.com/hc/en-us/articles/202798381-How-to-attribute-the-icons-to-their-authors))
+- Spieleicons erstellt von [Mysitemyway](http://icons.mysitemyway.com) ([Keine Autoren notwendig](http://icons.mysitemyway.com/faqs/)) 
 
 ## Anmerkungen/Konventionen
 * Namenskonvention: CamelCase
