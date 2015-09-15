@@ -2,6 +2,7 @@
 Ein auf der Idee von Hangman basierendes HTML5/JavaScript Spiel. Diese Version beinhaltet das traditionelle Hangman-Spiel mit einem modernen, cartoon-artigen Design und der Farbauswahl der FHDW.
 
 [Spiel starten](link) TODO: Link hinzufügen
+
 [Webseite besuchen](http://wip.esy.es/)
 
 ## Entwickler
