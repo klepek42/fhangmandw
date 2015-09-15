@@ -1,5 +1,8 @@
 # CHANGELOG
 
+Version 1.8.8. (Edgar)
+- Credit in Anleitung angepasst
+
 ## Version 1.8.7 (Daniel)
 - Screenshots-Ordern erstellt und gefüllt
 - Pitcher überarbeitet + CabinSketch-Font hinzugefügt
