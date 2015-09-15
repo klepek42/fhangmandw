@@ -18,6 +18,7 @@ You can either play this game by clicking on the buttons representing the alphab
 * jQuery UI 1.11.4 (hosted by Google) (MIT License)
 * [Store.js](https://github.com/marcuswestin/store.js/) (MIT License)
 * [howler.js](https://github.com/goldfire/howler.js) (MIT License)
+* [SweetAlert](https://github.com/t4t5/sweetalert) (MIT License)
 * Google Roboto Font (Apache License, version 2.0)
 * Cabin Sketch Font (SIL open font license)
 * Joker Icon made by Freepik [www.Freepik.com] from www.flaticon.com
