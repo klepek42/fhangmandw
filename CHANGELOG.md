@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## Version 1.8.3 (Edgar)
+- GameOver Animation
+- Umbau Highscores -> Eingabe auf Gameover Seite
+- Pointsspeicherung in localStorage
+
 ## Version 1.8.2 (Daniel)
 - Anpassungen im Design
 - Bugfix: "Abschneiden" der _ - Felder -> area-margin
@@ -12,7 +17,8 @@
 - Reengineering wordComplete()
 
 ## Version 1.7.9 (Edgar)
-
+- Mute-Button fertig implementiert
+- audio-fx.js entfernt
 
 ## Version 1.7.8 (Edgar)
 - Versucht den Mute-Button wechseln zu lassen
