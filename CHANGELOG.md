@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9.4 (Edgar)
+- Bestenlisten Button auf Gameover Seite
+- Eintragen per prompt sollte jetzt funktionieren
+
 ## Version 1.9.3 (Edgar)
 - Gameoverseite angepasst
 - Gameplay Bilder und Gif
