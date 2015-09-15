@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9.3 (Edgar)
+- Gameoverseite angepasst
+- Gameplay Bilder und Gif
+
 ## Version 1.9.2 (Edgar)
 - Anpassung Pitcher und neue Bilder
 
