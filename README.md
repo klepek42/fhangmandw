@@ -28,7 +28,11 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 * Namenskonvention: CamelCase
 * Funktionen- und Variablennamen auf Englisch
 * Dokumentation und Textsprache im Spiel auf Deutsch
-* Code: Fokus auf Lesbarkeit
+* Code: Fokus auf Lesbarkeit 
+
+## Arbeitsteilung (grob)
+*Edgar:
+  ** bla
 
 ## Lizenz
 FHDW Hangman ist unter der [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE) lizensiert.
