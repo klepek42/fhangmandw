@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.8.9 (Daniel)
+- Redesign Joker-Button: Farblich angepasst, mouseover bei 0 Leben entfernt, ausgegraut
+
 ## Version 1.8.8. (Edgar)
 - Credit in Anleitung angepasst
 
