@@ -1,5 +1,5 @@
 var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-var words = ["fhdw", "informatik", "bwl", "dual", "studium", "finanzmathematik", "bilanz", "guv", "gewinn", "javascript", "java", "software", "wirtschaft", "klausur", "praesentation", "office", "praxis"];
+var words = ["fhdw", "informatik", "bwl", "dual", "studium", "bilanz", "gewinn", "javascript", "java", "software", "wirtschaft", "klausur", "office", "praxis", "dozent", "vorlesung", "semester", "consulting", "bachelor", "master", "immatrikulation", "theorie", "fachhochschule", "bewerbung", "sap", "netzwerk", "kolloquium", "business", "english", "thesis", "prozess", "rechnung", "unternehmen", "gmbh", "karriere", "management", "manager"];
 var usedWords = [];
 var usedLetters = [];
 var word;
