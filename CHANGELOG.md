@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9.6 (Daniel)
+- Hover + -Sounds für Buttons im Gameover-Bereich
+- Keydown zurück zum Hauptmenü für Highscores.html
+
 ## Version 1.9.5 (Daniel)
 - Versuche von sechs auf acht hochgesetzt
 - kleine Margin-Anpassungen im Spiel
