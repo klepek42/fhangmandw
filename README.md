@@ -1,19 +1,19 @@
 # FHDW Hangman
-A HTML5/JavaScript game based on the game idea of hangman. This version represents the typical hangman game in a modern look and with a color branding based on the FHDW corporate design.
+Ein auf der Idee von Hangman basierendes HTML5/JavaScript Spiel. Diese Version beinhaltet das traditionelle Hangman-Spiel mit einem modernen, cartoon-artigen Design und der Farbauswahl der FHDW.
 
-[Play the game](link) TODO: add link  
-[Visit the website](http://wip.esy.es/)
+[Spiel starten](link) TODO: Link hinzufügen
+[Webseite besuchen](http://wip.esy.es/)
 
-## Contributions
-The only contributors to this project are [Daniel zur Linden](https://github.com/Mastaa12) and [Edgar Klepek](https://github.com/edgarklepek42).
+## Entwickler
+Die einzigen Entwickler dieses Projektes sind [Daniel zur Linden](https://github.com/Mastaa12) und [Edgar Klepek](https://github.com/edgarklepek42).
 
-## Instructions
-You can either play this game by clicking on the buttons representing the alphabet or by using the keyboard. The goal is to guess as many secret words as possible. To achieve this you have to choose wisely the right letters. Wrong letter choices will punish you and disable the specific letter button until you complete the word or get a new one.
+## Anleitung
+Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient werden. Ziel des Spiels ist es, so viele Wörter wie möglich zu erraten. Es ist wichtig, genau zu überlegen, welchen Buchstaben man als nächstes wählt, denn in einem Leben hast du nur sechs Fehlversuche. Insgesamt hast du vier Leben, repräsentiert durch die Buchstaben F,H,D und W. Solltest du ein Wort nicht erraten können, helfen dir die drei Joker, welche jeweils einen zufälligen Buchstaben aufdecken. Nach sechs Fehlversuchen verlierst du ein Leben, das aktuelle Wort ist aus dem Spiel und eine neues Wort wird automatisch generiert. Hast du alle Leben aufgebraucht, kannst du dich in die Highscore-Liste eintragen und dich mit anderen Spielern vor dir vergleichen.
 
 ## Screenshots
 ... to be added
 
-## 3rd party libraries/plug-ins/fonts
+## Genutzte Bibliotheken/Plug-Ins/Schriftarten Dritter
 * jQuery 1.11.3 (hosted by Google) (MIT License)
 * jQuery UI 1.11.4 (hosted by Google) (MIT License)
 * [Store.js](https://github.com/marcuswestin/store.js/) (MIT License)
@@ -21,13 +21,13 @@ You can either play this game by clicking on the buttons representing the alphab
 * [SweetAlert](https://github.com/t4t5/sweetalert) (MIT License)
 * Google Roboto Font (Apache License, version 2.0)
 * Cabin Sketch Font (SIL open font license)
-* Joker Icon made by Freepik [www.Freepik.com] from www.flaticon.com
+* Joker Icon erstellt von Freepik [www.Freepik.com] von www.flaticon.com
 
-## Notations/conventions
-* Name convention: CamelCase
-* Functions and variables in English
-* Documentation and user interface texts in German
-* Code: focus on readability
+## Anmerkungen/Konventionen
+* Namenskonvention: CamelCase
+* Funktionen- und Variablennamen auf Englisch
+* Dokumentation und Textsprache im Spiel auf Deutsch
+* Code: Fokus auf Lesbarkeit
 
-## License
-FHDW Hangman is licensed under the [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE).
+## Lizenz
+FHDW Hangman ist unter der [MIT license](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE) lizensiert.
