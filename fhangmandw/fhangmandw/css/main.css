@@ -14,7 +14,7 @@
     
 }
 
-/* Karriertes Papier Background */
+/* Karrierter Papier Hintergrund */
 body{
      font-size: 125%;    
     background-color: #f1f2f3; 
@@ -87,8 +87,6 @@ ul, menu, dir{
 .menu:active {
 	position:relative;
 	top:1px;
-
-
 }
 
 h1{
@@ -98,7 +96,6 @@ h1{
     margin:60px;
     
     font-size:100px;
-
 }
 
 ul {
@@ -132,15 +129,12 @@ ul {
 
 /* Angeklickte Buchstaben erhalten ein "active" Attribut */
 #letterButton li#abc.active {
-  color:rgba(255,255,255,0.4);/*Schrift*/ 
+  color:rgba(255,255,255,0.4); /*Schrift*/ 
   background-color:rgba(1,54,104,0.4); /*#014C91;*/
   border-color: rgba(1,54,104,0.4);
   cursor:default;
   -webkit-transition:background-color linear 0.5s;
   transition:background-color linear 0.5s;
-  /*-webkit-transition:color linear 5s;
-  transition:color linear 5s;*/
-   
 }
 
 #secretField li {
@@ -154,7 +148,7 @@ ul {
 	margin:1.5px;
 }
 
-/* Lebensanzeige statt Text Herzen oder ähnliches - Man verliert Leben wenn Punkte unter 0 oder zu viele Fehler? */
+/* HUD */
 #lives,#points, #tries, #jokerSpan {
 	font-size:45px;
 	font-family:'Cabin Sketch';
@@ -237,21 +231,25 @@ ul {
   margin:50px;
 }
 
+div#instructions #credits {
+  font-family:'Roboto';
+  font-size:10em;
+  display:inline-block;
+  color:black;
+  text-align:center;
+}
 
 /* index.html */
 .footer{
     font-family:'Cabin Sketch';
     font-weight:700;
     margin-top:100px;
-
 }
 
 .footerSpan{
     font-family:'Cabin Sketch';
     font-weight:700;
     color:#FF7901;
-
-
 }
 
 #area{
@@ -397,7 +395,3 @@ h1{
     font-size:27px;
  }
 }
-
-
-
-
