@@ -36,8 +36,6 @@ $(window).resize(createButtons);
 function init() {
     jQuery(function($){
         document.addEventListener("DOMContentLoaded", init, false);
-
-
         $("#joker").mouseover(function () {
             if (joker > 0) {
                 mouseover.play();
@@ -115,7 +113,6 @@ function createButtons() {
         var browserWidth = $( window ).width();
         //950px = 13 - 1 Buchstabe benötigt ca. 75 px
 
-
 		for(var i = 0; i < letters.length; i++) {
 		    //Umbruch bzw. einstellen der Tastatur
 		    
@@ -140,25 +137,19 @@ function createButtons() {
 			var letter = letters[i];
 			var abcEl = $('<li>' + letter + '</li>');
 			//Vergabe einer id für spätere Identifizierung bei checkLetter()
-			$(abcEl).attr('id', 'abc');
+			$(abcEl).attr('id', letters[i]);
 			//Klasse für Keyboards.js
-			$(abcEl).addClass(letters[i]);
+			$(abcEl).addClass('abc');
 			//Anhängen der Elemente an ul
 			$("#buttons ul").append(abcEl);
 		}
 	});
 }
-/*
-function deleteButtons() {
-    jQuery(function ($) {
-        $("#buttons").empty();
-    });
-}
-*/
+
 function removeActive() {
 	jQuery(function($){
 		for(var i = 0; i < letters.length; i++) {
-			$("#buttons ul li#abc").removeClass("active");
+			$("#buttons ul li.abc").removeClass("active");
 		}
 	});
 }
@@ -186,7 +177,7 @@ function fillSecret() {
 
 function getPick() {
 	jQuery(function($){
-		$('ul#letterButton li#abc').click(function() {
+		$('ul#letterButton li.abc').click(function() {
 			//button.play();
 			$(this).addClass("active");
 			var pick = $(this).text();

@@ -29,21 +29,18 @@
                 loadStore();
                 checkNewHighscore(points);
                 console.log("init");
-                document.getElementById('playAgain').addEventListener("click",
-                    function() {
+                $("#playAgain").bind("click", function () {
                         location.href = 'game.html';
-                    }, false);
-                document.getElementById('goHighscores').addEventListener("click",
-                    function() {
+                    });
+                $("#goHighscores").bind("click", function () {
                         location.href = 'scores.html';
-                    }, false);
+                    });
                 $("#playAgain").mouseover(function () {
                     mouseover.play();
                 });
                 $("#goHighscores").mouseover(function () {
                     mouseover.play();
                 });
-
             });
         }
         document.addEventListener("DOMContentLoaded", init, false);

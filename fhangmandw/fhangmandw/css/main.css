@@ -138,7 +138,7 @@ ul {
 
 
 /* Angeklickte Buchstaben erhalten ein "active" Attribut */
-#letterButton li#abc.active {
+#letterButton li.abc.active {
   color:rgba(255,255,255,0.4); /*Schrift*/ 
   background-color:rgba(1,54,104,0.4); /*#014C91;*/
   border-color: rgba(1,54,104,0.4);
