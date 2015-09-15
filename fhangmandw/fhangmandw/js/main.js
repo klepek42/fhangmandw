@@ -353,9 +353,8 @@ function savePoints() {
 
 //Muss ueber checkNewHighscore()
 function highscorePrompt(pos) {
-	schoolname = swal("Neuer Highscore! Gib den Namen deiner Schule ein!");
-
-	swal({
+	var points = store.get('points');
+	schoolname = swal({
 		title: "Neuer Highscore!",
 		text: "Gib den Namen deiner Schule ein!",
 		type: "input",
@@ -363,13 +362,25 @@ function highscorePrompt(pos) {
 		animation: "pop",
 		inputPlaceholder: "Schulname",
 		confirmButtonColor: "#013668"
+	},
+	function(schoolname) {
+		if (schoolname === false) return false;      
+		if (schoolname === "") {     
+			swal.showInputError("You need to write something!");
+		return false
+		}
+		if (schoolname != false) {
+			console.log("schoolname: " + schoolname);
+			console.log("Rufe addScore auf mit " + pos + " und " + schoolname);
+			addScore(pos,schoolname);
+		}
 	});
-	
+	/*
 	if(schoolname == null) {
 		schoolname = 'Unbekannt';
 	}
-	addScore(pos,schoolname);
-	console.log("Rufe addScore auf mit " + pos + " und " + schoolname);
+	*/
+
 }
 
 //Aufbauen der Liste mit bestehenden Highscores
@@ -418,8 +429,8 @@ function checkNewHighscore(points) {
 
 //Hinzufuegen eines neuen Scores zur Highscoreliste
 function addScore(pos,schoolname) {
-	console.log("pos: " + pos);
-	var punkte = points;
+	console.log("add pos: " + pos);
+	var punkte = store.get('points');
 	var name = schoolname;
 	console.log("addScore points: " + punkte);
 
@@ -430,6 +441,8 @@ function addScore(pos,schoolname) {
 	highscores.splice(pos+1, 1);
 	saveStore();
 	createHighscorelist();
+	//Score zuruecksetzen
+	//store.set('points', 0);
 }
 
 function checkEndgame() {

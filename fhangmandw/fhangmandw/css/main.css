@@ -37,10 +37,10 @@ body{
     background-position: 0 -0.5em;
 }
 
-.menu, .gameover {
+.menu, .gameover{
 	width:300px;
-    height:80px;
-    margin: 20px;
+  height:80px;
+  margin: 20px;
 	-webkit-box-shadow: 0px 11px 8px -9px #276873;
 	box-shadow: 0px 11px 8px -9px #276873;
 	background-color:#013668;
@@ -51,12 +51,11 @@ body{
 	display:inline-block;
 	cursor:pointer;
 	color:#FF7901;
-    font-family:'Cabin Sketch';
-    font-weight:400;
+  font-family:'Cabin Sketch';
+  font-weight:400;
 	font-size:40px;
 	padding:14px 31px;
 	text-decoration:none;
-    
 }
 
 ul, menu, dir{
@@ -99,7 +98,6 @@ h1{
     font-family:'Cabin Sketch'; 
     font-weight:700;
     margin:60px;
-    
     font-size:100px;
 }
 
@@ -107,7 +105,6 @@ h2{
        font-family:'Cabin Sketch'; 
     font-weight:700;
     margin:60px;
-    
     font-size:70px;
 }
 

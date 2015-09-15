@@ -4,6 +4,7 @@
     <title>Game Over</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
     <link href="css/main.css" rel="stylesheet" />
     <link href="css/sweetalert.min.css" rel="stylesheet">
 
@@ -28,9 +29,12 @@
                 checkNewHighscore(points);
                 console.log("init");
                 document.getElementById('playAgain').addEventListener("click",
-                    function()
-                    {
+                    function() {
                         location.href = 'index.html';
+                    }, false);
+                document.getElementById('goHighscores').addEventListener("click",
+                    function() {
+                        location.href = 'scores.html';
                     }, false);
             });
         }
@@ -38,7 +42,10 @@
     </script>
 </head>
 <body id="end">
-        <h1>EXMATRIKULIERT!</h1>
-        <button class="gameover" id="playAgain">Nochmal</button> <br />
+        <h1>Auswahlverfahren<br/>beendet!</h1>
+        <ul id="over">
+            <li><button class="gameover" id="playAgain">Nochmal</button> <br /></li>
+            <li><button class="gameover" id="goHighscores">Bestenliste</button> <br /></li>
+        </ul>
 </body>
 </html>
