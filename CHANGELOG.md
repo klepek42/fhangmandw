@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0 (D + E)
+- Abnahmetest
+
 ## Version 1.9.9 (Edgar)
 - Pitcher Update
 
