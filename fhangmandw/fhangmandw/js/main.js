@@ -63,13 +63,11 @@ function init() {
 					$('#off').attr('src', "img/speaker_off_button.png");
 	            	muted = true;
 	            	Howler.mute();
-	            	console.log("muted = true");
 				}
 				else {
 	            	$('#off').attr('src', "img/speaker_on_button.png");
 	            	muted = false;
 	            	Howler.unmute();
-	            	console.log("muted = false");
 				}
         	});
     });
@@ -85,14 +83,12 @@ function randomWord() {
         for (var i = 0; i < words.length; i++) {
             if (words[i] == word) {
                 words.splice(i, 1);
-                console.log(words.length);
             }
         }
     }
     else {
        	//Alert erfolgte in Methode fillSecret bei Array-Länge 0
     }
-    console.log(word);
     return word;
 }
 
@@ -134,6 +130,7 @@ function createButtons() {
 	});
 }
 
+//Active-Class aller Buchstaben entfernen
 function removeActive() {
 	jQuery(function($){
 		for(var i = 0; i < letters.length; i++) {
@@ -162,6 +159,7 @@ function fillSecret() {
 	});
 }
 
+//Active-Class bei Klick auf Buchstaben setzen und geklickten Buchstaben an checkLetter-Funktion geben 
 function getPick() {
 	jQuery(function($){
 		$('ul#letterButton li.abc').click(function() {
@@ -183,11 +181,9 @@ function checkLetter(userPick) {
 				for (var i = 0; i < word.length; i++) {
 				    if (userPick === word[i]) {
 				        letterFound = 1;
-				        console.log("letterFound " + letterFound);
 			          //Nur einmalig eintragen
 			          if(jQuery.inArray(userPick, correct) == -1) {
 			          	correct.push(userPick);
-			          	console.log("correct: " + correct);
 			          	//Unterstrich durch richtigen Buchstaben aufdecken
 			          	for(var a = 0; a < correct.length; a++) {
 			          		$('ul#secretField li#'+correct[a]).text(correct[a]);
@@ -196,17 +192,14 @@ function checkLetter(userPick) {
 			          	wordComplete();
 			          }
 			          var position = ++i;
-			          console.log("Position " + position);
 			          //Array picks mit Funden füllen
 			          picks.push(userPick);
-			          console.log(picks);
 				    }
 			     }
 				    if (letterFound == 0) {
 				        tries--;
 				        wrong.play();
 				        $('#tplaceholder').html(tries);
-				        console.log("Tries: " + tries);
 				        if (tries == 0) {
 				            lives--;
 				            removeActive();
@@ -215,14 +208,13 @@ function checkLetter(userPick) {
 				            $('#lplaceholder').html(lives);
 				            tries = 8;
 				            $('#tplaceholder').html(tries);
-				            console.log("Lives: " + lives);
 				            checkEndgame();
 				        }
 				    }
 			     letterFound = 0;
 				}
 				else {
-				    console.log("Bereits ausprobierter Buchstabe wurde nochmal probiert.");
+				    //Bereits ausprobierter Buchstabe wurde nochmal probiert.
 				}
 		});
 	}
@@ -234,20 +226,19 @@ function revealWord() {
 	}
 }
 
-//Entweder Inhalt der Unterstrich li Elemente auf noch vorhanden sein prüfen (Alternativ word mit correct gegenchecken (String vs Array))
+//Prüft, ob ein Wort vollständig ist
 function wordComplete() {
     var finds = 0;
     var wordArray = [];
     jQuery(function ($) {
         for (var i = 0; i < word.length; i++) {
-            wordArray.push(word.charAt(i));
+            wordArray.push(word.charAt(i)); //Macht aus word-string das Array wordArray
         }
+        /*wordArray und correct-Array Duplikate entfernen und sortieren*/
         wordArray = $.unique(wordArray);
         wordArray.sort();
         correct = $.unique(correct);
         correct.sort();
-        console.log("Wordarray: " + wordArray);
-        console.log("Correct-Array: " + correct);
 
         if (JSON.stringify(correct) === JSON.stringify(wordArray)) {
             //Wort ist vollständig
@@ -256,6 +247,7 @@ function wordComplete() {
             $("#secretField li").toggle("pulsate", { times: 4 }, 1500);
             setTimeout(function () {
 
+                //Leeren der Arrays
                 picks.length = 0;
                 correct.length = 0;
                 usedLetters.length = 0;
@@ -292,7 +284,6 @@ function fhdwLife() {
 		fail.play();
 	}
 	else if(lives == 0) {
-		console.log("fhdwLife togglet");
 		$("#fhdwLogo span#w" ).toggle("fade");
 	}	
 }
@@ -300,7 +291,6 @@ function fhdwLife() {
 //Speichern der Punkte fuer die GameOver-Seite
 function savePoints() {
 	store.set('points', points);
-	console.log("Saved " + points + " points");
 }
 
 function checkEndgame() {

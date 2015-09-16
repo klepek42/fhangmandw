@@ -39,7 +39,7 @@ function checkKeyboard() {
                         $('ul#letterButton li.abc.' + key.toLowerCase()).addClass("active");
                     });
                     break;
-                default: console.log("Alles was kein Grundbuchstabe ist, wird ignoriert.");
+                default: // Alles was kein Grundbuchstabe ist, wird ignoriert.
                     break;
             }
         }
