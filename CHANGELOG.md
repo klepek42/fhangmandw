@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## Version 1.9.9 (Edgar)
+- Pitcher Update
+
+## Version 1.9.8 (Edgar)
+- Console Meldungen entfernt
+- Präsentation entfernt
+- neuer Pitcher,
+- Anleitung komprimiert
+- Icons in Gameover Alerts
+
 ## Version 1.9.7.3 (Daniel)
 - Design-Anpassungen Game.html: Korrektur von Abständen
 
