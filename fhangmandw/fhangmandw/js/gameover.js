@@ -15,7 +15,6 @@ function loadStore() {
 //Abspeichern in localStorage via store.js
 function saveStore() {
     store.set('highscores', highscores);
-    console.log("Highscores saved to Store");
 }
 
 //Muss ueber checkNewHighscore()
@@ -28,13 +27,12 @@ function highscorePrompt(pos) {
         closeOnConfirm: true,
         animation: "pop",
         inputPlaceholder: "Schulname",
-        confirmButtonColor: "#013668"
+        confirmButtonColor: "#013668",
+        imageUrl: "img/joke.png"
     },
     function(schoolname) {
         if (schoolname === false) return false;
         if (schoolname != false) {
-            console.log("schoolname: " + schoolname);
-            console.log("Rufe addScore auf mit " + pos + " und " + schoolname);
             addScore(pos,schoolname);
         }
     });
@@ -53,7 +51,6 @@ function createHighscorelist() {
             $("#highscores").append(entry);
         }
     });
-    console.log("createHighscorelist()");
 }
 
 //Pruefen ob der neue Score in die Highscoreliste gehoert
@@ -63,35 +60,27 @@ function checkNewHighscore(points) {
     var i = 4;
     var achievedPoints = points;
 
-    console.log(highscores[4]);
-    console.log("Beginne Positonssuche");
-
     //Wenn Wert groeßer als der kleinste in der Liste also highscores[4]
     if(achievedPoints > highscores[4]) {
         i--;
         //Suchen der Position
-        console.log("Neuer Highscore");
         newHighscore.play();
-        console.log(highscores[i]);
         while(achievedPoints > highscores[i]) {
             i--;
             pos--;
         }
-        console.log("Position gefunden. Ergebnis = " + pos);
         highscorePrompt(pos);
     }
     else {
         noHighscore.play();
-        sweetAlert("Kein neuer Highscore");
+        swal("Kein neuer Highscore", "", "error");
     }
 }
 
 //Hinzufuegen eines neuen Scores zur Highscoreliste
 function addScore(pos,schoolname) {
-    console.log("add pos: " + pos);
     var punkte = store.get('points');
     var name = schoolname;
-    console.log("addScore points: " + punkte);
 
     //Fuege Ergebnis an ermittelte Position und verschiebe
     highscores.splice(pos+5, 0, name);

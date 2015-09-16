@@ -4,7 +4,6 @@ function checkKeyboard() {
         function (event)
         {
             var key = String.fromCharCode(event.keyCode);
-            console.log("Key: " + key);
             key.toUpperCase();
             switch (key)
             {
