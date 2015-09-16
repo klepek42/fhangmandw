@@ -46,7 +46,7 @@ function init() {
                     picks.push(word[letterNumber]);
                     correct.push(word[letterNumber]);
                     usedLetters.push(word[letterNumber]);
-                    $("." + word[letterNumber]).addClass("active");
+                    $("#buttons ul li" + "#" + word[letterNumber]).addClass(" active");
                     $('#jplaceholder').html(joker);
                     wordComplete();
                 }
@@ -201,14 +201,18 @@ function checkLetter(userPick) {
 				        wrong.play();
 				        $('#tplaceholder').html(tries);
 				        if (tries == 0) {
-				            lives--;
-				            removeActive();
-				            fhdwLife();
 				            revealWord();
-				            $('#lplaceholder').html(lives);
-				            tries = 8;
-				            $('#tplaceholder').html(tries);
-				            checkEndgame();
+				            lives--;
+				            fhdwLife();				         
+				            $("#secretField li").css("color", "#FF7901");
+				            $("#secretField li").toggle("pulsate", { times: 6 }, 2000);
+				            setTimeout(function () {
+				                checkEndgame();
+				                removeActive();
+				                $('#lplaceholder').html(lives);
+				                tries = 8;
+				                $('#tplaceholder').html(tries);
+                              }, 2000);
 				        }
 				    }
 			     letterFound = 0;
@@ -295,16 +299,9 @@ function savePoints() {
 
 function checkEndgame() {
     if (lives == 0 || words.length <= 0) {
-        $("#secretField li").css("color", "#FF7901");
-        $("#secretField li").toggle("pulsate", { times: 8 }, 3000);
         end.play();
         savePoints();
-        setTimeout(function () {
-            revealWord();
-            $('#tplaceholder').html('0');
-            window.location.href = 'gameover.html';
-        }, 3000);
-
+        window.location.href = 'gameover.html';
     }
     else {
 			picks.length = 0;
