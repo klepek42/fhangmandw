@@ -28,11 +28,6 @@ var end = new Howl({ urls: ['sounds/133283__fins__game-over.wav'], volume: 1 });
 var jokerSound = new Howl({ urls: ['sounds/116779__domrodrig__ringing-bell-happy.wav'], volume: 1 });
 var mouseover = new Howl({ urls: ['sounds/166186__drminky__menu-screen-mouse-over.wav'], volume: 1 });
 
-
-/*
-$(window).resize(deleteButtons());
-$(window).resize(createButtons);
-*/
 function init() {
     jQuery(function($){
         document.addEventListener("DOMContentLoaded", init, false);
@@ -132,11 +127,10 @@ function createButtons() {
 		        $("#buttons ul").append('<br/>');
 		    }
 
-
 			//Einsetzen aller Buchstaben in Variable
 			var letter = letters[i];
 			var abcEl = $('<li>' + letter + '</li>');
-			//Vergabe einer id für spätere Identifizierung bei checkLetter()
+			//Vergabe einer ID für spätere Identifizierung bei checkLetter()
 			$(abcEl).attr('id', letters[i]);
 			//Klasse für Keyboards.js
 			$(abcEl).addClass('abc');
@@ -159,7 +153,6 @@ function fillSecret() {
 	jQuery(function($){
 	//Reset fuer "nächstes Wort"
 	    $("#area ul").empty();
-
 	    if (words.length > 0) {
 	        for (var j = 0; j < word.length; j++) {
 	        	var secretEl = $('<li>_</li>')
@@ -222,8 +215,6 @@ function checkLetter(userPick) {
 				        wrong.play();
 				        $('#tplaceholder').html(tries);
 				        console.log("Tries: " + tries);
-
-				        //Eigene Funktion daraus machen?
 				        if (tries == 0) {
 				            lives--;
 				            removeActive();
@@ -258,16 +249,13 @@ function wordComplete() {
     jQuery(function ($) {
         for (var i = 0; i < word.length; i++) {
             wordArray.push(word.charAt(i));
-
         }
-
         wordArray = $.unique(wordArray);
         wordArray.sort();
         correct = $.unique(correct);
         correct.sort();
         console.log("Wordarray: " + wordArray);
         console.log("Correct-Array: " + correct);
-
 
         if (JSON.stringify(correct) === JSON.stringify(wordArray)) {
             //Wort ist vollständig
@@ -287,7 +275,6 @@ function wordComplete() {
                 removeActive();
                 fillSecret();
 
-
                 //Punktevergabe
                 points++;
                 $('#pplaceholder').html(points);
@@ -296,7 +283,6 @@ function wordComplete() {
         }
     });
 }
-
 
 //Steuerung der Lebensanzeige (FHDW Logo)
 function fhdwLife() {
@@ -322,8 +308,8 @@ function fhdwLife() {
 //Auslesen des localStorage und speichern in einer Variable
 function loadStore() {
 	if(store.get('highscores') == undefined) {
-		store.set('highscores', [5,4,3,2,1,'Gymnasium Hochdahl','Gymnasium am Neanderthal','Berufskolleg Hilden','Gymnasium Ratingen','FHDW Mettmann'])
-		highscores = [5,4,3,2,1,'Gymnasium Hochdahl','Gymnasium am Neanderthal','Berufskolleg Hilden','Gymnasium Ratingen','FHDW Mettmann'];
+		store.set('highscores', [6,4,2,2,1,'Gymnasium Hochdahl','Gymnasium am Neandertal','Berufskolleg Hilden','Dietrich Bonhoeffer Gymnasium','Lore-Lorentz Schule'])
+		highscores = [6,4,2,2,1, 'Gymnasium Hochdahl','Gymnasium am Neandertal','Berufskolleg Hilden','Dietrich Bonhoeffer Gymnasium','Lore-Lorentz Schule'];
 	}
 	else {
 		highscores = store.get('highscores');
@@ -355,22 +341,17 @@ function highscorePrompt(pos) {
 		confirmButtonColor: "#013668"
 	},
 	function(schoolname) {
-		if (schoolname === false) return false;      
-		if (schoolname === "") {     
-			swal.showInputError("You need to write something!");
-		return false
-		}
+		if (schoolname === false) return false;
 		if (schoolname != false) {
 			console.log("schoolname: " + schoolname);
 			console.log("Rufe addScore auf mit " + pos + " und " + schoolname);
 			addScore(pos,schoolname);
 		}
 	});
-	/*
+	
 	if(schoolname == null) {
 		schoolname = 'Unbekannt';
 	}
-	*/
 
 }
 
@@ -433,7 +414,7 @@ function addScore(pos,schoolname) {
 	saveStore();
 	createHighscorelist();
 	//Score zuruecksetzen
-	//store.set('points', 0);
+	store.set('points', 0);
 }
 
 function checkEndgame() {
