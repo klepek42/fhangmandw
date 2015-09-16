@@ -24,10 +24,8 @@
                 var highscores = [];
                 var pos;
                 var mouseover = new Howl({ urls: ['sounds/166186__drminky__menu-screen-mouse-over.wav'], volume: 1 });
-                console.log("points aus store: " + points);
                 loadStore();
                 checkNewHighscore(points);
-                console.log("init");
                 $("#playAgain").bind("click", function () {
                         location.href = 'game.html';
                     });
