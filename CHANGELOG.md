@@ -1,7 +1,9 @@
 # CHANGELOG
 
-## Version 2.0 (D + E)
-- Abnahmetest
+## Version 2.0 (Daniel)
+- Bugfix: Joker-Button graut letterButtons jetzt auch wieder aus
+- Bei Lebensverlust wird das gesamte Wort nun in Orange und blinkend
+angezeigt
 
 ## Version 1.9.9 (Edgar)
 - Pitcher Update
