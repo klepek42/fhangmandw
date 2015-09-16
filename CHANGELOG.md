@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9.7 (Edgar)
+- Credits im Hauptmenü hinzugefügt
+- Hinweistext in Instructions mittig positioniert
+
 ## Version 1.9.6.5 (Edgar)
 - Auslagerung der Highscore Scripte in 'gameover.js'
 
