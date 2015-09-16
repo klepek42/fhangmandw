@@ -6,7 +6,7 @@
 ## Version 1.9.8 (Edgar)
 - Console Meldungen entfernt
 - Präsentation entfernt
-- neuer Pitcher,
+- Neuer Pitcher
 - Anleitung komprimiert
 - Icons in Gameover Alerts
 
