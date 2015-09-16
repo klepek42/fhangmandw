@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 1.9.6.5 (Edgar)
+- Auslagerung der Highscore Scripte in 'gameover.js'
+
+## Version 1.9.6.4 (Edgar)
+- Nicht verwendete Sound und Bilder entfernt
+- Quellcode etwas aufgeräumt
+- Sounds für neuen Highscore und keinen Highscore eingefügt
+
 ## Version 1.9.6.3 (Edgar)
 - Fix für Bestenliste. Temporäre Points im localStorage nach Highscore-Eintrag wieder 0 setzen.
 
