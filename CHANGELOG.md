@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9.7.1 (Daniel)
+- console.log-Debug-Meldungen entfernt
+- CSS aufgeräumt
+
 ## Version 1.9.7 (Edgar)
 - Credits im Hauptmenü hinzugefügt
 - Hinweistext in Instructions mittig positioniert
