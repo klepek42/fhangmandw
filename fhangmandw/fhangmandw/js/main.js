@@ -19,7 +19,6 @@ var schoolname;
 var highscores = [];
 
 //Sounds
-var button = new Howl({ urls: ['sounds/BounceYoFrankie.mp3'], volume: 1 });
 var rightLetter = new Howl({urls: ['sounds/243701__ertfelda__correct.wav'], volume:0.2});
 var rightWord = new Howl({ urls: ['sounds/109663__grunz__success-low.wav'], volume: 1 });
 var wrong = new Howl({ urls: ['sounds/232444__afleetingspeck__game-over-sounds-1.wav'], volume: 1 });
@@ -27,6 +26,8 @@ var fail = new Howl({ urls: ['sounds/242503__gabrielaraujo__failure-wrong-action
 var end = new Howl({ urls: ['sounds/133283__fins__game-over.wav'], volume: 1 });
 var jokerSound = new Howl({ urls: ['sounds/116779__domrodrig__ringing-bell-happy.wav'], volume: 1 });
 var mouseover = new Howl({ urls: ['sounds/166186__drminky__menu-screen-mouse-over.wav'], volume: 1 });
+var newHighscore = new Howl({ urls: ['sounds/270404__littlerobotsoundfactory__jingle-achievement-00.wav'], volume: 1});
+var noHighscore = new Howl({ urls: ['sounds/242208__wagna__failfare.mp3'], volume: 1});
 
 function init() {
     jQuery(function($){
@@ -171,10 +172,8 @@ function fillSecret() {
 function getPick() {
 	jQuery(function($){
 		$('ul#letterButton li.abc').click(function() {
-			//button.play();
 			$(this).addClass("active");
 			var pick = $(this).text();
-			//console.log("Picked " + pick);
 			checkLetter(pick);
 			return pick;
 		});
@@ -348,11 +347,6 @@ function highscorePrompt(pos) {
 			addScore(pos,schoolname);
 		}
 	});
-	
-	if(schoolname == null) {
-		schoolname = 'Unbekannt';
-	}
-
 }
 
 //Aufbauen der Liste mit bestehenden Highscores
@@ -386,6 +380,7 @@ function checkNewHighscore(points) {
 		i--;
 		//Suchen der Position
 		console.log("Neuer Highscore");
+		newHighscore.play();
 		console.log(highscores[i]);
 		while(achievedPoints > highscores[i]) {
 			i--;
@@ -395,6 +390,7 @@ function checkNewHighscore(points) {
 		highscorePrompt(pos);
 	}
 	else {
+		noHighscore.play();
 		sweetAlert("Kein neuer Highscore");
 	}
 }

@@ -35,8 +35,6 @@ function init() {
                 location.href = 'instructions.html';
             }, 500);
         });
-
-        
     });
 }
 
