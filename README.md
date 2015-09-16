@@ -81,5 +81,8 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 * Verbesserung bestehender Funktionen
 * Suchen weiterer Libraries/Plug-Ins/Fonts
 
+## Known Bugs
+- Der Erfolgssound wird im Verlauf eines Wortes immer lauter
+
 ## Lizenz
 FHDW Hangman ist unter der [MIT License](https://github.com/edgarklepek42/fhangmandw/blob/master/LICENSE) lizensiert.
