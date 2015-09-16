@@ -254,12 +254,14 @@ ul {
   margin:50px;
 }
 
-#credits {
-  margin-top:20px;
-  font-family:'Roboto';
-  font-size:10px;
+#attribution {
+  margin-top:18px;
+  font-size:1.2em;
+  font-weight:700;
+  font-family:'Cabin Sketch';
   color:black;
-  text-align:center;
+  background-color:rgba(0,0,0,0.0);
+  border:none;
 }
 
 /* index.html */
