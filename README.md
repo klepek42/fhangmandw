@@ -1,5 +1,5 @@
 # FHDW Hangman
-Ein auf der Idee von Hangman basierendes HTML5/JavaScript Spiel. Diese Version beinhaltet das traditionelle Hangman-Spiel mit einem modernen, cartoon-artigen Design und orientiert sich mit der Farbauswahl an dem aktuellen Corporate Design der FHDW.
+Ein auf der Idee von Hangman basierendes HTML5 Spiel. Diese Version beinhaltet das traditionelle Hangman-Spiel mit einem modernen, cartoon-artigen Design und orientiert sich mit der Farbauswahl an dem aktuellen Corporate Design der FHDW.
 
 [Spiel starten](link) TODO: Link hinzufügen
 
@@ -28,6 +28,14 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 ## Bilder/Icons
 - Joker Icon erstellt von [Freepik](www.Freepik.com) über www.flaticon.com ([Autorennennung notwendig](http://support.flaticon.com/hc/en-us/articles/202798381-How-to-attribute-the-icons-to-their-authors))
 - Spieleicons erstellt von [Mysitemyway](http://icons.mysitemyway.com) ([Keine Autorennennung notwendig](http://icons.mysitemyway.com/faqs/)) 
+
+## Verwendete Sounds (www.freesound.org)
+### [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
+- wrong action.wav by GabrialAraujo
+- success_low.wav by grunz
+- failfare.mp3 by Wagna
+- Menu screen mouse over by DrMinky
+- Xylophone-Cartton by sergeeo 
 
 ## Anmerkungen/Konventionen
 * Namenskonvention: CamelCase
