@@ -9,14 +9,9 @@ var points = 0;
 var pick; //Buchstaben Wahl des Nutzers
 var picks = []; //Alle ausgewählten Buchstaben des Nutzers
 var correct = []; //Richtige picks
-var gameover;
 var letterFound = 0;
 var joker = 3;
 var muted = false;
-
-//Local Highscores TEST
-var schoolname;
-var highscores = [];
 
 //Sounds
 var rightLetter = new Howl({urls: ['sounds/243701__ertfelda__correct.wav'], volume:0.2});
@@ -26,8 +21,6 @@ var fail = new Howl({ urls: ['sounds/242503__gabrielaraujo__failure-wrong-action
 var end = new Howl({ urls: ['sounds/133283__fins__game-over.wav'], volume: 1 });
 var jokerSound = new Howl({ urls: ['sounds/116779__domrodrig__ringing-bell-happy.wav'], volume: 1 });
 var mouseover = new Howl({ urls: ['sounds/166186__drminky__menu-screen-mouse-over.wav'], volume: 1 });
-var newHighscore = new Howl({ urls: ['sounds/270404__littlerobotsoundfactory__jingle-achievement-00.wav'], volume: 1});
-var noHighscore = new Howl({ urls: ['sounds/242208__wagna__failfare.mp3'], volume: 1});
 
 function init() {
     jQuery(function($){
@@ -304,113 +297,10 @@ function fhdwLife() {
 	}	
 }
 
-//Auslesen des localStorage und speichern in einer Variable
-function loadStore() {
-	if(store.get('highscores') == undefined) {
-		store.set('highscores', [6,4,2,2,1,'Gymnasium Hochdahl','Gymnasium am Neandertal','Berufskolleg Hilden','Dietrich Bonhoeffer Gymnasium','Lore-Lorentz Schule'])
-		highscores = [6,4,2,2,1, 'Gymnasium Hochdahl','Gymnasium am Neandertal','Berufskolleg Hilden','Dietrich Bonhoeffer Gymnasium','Lore-Lorentz Schule'];
-	}
-	else {
-		highscores = store.get('highscores');
-	}
-}
-
-//Abspeichern in localStorage via store.js
-function saveStore() {
-	store.set('highscores', highscores);
-	console.log("Highscores saved to Store");
-}
-
 //Speichern der Punkte fuer die GameOver-Seite
 function savePoints() {
 	store.set('points', points);
 	console.log("Saved " + points + " points");
-}
-
-//Muss ueber checkNewHighscore()
-function highscorePrompt(pos) {
-	var points = store.get('points');
-	schoolname = swal({
-		title: "Neuer Highscore!",
-		text: "Gib den Namen deiner Schule ein!",
-		type: "input",
-		closeOnConfirm: true,
-		animation: "pop",
-		inputPlaceholder: "Schulname",
-		confirmButtonColor: "#013668"
-	},
-	function(schoolname) {
-		if (schoolname === false) return false;
-		if (schoolname != false) {
-			console.log("schoolname: " + schoolname);
-			console.log("Rufe addScore auf mit " + pos + " und " + schoolname);
-			addScore(pos,schoolname);
-		}
-	});
-}
-
-//Aufbauen der Liste mit bestehenden Highscores
-function createHighscorelist() {
-	jQuery(function($){
-		$("#highscores").empty();
-		loadStore();
-		var y = 4;
-
-		for(var i = 0; i < 5; i++) {
-			y++;
-			var entry = $('<li id="entry"><span id="'+i+'" class="score">' + highscores[i] + '</span> <span id="'+y+'" class="schoolname">' + highscores[y] + '</span></li><br/>');
-			$("#highscores").append(entry);
-		}
-	});
-	console.log("createHighscorelist()");
-}
-
-//Pruefen ob der neue Score in die Highscoreliste gehoert
-function checkNewHighscore(points) {
-	//Durchlaufen der Highscoreliste und Points gegenchecken
-	var pos = 4;
-	var i = 4;
-	var achievedPoints = points;
-
-	console.log(highscores[4]);
-	console.log("Beginne Positonssuche");
-
-	//Wenn Wert groeßer als der kleinste in der Liste also highscores[4]
-	if(achievedPoints > highscores[4]) {
-		i--;
-		//Suchen der Position
-		console.log("Neuer Highscore");
-		newHighscore.play();
-		console.log(highscores[i]);
-		while(achievedPoints > highscores[i]) {
-			i--;
-			pos--;
-		}
-		console.log("Position gefunden. Ergebnis = " + pos);
-		highscorePrompt(pos);
-	}
-	else {
-		noHighscore.play();
-		sweetAlert("Kein neuer Highscore");
-	}
-}
-
-//Hinzufuegen eines neuen Scores zur Highscoreliste
-function addScore(pos,schoolname) {
-	console.log("add pos: " + pos);
-	var punkte = store.get('points');
-	var name = schoolname;
-	console.log("addScore points: " + punkte);
-
-	//Fuege Ergebnis an ermittelte Position und verschiebe
-	highscores.splice(pos+5, 0, name);
-	highscores.pop();
-	highscores.splice(pos, 0, punkte);
-	highscores.splice(pos+1, 1);
-	saveStore();
-	createHighscorelist();
-	//Score zuruecksetzen
-	store.set('points', 0);
 }
 
 function checkEndgame() {

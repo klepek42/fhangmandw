@@ -24,4 +24,3 @@ function initStore() {
 }
 
 start();
-createHighscorelist();
