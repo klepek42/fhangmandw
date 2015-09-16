@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.9.7.2 (Daniel)
+- Bugfix: Nach Tastatureingabe werden die Buttons auch wieder
+deaktiviert
+
 ## Version 1.9.7.1 (Daniel)
 - console.log-Debug-Meldungen entfernt
 - CSS aufgeräumt
