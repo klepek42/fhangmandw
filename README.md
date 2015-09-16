@@ -1,7 +1,7 @@
 # FHDW Hangman
 Ein auf der Idee von Hangman basierendes HTML5 Spiel. Diese Version beinhaltet das traditionelle Hangman-Spiel mit einem modernen, cartoon-artigen Design und orientiert sich mit der Farbauswahl an dem aktuellen Corporate Design der FHDW.
 
-[Spiel starten](link) TODO: Link hinzufügen
+[Spiel starten](wip.esy.es/fhdwhangman)
 
 [Webseite besuchen](http://wip.esy.es/)
 
