@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.9.7.3 (Daniel)
+- Design-Anpassungen Game.html: Korrektur von Abständen
+
 ## Version 1.9.7.2 (Daniel)
 - Bugfix: Nach Tastatureingabe werden die Buttons auch wieder
 deaktiviert
