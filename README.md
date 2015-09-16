@@ -27,7 +27,7 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 
 ## Bilder/Icons
 - Joker Icon erstellt von [Freepik](www.Freepik.com) über www.flaticon.com ([Autorennennung notwendig](http://support.flaticon.com/hc/en-us/articles/202798381-How-to-attribute-the-icons-to-their-authors))
-- Spieleicons erstellt von [Mysitemyway](http://icons.mysitemyway.com) ([Keine Autoren notwendig](http://icons.mysitemyway.com/faqs/)) 
+- Spieleicons erstellt von [Mysitemyway](http://icons.mysitemyway.com) ([Keine Autorennennung notwendig](http://icons.mysitemyway.com/faqs/)) 
 
 ## Anmerkungen/Konventionen
 * Namenskonvention: CamelCase
