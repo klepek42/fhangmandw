@@ -38,10 +38,10 @@ Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient
 - Xylophone-Cartton by sergeeo 
 
 ### [CC0 1.0](http://creativecommons.org/publicdomain/zero/1.0/deed.de)
-game over by fins
-correct by ertfeld
-Game over sounds 1 by afleetingspeck
-Ringing bell by domrodrig
+- game over by fins
+- correct by ertfeld
+- Game over sounds 1 by afleetingspeck
+- Ringing bell by domrodrig
 
 ## Anmerkungen/Konventionen
 * Namenskonvention: CamelCase
