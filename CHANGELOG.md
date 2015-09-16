@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.9.6.3 (Edgar)
+- Fix für Bestenliste. Temporäre Points im localStorage nach Highscore-Eintrag wieder 0 setzen.
+
 ## Version 1.9.6.2 (Edgar)
 - ID und CLASS der Buchstaben-Buttons ausgetauscht
 
