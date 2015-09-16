@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 2.0.1 (Edgar)
+- Übrige Console Meldungen entfernt
+
 ## Version 2.0 (Daniel)
 - Bugfix: Joker-Button graut letterButtons jetzt auch wieder aus
 - Bei Lebensverlust wird das gesamte Wort nun in Orange und blinkend
