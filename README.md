@@ -9,7 +9,7 @@ Ein auf der Idee von Hangman basierendes HTML5 Spiel. Diese Version beinhaltet d
 Die einzigen Entwickler dieses Projektes sind [Daniel zur Linden](https://github.com/Mastaa12) und [Edgar Klepek](https://github.com/edgarklepek42).
 
 ## Anleitung
-Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient werden. Ziel des Spiels ist es, so viele Wörter wie möglich zu erraten. Es ist wichtig, genau zu überlegen, welchen Buchstaben man als nächstes wählt, denn in einem Leben hast du nur acht Fehlversuche. Insgesamt hast du vier Leben, repräsentiert durch die Buchstaben F,H,D und W. Solltest du ein Wort nicht erraten können, helfen dir die drei Joker, welche jeweils einen zufälligen Buchstaben aufdecken. Nach acht Fehlversuchen verlierst du ein Leben, das aktuelle Wort ist aus dem Spiel und eine neues Wort wird automatisch generiert. Hast du alle Leben aufgebraucht, kannst du dich in die Highscore-Liste eintragen und dich mit anderen Spielern vor dir vergleichen.
+Das Spiel kann sowohl per Maus, als auch per Tastatur im Internetbrowser bedient werden. Ziel des Spiels ist es, so viele Wörter wie möglich zu erraten. Es ist wichtig, genau zu überlegen, welchen Buchstaben man als nächstes wählt, denn in einem Leben hast du nur acht Fehlversuche. Insgesamt hast du vier Leben, repräsentiert durch die Buchstaben F,H,D und W. Solltest du ein Wort nicht erraten können, helfen dir die drei Joker, welche jeweils einen zufälligen Buchstaben aufdecken. Nach acht Fehlversuchen verlierst du ein Leben, das aktuelle Wort ist aus dem Spiel und ein neues Wort wird automatisch generiert. Hast du alle Leben aufgebraucht, kannst du dich in die Highscore-Liste eintragen und dich mit anderen Spielern vor dir vergleichen.
 
 ## Screenshots
 ### Menü
